@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/extensions/extension.dart';
 import '../../../../config/route/app_routes.dart';
 import 'package:get/get.dart';
@@ -31,7 +32,10 @@ class _SplashScreenState extends State<SplashScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      body: CommonImage(imageSrc: AppImages.noImage, size: 70).center,
+      backgroundColor: AppColors.splash,
+      body: Center(
+        child: Image.asset(AppImages.appLogo),
+      ),
     );
   }
 }

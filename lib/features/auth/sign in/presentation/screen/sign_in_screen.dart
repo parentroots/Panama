@@ -4,8 +4,10 @@ import '../../../../../../../utils/extensions/extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import '../../../../../component/button/common_button.dart';
+import '../../../../../component/image/common_image.dart';
 import '../../../../../component/text/common_text.dart';
 import '../../../../../component/text_field/common_text_field.dart';
+import '../../../../../utils/constants/app_images.dart';
 import '../controller/sign_in_controller.dart';
 
 import '../../../../../../../utils/constants/app_colors.dart';
@@ -19,8 +21,11 @@ class SignInScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: AppColors.backgroundColor,
       /// App Bar Sections Starts here
-      appBar: AppBar(),
+      appBar: AppBar(
+        backgroundColor: AppColors.backgroundColor,
+      ),
 
       /// Body Sections Starts here
       body: GetBuilder<SignInController>(
@@ -31,66 +36,52 @@ class SignInScreen extends StatelessWidget {
               key: controller.formKey,
               child: Column(
                 mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.start,
+                crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
-                  /// Log In Instruction here
-                  const CommonText(
-                    text: AppString.logIntoYourAccount,
-                    fontSize: 32,
-                    bottom: 20,
-                    top: 36,
+
+
+                  180.height,
+                  const Center(
+                    child: CommonImage(imageSrc: AppImages.profile, size: 70),
                   ),
 
-                  /// Account Email Input here
-                  const CommonText(text: AppString.email, bottom: 8),
+                  20.height,
+
+                  CommonText(text: 'SignIn',style: TextStyle(
+                    fontWeight: FontWeight.w700,
+                      fontSize: 24,
+                      color: AppColors.commonButtonBorderColor
+                  ),),
+
+                  14.height,
+
+                 CommonTextField(
+                   borderRadius: 26,
+                   borderColor: AppColors.commonButtonBorderColor,
+                   hintText: AppString.email,
+                 ),
+
+                  24.height,
+
                   CommonTextField(
-                    controller: controller.emailController,
-                    prefixIcon: const Icon(Icons.mail),
+                    borderRadius: 26,
+                    fillColor: Color(0xff2E5089),
+                    borderColor: AppColors.commonButtonBorderColor,
                     hintText: AppString.email,
-                    validator: OtherHelper.emailValidator,
                   ),
 
-                  /// Account Password Input here
-                  const CommonText(
-                    text: AppString.password,
-                    bottom: 8,
-                    top: 24,
-                  ),
-                  CommonTextField(
-                    controller: controller.passwordController,
-                    prefixIcon: const Icon(Icons.lock),
-                    isPassword: true,
-                    hintText: AppString.password,
-                    validator: OtherHelper.passwordValidator,
-                  ),
+                  SizedBox(height: 10,),
+                  CommonText(text: AppString.forgotPassword,
+                    color: AppColors.commonTextColor,fontSize: 11,),
 
-                  /// Forget Password Button here
-                  Align(
-                    alignment: Alignment.centerRight,
-                    child: GestureDetector(
-                      onTap: () => Get.toNamed(AppRoutes.forgotPassword),
-                      child: const CommonText(
-                        text: AppString.forgotThePassword,
-                        top: 10,
-                        bottom: 30,
-                        color: AppColors.primaryColor,
-                        fontSize: 16,
-                        fontWeight: FontWeight.w600,
-                      ),
-                    ),
-                  ),
-
-                  /// Submit Button here
+                  SizedBox(height: 80,),
+                  
                   CommonButton(
-                    titleText: AppString.signIn,
-                    isLoading: controller.isLoading,
-                    onTap: controller.signInUser,
-                  ),
-                  30.height,
-
-                  /// Account Creating Instruction here
-                  const DoNotHaveAccount(),
-                  30.height,
+                    onTap: () => Get.toNamed(AppRoutes.signInWithCategoryScreen),
+                    titleText: 'Enter',
+                  titleColor: AppColors.TextColor,
+                  buttonColor: AppColors.white,
+                  borderColor: AppColors.commonButtonBorderColor,)
                 ],
               ),
             ),
@@ -99,4 +90,6 @@ class SignInScreen extends StatelessWidget {
       ),
     );
   }
+
+
 }

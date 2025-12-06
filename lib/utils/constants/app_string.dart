@@ -21,7 +21,7 @@ class AppString {
   static const String currentPassword = "Current Password";
   static const String newPassword = "New Password";
   static const String confirmPassword = "Confirm Password";
-  static const String forgotPassword = "Forgot Password";
+  static const String forgotPassword = "you forgot your password";
   static const String confirm = "Confirm";
   static const String createNewPassword = "Create New Password";
   static const String createYourNewPassword = "Create Your New Password";
@@ -36,9 +36,9 @@ class AppString {
   static const String verify = "Verify";
   static const String logIntoYourAccount = "Login to Your Account";
   static const String forgotThePassword = "Forgot the password";
-  static const String signIn = "Sign in";
+  static const String signIn = "Login";
   static const String doNotHaveAccount = "Don’t have an account";
-  static const String signUp = "Sign up";
+  static const String signUp = "Password";
   static const String alreadyHaveAccount = "Already have an account";
   static const String fullName = "Full Name";
   static const String createYourAccount = "Create Your Account";
@@ -71,4 +71,29 @@ class AppString {
   static const String thePasswordDoesNotMatch = "The password does not match";
   static const String startServer = "Please, start the Server";
   static const String unknownError = "Unknown Error";
+
+//-------------------------------------------------------------------------------------------------
+  static const String howWillYouRegister = "How will you register?";
+  static const String iAmCitizen = "I am a Citizen";
+  static const String iAmLawyer = "I am a Lawyer";
+  static const String iAmExpert = "I am an expert";
+  static const String iAmAStudent = "I am a Student";
+  static const String register = "Register";
+  static const String expertInformation = "Expert Information";
+  static const String identityDocument = "Identity Document";
+  static const String technicalSpeciality = "Technical Specialty";
+  static const String documentScan = "Document Scanner";
+  static const String expertBillPlan = "Expert Plan";
+  static const String selectPaymentMethod = "Select Payment Method";
+  static const String continuePaymentMethod = "Select Payment Method";
+  static const String continuePayment = "continue to payment";
+
+  static const String accessevaluationrequestschatwithlawyersandtheprofessionaldirectory = "Access evaluation requests, chat with lawyers, and the professional directory";
+
+
+
+
+
+
+
 }

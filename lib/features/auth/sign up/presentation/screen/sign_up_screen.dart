@@ -15,6 +15,7 @@ class SignUpScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       /// App Bar Section Starts Here
       appBar: AppBar(),
 
@@ -38,8 +39,8 @@ class SignUpScreen extends StatelessWidget {
                   SignUpAllField(controller: controller),
 
                   16.height,
-
                   /// Submit Button Here
+                  ///
                   CommonButton(
                     titleText: AppString.signUp,
                     isLoading: controller.isLoading,
