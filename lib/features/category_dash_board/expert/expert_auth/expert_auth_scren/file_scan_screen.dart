@@ -1,10 +1,12 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:new_untitled/component/app_bar/common_app_bar.dart';
 import 'dart:math' as math;
 
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
+import 'package:new_untitled/utils/constants/app_images.dart';
 
 class FileScanScreen extends StatefulWidget {
   const FileScanScreen({Key? key}) : super(key: key);
@@ -40,6 +42,11 @@ class _FileScanScreenState extends State<FileScanScreen>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      appBar: PreferredSize(preferredSize: Size.fromHeight(100), child: CommonAppBar(
+        leadingIcon: AppImages.back, onTap: () {
+          Get.back();
+      },
+      )),
       backgroundColor: AppColors.backgroundColor,
       body: Stack(
         children: [

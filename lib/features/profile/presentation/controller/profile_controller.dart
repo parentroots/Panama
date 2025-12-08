@@ -41,7 +41,7 @@ class ProfileController extends GetxController {
     Get.back();
   }
 
-  /// update profile function here
+  /// update profile_screen function here
   Future<void> editProfileRepo() async {
     if (!formKey.currentState!.validate()) return;
 

@@ -1,6 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:new_untitled/component/app_bar/common_app_bar.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
@@ -24,52 +26,67 @@ class _ExpertInformationUploadScreenState
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(backgroundColor: AppColors.backgroundColor),
+      appBar: PreferredSize(preferredSize: Size.fromHeight(100), child: CommonAppBar(
+        leadingIcon: AppImages.back, onTap: () {
+          Get.back();
+      },
+      )),
       body: Column(
         children: [
           CommonCurvedWidget(
-            height: 100,
+            height: 120,
             text: AppString.register,
 
-            imageSource: AppImages.profile,
+            imageSource: AppImages.appLogo,
             textColor: AppColors.commonTextColor,
           ),
 
-          SizedBox(height: 40),
+          SizedBox(height: 40.h),
 
-          CommonText(
-            text: AppString.expertInformation,
-            fontWeight: FontWeight.w700,
-            fontSize: 24,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 69),
+            child: CommonText(
+              text: AppString.expertInformation,
+              fontWeight: FontWeight.w700,
+              fontSize: 24,
+            ),
           ),
-          SizedBox(height: 20),
-          CommonText(
-            text: AppString.identityDocument,
-            fontWeight: FontWeight.w700,
-            fontSize: 17,
+          SizedBox(height: 40.h),
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 135.w),
+            child: CommonText(
+              text: AppString.identityDocument,
+              fontWeight: FontWeight.w700,
+              fontSize: 17,
+            ),
           ),
 
-          40.height,
+          18.height,
 
-          CommonButton(
-            onTap:  () => Get.toNamed(AppRoutes.fileScanScreen),
-            borderColor: AppColors.buttonBorderColor,
-            buttonWidth: 380,
-            buttonHeight: 53,
-            titleText: 'Upload File',
-            buttonColor: AppColors.white,
-            titleColor: AppColors.secondary,
+          Padding(
+            padding: EdgeInsets.symmetric(horizontal: 52.w),
+            child: CommonButton(
+              onTap:  () => Get.toNamed(AppRoutes.fileScanScreen),
+              borderColor: AppColors.buttonBorderColor,
+              buttonWidth: 380,
+              buttonHeight: 53,
+              titleText: 'Upload File',
+              buttonColor: AppColors.white,
+              titleColor: AppColors.secondary,
+            ),
           ),
 
           SizedBox(height: 30),
 
-          CommonButton(
-            borderColor: AppColors.buttonBorderColor,
-            buttonWidth: 380,
-            buttonHeight: 53,
-            titleText: AppString.technicalSpeciality,
-            buttonColor: AppColors.white,
-            titleColor: AppColors.secondary,
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 51),
+            child: CommonButton(
+              borderColor: AppColors.buttonBorderColor,
+              buttonHeight: 53,
+              titleText: AppString.technicalSpeciality,
+              buttonColor: AppColors.white,
+              titleColor: AppColors.secondary,
+            ),
           ),
 
           Spacer(),
@@ -81,7 +98,7 @@ class _ExpertInformationUploadScreenState
             titleText: AppString.continues,
           ),
 
-          SizedBox(height: 40),
+          SizedBox(height: 60.h),
 
 
 

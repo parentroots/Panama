@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:new_untitled/component/app_bar/common_app_bar.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
 import '../../../../config/route/app_routes.dart';
 import '../../../../utils/extensions/extension.dart';
@@ -10,57 +11,89 @@ import '../../component/button/common_button.dart';
 import '../../component/image/common_image.dart';
 import '../../component/text/common_text.dart';
 
-
 class OnboardingScreen extends StatelessWidget {
   const OnboardingScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: Text("onBoarding"),),
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100.0),
+        child: CommonAppBar(
+          leadingIcon: AppImages.back,
+          onTap: () {
+            Get.back();
+          },
+        ),
+      ),
       backgroundColor: AppColors.backgroundColor,
       body: Padding(
         padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
-        child: Column(
-          children: [
-            180.height,
-            const Center(
-              child: CommonImage(imageSrc: AppImages.noImage, size: 70),
-            ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              223.height,
+              const Center(
+                child: CommonImage(imageSrc: AppImages.appLogo, size: 70),
+              ),
 
-            120.height,
+              60.height,
 
-            CommonText(text: 'Your legal connection in Panamá',style: TextStyle(
-              fontSize: 24,
-              color: AppColors.commonButtonBorderColor
-            ),),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 69),
+                child: Column(
+                  children: [
+                    CommonText(
+                      text: 'Your legal connection ',
+                      style: TextStyle(
+                        fontSize: 24,
+                        color: AppColors.commonButtonBorderColor,
+                      ),
+                    ),
 
-            80.height,
+                    CommonText(
+                      text: 'In Panama',
+                      fontSize: 24,
+                      color: AppColors.commonButtonBorderColor,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ],
+                ),
+              ),
 
-            CommonButton(
-              buttonRadius: 26,
-              buttonHeight: 53,
-              buttonWidth: 336,
-              borderColor: AppColors.commonButtonBorderColor,borderWidth: 1,
-              buttonColor: AppColors.commonButtonColor,
-              titleText: AppString.signIn,
-              titleColor: AppColors.commonTextColor,
-              onTap: () => Get.toNamed(AppRoutes.signIn),
-            ),
+              80.height,
 
-            24.height,
+              Padding(
+                padding: EdgeInsets.symmetric(horizontal: 49.w),
+                child: CommonButton(
+                  buttonRadius: 26,
+                  buttonHeight: 53,
+                  borderColor: AppColors.commonButtonBorderColor,
+                  borderWidth: 1,
+                  buttonColor: AppColors.commonButtonColor,
+                  titleText: AppString.signIn,
+                  titleColor: AppColors.commonTextColor,
+                  onTap: () => Get.toNamed(AppRoutes.signIn),
+                ),
+              ),
 
-            CommonButton(
-              buttonRadius: 26,
-              buttonHeight: 53,
-              buttonWidth: 336,
-              titleColor: AppColors.commonTextColor,
-              borderColor: AppColors.commonButtonBorderColor,borderWidth: 1,
-              buttonColor: AppColors.commonButtonColor,
-              titleText: AppString.signUp,
-              onTap: () => Get.toNamed(AppRoutes.signUpWithCategoryScreen),
-            ),
-          ],
+              24.height,
+
+              Padding(
+                padding: EdgeInsetsGeometry.symmetric(horizontal: 49.w),
+                child: CommonButton(
+                  buttonRadius: 26,
+                  buttonHeight: 53,
+                  titleColor: AppColors.commonTextColor,
+                  borderColor: AppColors.commonButtonBorderColor,
+                  borderWidth: 1,
+                  buttonColor: AppColors.commonButtonColor,
+                  titleText: AppString.signUp,
+                  onTap: () => Get.toNamed(AppRoutes.signUpWithCategoryScreen),
+                ),
+              ),
+            ],
+          ),
         ),
       ),
     );

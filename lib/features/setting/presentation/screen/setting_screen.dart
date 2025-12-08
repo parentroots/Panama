@@ -100,7 +100,7 @@ class SettingScreen extends StatelessWidget {
       ),
 
       /// Bottom Navigation Bar Section starts here
-      bottomNavigationBar: const CommonBottomNavBar(currentIndex: 0),
+      bottomNavigationBar: const ExpertBottomNavBar(currentIndex: 0),
     );
   }
 }

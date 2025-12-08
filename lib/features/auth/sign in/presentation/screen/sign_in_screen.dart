@@ -79,7 +79,7 @@ class SignInScreen extends StatelessWidget {
                   CommonButton(
                     onTap: () => Get.toNamed(AppRoutes.signInWithCategoryScreen),
                     titleText: 'Enter',
-                  titleColor: AppColors.TextColor,
+                  titleColor: AppColors.secondPrimaryTextColor,
                   buttonColor: AppColors.white,
                   borderColor: AppColors.commonButtonBorderColor,)
                 ],

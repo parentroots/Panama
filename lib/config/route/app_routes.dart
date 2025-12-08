@@ -1,11 +1,20 @@
 import 'package:get/get.dart';
+import 'package:new_untitled/component/bottom_nav_bar/common_bottom_bar.dart';
 import 'package:new_untitled/features/auth/sign%20in/presentation/screen/sign_in_with_category_screen.dart';
+import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/chat_bot_screen/expert_chat_bot_screen.dart';
+import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/expert_bottom_nav_screen.dart';
+import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/important_articles_screen/expert_important_articles_screen.dart';
+import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/library_screen/expert_library_screen.dart';
+import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/profile_screen/profile_screen.dart';
+import 'package:new_untitled/features/category_dash_board/expert/home/expert_home_screen.dart';
 import 'package:new_untitled/features/category_dash_board/expert/payment_screen/bil_plan_screen.dart';
 import 'package:new_untitled/features/category_dash_board/expert/expert_auth/expert_auth_scren/expert_information_upload_screen.dart';
 import 'package:new_untitled/features/category_dash_board/expert/expert_auth/expert_auth_scren/expert_sign_up_screen.dart';
 import 'package:new_untitled/features/category_dash_board/expert/expert_auth/expert_auth_scren/file_scan_screen.dart';
 import 'package:new_untitled/features/category_dash_board/expert/payment_screen/pay_confirmation_screen.dart';
+import 'package:new_untitled/features/category_dash_board/expert/payment_screen/payment_loading_screen.dart';
 import 'package:new_untitled/features/category_dash_board/expert/payment_screen/payment_method_screen.dart';
+import 'package:new_untitled/features/category_dash_board/expert/payment_screen/pending_validation_screen.dart';
 import '../../features/auth/change_password/presentation/screen/change_password_screen.dart';
 import '../../features/auth/forgot password/presentation/screen/create_password.dart';
 import '../../features/auth/forgot password/presentation/screen/forgot_password.dart';
@@ -49,6 +58,7 @@ class AppRoutes {
 
 
 
+
   static const String signInWithCategoryScreen = "/sign_in_with_category_screen.dart";
   static const String signUpWithCategoryScreen = "/sign_up_with_category_screen.dart";
   static const String expertSignUpScreen = "/expert_sign_up_screen.dart";
@@ -57,6 +67,15 @@ class AppRoutes {
   static const String bill_plan_screen = "/bill_plan_screen.dart";
   static const String payment_method_screen = "/payment_method_screen.dart";
   static const String pay_confirmation_screen = "/pay_confirmation_screen.dart";
+  static const String paymentLoadingScreen = "/payment_loading_screen.dart";
+  static const String pendingValidationScreen = "/pending_validation_screen.dart";
+  static const String expertHomeScreen = "/expert_home_screen.dart";
+  static const String expertChatBotScreen = "/expert_chat_bot_screen.dart";
+  static const String expertImportantArticlesScreen = "/expert_important_articles_screen.dart";
+  static const String expertLibraryScreen = "/expert_library_screen.dart";
+  static const String expertProfileScreen = "/expert_profile_screen.dart";
+  static const String expertBottomNavScreen = "/expert_bottom_nav_screen.dart";
+
 
 
 
@@ -82,6 +101,8 @@ class AppRoutes {
 
 
 
+    ///-------------------------------------------Expert Routes-----------------
+
     GetPage(name: signInWithCategoryScreen, page: () => const SignInWithCategoryScreen()),
     GetPage(name: signUpWithCategoryScreen, page: () => const SignUpWithCategoryScreen()),
     GetPage(name: expertSignUpScreen, page: () => const ExpertSignUpScreen()),
@@ -91,6 +112,15 @@ class AppRoutes {
     GetPage(name: bill_plan_screen, page: () => const BilPlanScreen()),
     GetPage(name: payment_method_screen, page: () => PaymentMethodScreen()),
     GetPage(name: pay_confirmation_screen, page: () => PayConfirmationScreen()),
+    GetPage(name: paymentLoadingScreen, page: () => PaymentLoadingScreen()),
+    GetPage(name: pendingValidationScreen, page: () => PendingValidationScreen()),
+    GetPage(name: expertHomeScreen, page: () => ExpertHomeScreen()),
+    GetPage(name: expertChatBotScreen, page: () => ExpertChatBotScreen()),
+    GetPage(name: expertLibraryScreen, page: () => ExpertLibraryScreen()),
+    GetPage(name: expertImportantArticlesScreen, page: () => ExpertImportantArticlesScreen()),
+    GetPage(name: expertProfileScreen, page: () => ExpertProfileScreen()),
+    GetPage(name: expertChatBotScreen, page: () => ExpertChatBotScreen()),
+   GetPage(name: expertBottomNavScreen, page: () => ExpertBottomNavScreen())
 
 
   ];

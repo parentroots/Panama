@@ -6,16 +6,16 @@ import '../../../utils/constants/app_colors.dart';
 import '../../../utils/log/app_log.dart';
 
 
-class CommonBottomNavBar extends StatefulWidget {
+class ExpertBottomNavBar extends StatefulWidget {
   final int currentIndex;
 
-  const CommonBottomNavBar({required this.currentIndex, super.key});
+  const ExpertBottomNavBar({required this.currentIndex, super.key});
 
   @override
-  State<CommonBottomNavBar> createState() => _CommonBottomNavBarState();
+  State<ExpertBottomNavBar> createState() => _ExpertBottomNavBarState();
 }
 
-class _CommonBottomNavBarState extends State<CommonBottomNavBar> {
+class _ExpertBottomNavBarState extends State<ExpertBottomNavBar> {
   var bottomNavIndex = 0;
   List<Widget> unselectedIcons = [
     const Icon(Icons.settings_outlined, color: AppColors.black),

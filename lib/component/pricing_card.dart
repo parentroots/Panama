@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
 
 class PricingCard extends StatelessWidget {
@@ -34,7 +35,7 @@ class PricingCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
-        padding: const EdgeInsets.symmetric(horizontal: 32, vertical: 28),
+        padding:  EdgeInsets.symmetric(horizontal: 70.w),
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.circular(borderRadius),
@@ -73,7 +74,7 @@ class PricingCard extends StatelessWidget {
               style: TextStyle(
                 fontSize: 56,
                 fontWeight: FontWeight.bold,
-                color: AppColors.TextColor,
+                color: AppColors.secondPrimaryTextColor,
                 height: 1.0,
                 letterSpacing: -2,
               ),
@@ -88,7 +89,7 @@ class PricingCard extends StatelessWidget {
               style: TextStyle(
                 fontSize: 16,
                 fontWeight: FontWeight.w500,
-                color: AppColors.TextColor,
+                color: AppColors.secondPrimaryTextColor,
               ),
             ),
           ],
