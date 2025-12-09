@@ -24,73 +24,73 @@ class _ExpertLibraryScreenState extends State<ExpertLibraryScreen> {
         actionImage: AppImages.language,
         middleImage: AppImages.appLogo,
       ),
-      
+
       body: Column(
         children: [
+          SizedBox(height: 40),
 
-        SizedBox(height: 40,),
-        
-        Padding(
-          padding: const EdgeInsets.symmetric(horizontal: 15),
-          child: Row(children: [
-            Image.asset(AppImages.libraryIcon),
-            CommonText(text: 'LAW',color: AppColors.secondary,fontSize: 24,fontWeight: FontWeight.w700,),
-            CommonText(text: '  LIBRARY',color: AppColors.blueColor,fontSize: 24,fontWeight: FontWeight.w700,)
-          ],),
-        ),
+          Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 15),
+            child: Row(
+              children: [
+                Image.asset(AppImages.libraryIcon),
+                CommonText(
+                  text: 'LAW',
+                  color: AppColors.secondary,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                ),
+                CommonText(
+                  text: '  LIBRARY',
+                  color: AppColors.blueColor,
+                  fontSize: 24,
+                  fontWeight: FontWeight.w700,
+                ),
+              ],
+            ),
+          ),
 
-          SizedBox(height: 30,),
+          SizedBox(height: 30),
           Container(
-
-              height: 43,
-              width: 358,
-              decoration: BoxDecoration(
-                  color: Color(0xffFAFAFA),
-                  borderRadius: BorderRadius.circular(26),
-                  border: Border.all(
-                      color: Color(0xffBDD3F8)
-                  )
-              ),
-              child: Padding(
-                padding: const EdgeInsets.all(8.0),
-                child: Align(
-                  alignment: Alignment.center,
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.center,
-                    crossAxisAlignment: CrossAxisAlignment.center,
-                    children: [
-                      Icon(Icons.search,color: Color(0xffB1B1B1),),
-                      Expanded(
-                        child: TextField(
-                          decoration: InputDecoration(
-                            hintText: 'Search by keyword or article…',
-                            border: InputBorder.none,
-                            hintStyle: TextStyle(fontSize: 14, color: Colors.grey),
+            height: 43,
+            width: 358,
+            decoration: BoxDecoration(
+              color: Color(0xffFAFAFA),
+              borderRadius: BorderRadius.circular(26),
+              border: Border.all(color: Color(0xffBDD3F8)),
+            ),
+            child: Padding(
+              padding: const EdgeInsets.all(8.0),
+              child: Align(
+                alignment: Alignment.center,
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.center,
+                  crossAxisAlignment: CrossAxisAlignment.center,
+                  children: [
+                    Icon(Icons.search, color: Color(0xffB1B1B1)),
+                    Expanded(
+                      child: TextField(
+                        decoration: InputDecoration(
+                          hintText: 'Search by keyword or article…',
+                          border: InputBorder.none,
+                          hintStyle: TextStyle(
+                            fontSize: 14,
+                            color: Colors.grey,
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
-
             ),
+          ),
 
+          SizedBox(height: 30),
 
-          SizedBox(height: 30,),
-
-          Row(children: [
-            
-            Image.asset(AppImages.category)
-
-
-          ],)
-
-
-
-
-        ],),
-
+          Row(children: [Image.asset(AppImages.appLogo)]),
+        ],
+      ),
     );
   }
 }
