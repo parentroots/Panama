@@ -1,9 +1,11 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/chat_bot_screen/expert_chat_bot_screen.dart';
 import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/important_articles_screen/expert_important_articles_screen.dart';
 import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/library_screen/expert_library_screen.dart';
 import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/profile_screen/profile_screen.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
+import 'package:new_untitled/utils/constants/app_images.dart';
 
 class ExpertBottomNavScreen extends StatefulWidget {
   const ExpertBottomNavScreen({super.key});
@@ -39,13 +41,19 @@ class _ExpertBottomNavScreenState extends State<ExpertBottomNavScreen> {
         selectedItemColor: AppColors.bottomNavSelectedColor,
         unselectedItemColor: AppColors.nameTextColor,
         items: [
-          BottomNavigationBarItem(icon: Icon(Icons.chat), label: 'chat'),
-          BottomNavigationBarItem(icon: Icon(Icons.article), label: 'articles'),
           BottomNavigationBarItem(
-            icon: Icon(Icons.library_add),
+            icon: SvgPicture.asset(AppImages.chatSvg),
+            label: 'chat',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(AppImages.bottomArticles),
+            label: 'articles',
+          ),
+          BottomNavigationBarItem(
+            icon: SvgPicture.asset(AppImages.bottomLibrary),
             label: 'library',
           ),
-          BottomNavigationBarItem(icon: Icon(Icons.person), label: 'profile'),
+          BottomNavigationBarItem(icon: SvgPicture.asset(AppImages.bottomPerson), label: 'profile'),
         ],
       ),
       body: screens[currentIndex],

@@ -1,6 +1,9 @@
 class AppImages {
 
   static const String baseurl = "assets/images" ;
+  static const String iconBaseUrl = "assets/icons" ;
+
+
   static const String noData = "$baseurl/noData.png" ;
   static const String noImage = "$baseurl/noImage.png" ;
   static const String profile = "$baseurl/profile_screen.png" ;
@@ -21,7 +24,13 @@ class AppImages {
   static const String aiAvatar = "$baseurl/aiAvatar.png" ;
   static const String aiAvatarMiddle = "$baseurl/aiAvatarMiddle.png" ;
   static const String libraryIcon = "$baseurl/libraryIcon.png" ;
-  static const String category = "$baseurl/category.png" ;
+  static const String category = "assets/images/cetegory.png" ;
+
+  ///-----------------------------------svg
+  static const String chatSvg = "$iconBaseUrl/chatBot.svg" ;
+  static const String bottomArticles = "$iconBaseUrl/bottomArticles.svg" ;
+  static const String bottomLibrary = "$iconBaseUrl/bottomLibrary.svg" ;
+  static const String bottomPerson = "$iconBaseUrl/bottomPerson.svg" ;
 
 
 
