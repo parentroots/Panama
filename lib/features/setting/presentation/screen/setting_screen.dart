@@ -6,6 +6,7 @@ import 'package:get/get.dart';
 import '../../../../component/bottom_nav_bar/common_bottom_bar.dart';
 import '../../../../component/pop_up/common_pop_menu.dart';
 import '../../../../component/text/common_text.dart';
+import '../../../category_dash_board/expert/expert_bottom_nav/expert_bottom_nav_screen.dart';
 import '../controller/setting_controller.dart';
 import '../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../utils/constants/app_string.dart';

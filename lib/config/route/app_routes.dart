@@ -120,7 +120,7 @@ class AppRoutes {
     GetPage(name: expertImportantArticlesScreen, page: () => ExpertImportantArticlesScreen()),
     GetPage(name: expertProfileScreen, page: () => ExpertProfileScreen()),
     GetPage(name: expertChatBotScreen, page: () => ExpertChatBotScreen()),
-   GetPage(name: expertBottomNavScreen, page: () => ExpertBottomNavScreen())
+   // GetPage(name: expertBottomNavScreen, page: () => ExpertBottomNavScreen())
 
 
   ];

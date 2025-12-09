@@ -1,25 +1,25 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
+import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/text/common_text.dart';
-import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/library_screen/library_expert_one_screen.dart';
-import '../../../../../component/bottom_nav_bar/common_bottom_bar.dart';
+import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/library_screen/library_expert_one_details_screen.dart';
 import '../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../component/law_library_card/law_library_card.dart';
 import '../../../../../utils/constants/app_colors.dart';
 import '../../../../../utils/constants/app_images.dart';
 import '../expert_bottom_nav_screen.dart';
 
-class ExpertLibraryScreen extends StatefulWidget {
-  const ExpertLibraryScreen({super.key});
+class LibraryExpertOneScreen extends StatefulWidget {
+  const LibraryExpertOneScreen({super.key});
 
   @override
-  State<ExpertLibraryScreen> createState() => _ExpertLibraryScreenState();
+  State<LibraryExpertOneScreen> createState() => _LibraryExpertOneScreenState();
 }
 
-class _ExpertLibraryScreenState extends State<ExpertLibraryScreen> {
+class _LibraryExpertOneScreenState extends State<LibraryExpertOneScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -32,14 +32,13 @@ class _ExpertLibraryScreenState extends State<ExpertLibraryScreen> {
         middleImage: AppImages.appLogo,
       ),
 
-
       bottomNavigationBar: const ExpertBottomNavBar(currentIndex: 1),
 
       body: SingleChildScrollView(
         child: Column(
           children: [
             SizedBox(height: 40),
-        
+
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 15),
               child: Row(
@@ -66,7 +65,7 @@ class _ExpertLibraryScreenState extends State<ExpertLibraryScreen> {
                 ],
               ),
             ),
-        
+
             SizedBox(height: 30),
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 42),
@@ -105,75 +104,48 @@ class _ExpertLibraryScreenState extends State<ExpertLibraryScreen> {
                 ),
               ),
             ),
-        
+
             SizedBox(height: 30),
-        
-            Row(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(left: 25),
-                  child: Image.asset(AppImages.category),
-                ),
-                CommonText(
-                  text: 'Categories',
-                  fontSize: 16.h,
-                  fontWeight: FontWeight.w700,
-                ),
-              ],
-            ),
-        
-            SizedBox(height: 33.h,),
-        
-            LawLibraryCard(
-              backgroundImage: AppImages.imageCard1,
-              titleText: 'Civil Code',
-              subTitleText: 'See related articles', onTap: () {
-                Get.to(LibraryExpertOneScreen());
-            },
-            ),
-        
-            SizedBox(height: 17.h,),
-        
-            LawLibraryCard(
-              backgroundImage: AppImages.imageCard2,
-              titleText: 'Civil Code',
-              subTitleText: 'See related articles',
+
+            _buildCardWidget(
+              text: 'Penal Code',
+              textColor: AppColors.primaryColor,
+              bgColor: Color(0xffE1D49F),
               onTap: () {
-                Get.to(LibraryExpertOneScreen());
+
+                Get.to(LibraryExpertOneDetailsScreen());
               },
             ),
-        
-        
-            SizedBox(height: 17.h,),
-        
-            LawLibraryCard(
-              backgroundImage: AppImages.imageCard3,
-              titleText: 'Penal Code',
-              subTitleText: 'See related articles',
+            SizedBox(height: 25.h),
+            _buildCardWidget(
               onTap: () {
-                Get.to(LibraryExpertOneScreen());
+
+                Get.to(LibraryExpertOneDetailsScreen());
               },
+              text: 'Commercial Code',
+              textColor: AppColors.white,
+              bgColor: Color(0xff97A8C4),
             ),
-        
-        
-            SizedBox(height: 17.h,),
-        
-            LawLibraryCard(
-              backgroundImage: AppImages.imageCard4,
-              titleText: 'Special Laws',
-              subTitleText: 'See related articles',
+            SizedBox(height: 25.h),
+            _buildCardWidget(
               onTap: () {
-                Get.to(LibraryExpertOneScreen());
+
+                Get.to(LibraryExpertOneDetailsScreen());
               },
+              text: 'Civil Code',
+              textColor: AppColors.primaryColor,
+              bgColor: Color(0xffE1D49F),
             ),
-            
-            
-            Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 52,vertical: 39),
-              child: CommonButton(titleText: 'See the most recent Official Gazette'),
-            )
-        
-        
+            SizedBox(height: 25.h),
+            _buildCardWidget(
+              onTap: () {
+
+                Get.to(LibraryExpertOneDetailsScreen());
+              },
+              text: 'Specials Laws',
+              textColor: AppColors.white,
+              bgColor: Color(0xff97A8C4),
+            ),
           ],
         ),
       ),
@@ -181,3 +153,54 @@ class _ExpertLibraryScreenState extends State<ExpertLibraryScreen> {
   }
 }
 
+class _buildCardWidget extends StatelessWidget {
+  const _buildCardWidget({
+    super.key,
+    required this.text,
+    required this.textColor,
+    required this.bgColor,
+    required this.onTap,
+  });
+
+  final String text;
+  final Color textColor;
+  final Color bgColor;
+
+  final VoidCallback onTap;
+
+  @override
+  Widget build(BuildContext context) {
+    return Padding(
+      padding: const EdgeInsets.symmetric(horizontal: 40),
+      child: InkWell(
+        onTap: onTap,
+        child: Container(
+          height: 46,
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20.r),
+            color: bgColor,
+          ),
+          child: Row(
+            children: [
+              Padding(
+                padding: const EdgeInsets.only(left: 43),
+                child: SvgPicture.asset(
+                  AppImages.directionIcon,
+                  width: 24,
+                  height: 24,
+                  colorFilter: const ColorFilter.mode(
+                    Colors.black,
+                    BlendMode.srcIn,
+                  ),
+                ),
+              ),
+              SizedBox(width: 10),
+
+              CommonText(text: text, color: (textColor)),
+            ],
+          ),
+        ),
+      ),
+    );
+  }
+}

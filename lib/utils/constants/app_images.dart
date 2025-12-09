@@ -33,5 +33,13 @@ class AppImages {
   static const String bottomPerson = "$iconBaseUrl/bottomPerson.svg" ;
 
 
+  static const String imageCard1= "$baseurl/cardImage.png" ;
+  static const String imageCard2= "$baseurl/cardImage2.png" ;
+  static const String imageCard3 = "$baseurl/cardImage3.png" ;
+  static const String imageCard4 = "$baseurl/cardImage4.png" ;
+  static const String directionIcon = "$iconBaseUrl/directionIcon.svg" ;
+  static const String carlos = "$baseurl/carlos.png" ;
+
+
 
 }

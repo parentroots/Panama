@@ -6,6 +6,9 @@ import 'package:new_untitled/component/curved_background_widget/home_bottom_curv
 import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 
+import '../../../../../component/bottom_nav_bar/common_bottom_bar.dart';
+import '../expert_bottom_nav_screen.dart';
+
 class ExpertChatBotScreen extends StatefulWidget {
   const ExpertChatBotScreen({super.key});
 
@@ -18,20 +21,17 @@ class _ExpertChatBotScreenState extends State<ExpertChatBotScreen> {
 
   List<Map<String, dynamic>> messageList = [];
   bool isTyping = false;
+
   @override
   void initState() {
-
     super.initState();
-    
-    messageTEController.addListener((){
 
+    messageTEController.addListener(() {
       setState(() {
-        isTyping=messageTEController.text.trim().isNotEmpty;
+        isTyping = messageTEController.text.trim().isNotEmpty;
       });
     });
   }
-
-
 
   @override
   Widget build(BuildContext context) {
@@ -45,6 +45,7 @@ class _ExpertChatBotScreenState extends State<ExpertChatBotScreen> {
         actionImage: AppImages.language,
         middleImage: AppImages.appLogo,
       ),
+      bottomNavigationBar: const ExpertBottomNavBar(currentIndex: 0),
       body: Column(
         children: [
           Expanded(
@@ -77,12 +78,19 @@ class _ExpertChatBotScreenState extends State<ExpertChatBotScreen> {
                         child: Row(
                           mainAxisAlignment: MainAxisAlignment.end,
                           children: [
-                            if (!isTyping)...[
-                               Icon(Icons.attach_file),
+                            if (!isTyping) ...[
+                              Icon(Icons.attach_file),
                               SizedBox(width: 10.h),
-                               InkWell(
-                                 onTap: onTapCameraButton,
-                                   child: Icon(Icons.camera_alt,color: AppColors.primaryColor,)),
+                              InkWell(
+                                onTap: onTapCameraButton,
+                                child: Padding(
+                                  padding: const EdgeInsets.only(right: 12),
+                                  child: Icon(
+                                    Icons.camera_alt,
+                                    color: AppColors.primaryColor,
+                                  ),
+                                ),
+                              ),
                             ],
                             if (isTyping)
                               IconButton(
@@ -94,7 +102,6 @@ class _ExpertChatBotScreenState extends State<ExpertChatBotScreen> {
                           ],
                         ),
                       ),
-
 
                       contentPadding: const EdgeInsets.symmetric(
                         horizontal: 16,
@@ -108,14 +115,16 @@ class _ExpertChatBotScreenState extends State<ExpertChatBotScreen> {
                   ),
                 ),
                 const SizedBox(width: 10),
-                CircleAvatar(
-                  radius: 26,
-                  backgroundColor: Colors.blue,
-                  child: IconButton(
-                    color: Colors.white,
-                    onPressed: () {
-                    },
-                    icon: Icon(Icons.mic),
+                Padding(
+                  padding: const EdgeInsets.all(6.0),
+                  child: CircleAvatar(
+                    radius: 26,
+                    backgroundColor: Colors.blue,
+                    child: IconButton(
+                      color: Colors.white,
+                      onPressed: () {},
+                      icon: Icon(Icons.mic,size: 22,),
+                    ),
                   ),
                 ),
               ],
@@ -135,13 +144,10 @@ class _ExpertChatBotScreenState extends State<ExpertChatBotScreen> {
     }
   }
 
-
- Future<void> onTapCameraButton()async{
-
+  Future<void> onTapCameraButton() async {
     final ImagePicker picker = ImagePicker();
     final XFile? image = await picker.pickImage(source: ImageSource.gallery);
   }
-
 
   @override
   void dispose() {
@@ -149,11 +155,7 @@ class _ExpertChatBotScreenState extends State<ExpertChatBotScreen> {
     super.dispose();
     messageTEController.dispose();
   }
-
-
-
 }
-
 
 class _BotMessage extends StatelessWidget {
   final String text;
@@ -170,7 +172,11 @@ class _BotMessage extends StatelessWidget {
           CircleAvatar(
             radius: 22,
             backgroundColor: Colors.blue,
-            child: Image.asset(AppImages.aiAvatarMiddle,height: 24.h,width: 24.h,),
+            child: Image.asset(
+              AppImages.aiAvatarMiddle,
+              height: 24.h,
+              width: 24.h,
+            ),
           ),
           const SizedBox(width: 10),
           Expanded(
@@ -225,4 +231,3 @@ class _UserMessage extends StatelessWidget {
     );
   }
 }
-

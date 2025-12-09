@@ -88,43 +88,40 @@ class ExpertHomeScreen extends StatelessWidget {
             SizedBox(height: 10,),
 
 
-            Padding(
-              padding: const EdgeInsets.all(8.0),
-              child: Column(
-                children: [
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
+            Column(
+              children: [
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
 
-                      HomeCard(boxColor: AppColors.card1, text: "Chatbot", image: AppImages.bot, onTap: () {
-                         Get.toNamed(AppRoutes.expertBottomNavScreen);
+                    HomeCard(boxColor: AppColors.card1, text: "Chatbot", image: AppImages.bot, onTap: () {
+                       Get.toNamed(AppRoutes.expertChatBotScreen);
+                    },),
+                    SizedBox(width: 20,),
+                    HomeCard(boxColor: AppColors.card2, text: "Library", image: AppImages.library, onTap: () {
+                      Get.toNamed(AppRoutes.expertLibraryScreen);
+                    },)
+                  ],),
+                ),
+
+                Padding(
+                  padding: const EdgeInsets.all(8.0),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+
+                      HomeCard(boxColor: AppColors.card3, text: "Important articles", image: AppImages.book2, onTap: () {
+                        Get.toNamed(AppRoutes.expertImportantArticlesScreen);
                       },),
                       SizedBox(width: 20,),
-                      HomeCard(boxColor: AppColors.card2, text: "Library", image: AppImages.library, onTap: () {
-                        Get.toNamed(AppRoutes.expertBottomNavScreen);
+                      HomeCard(boxColor: AppColors.card4, text: "Profile", image: AppImages.person, onTap: () {
+                        Get.toNamed(AppRoutes.expertProfileScreen);
                       },)
                     ],),
-                  ),
-
-                  Padding(
-                    padding: const EdgeInsets.all(8.0),
-                    child: Row(
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-
-                        HomeCard(boxColor: AppColors.card3, text: "Important articles", image: AppImages.book2, onTap: () {
-                          Get.toNamed(AppRoutes.expertBottomNavScreen);
-                        },),
-                        SizedBox(width: 20,),
-                        HomeCard(boxColor: AppColors.card4, text: "Profile", image: AppImages.person, onTap: () {
-                          Get.toNamed(AppRoutes.expertBottomNavScreen);
-                        },)
-                      ],),
-                  ),
-                ],
-              ),
+                ),
+              ],
             ),
 
 
