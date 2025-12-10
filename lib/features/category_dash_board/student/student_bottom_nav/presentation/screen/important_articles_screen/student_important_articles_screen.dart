@@ -1,0 +1,48 @@
+import 'package:flutter/material.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/home/citizen_home_screen.dart';
+
+import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
+import '../../../../../../../utils/constants/app_colors.dart';
+import '../../../../../../../utils/constants/app_images.dart';
+import '../../../student_bottom_nav_screen.dart';
+
+
+class StudentImportantArticlesScreen extends StatefulWidget {
+  const StudentImportantArticlesScreen({super.key});
+
+  @override
+  State<StudentImportantArticlesScreen> createState() => _StudentImportantArticlesScreenState();
+}
+
+class _StudentImportantArticlesScreenState extends State<StudentImportantArticlesScreen> {
+
+  Future<void>onTapLeading()async{
+    Get.to(CitizenHomeScreen());
+
+  }
+  @override
+  Widget build(BuildContext context) {
+    return Scaffold(
+      appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: onTapLeading,
+        height: 100,
+        backgroundColor: AppColors.backgroundColor,
+        backImage: AppImages.back,
+        leadingImage: AppImages.appBarHome,
+        actionImage: AppImages.language,
+        middleImage: AppImages.appLogo,
+      ),
+
+      bottomNavigationBar: const CitizenBottomNavBar(currentIndex: 2),
+      body: Column(
+        children: [
+
+
+
+        ],
+      ),
+    );
+  }
+}

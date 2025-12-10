@@ -31,6 +31,12 @@ class AppImages {
   static const String bottomArticles = "$iconBaseUrl/bottomArticles.svg" ;
   static const String bottomLibrary = "$iconBaseUrl/bottomLibrary.svg" ;
   static const String bottomPerson = "$iconBaseUrl/bottomPerson.svg" ;
+  static const String paper= "$iconBaseUrl/paper.svg" ;
+  static const String bag = "$iconBaseUrl/bag.svg" ;
+  static const String property = "$iconBaseUrl/property.svg" ;
+  static const String friends = "$iconBaseUrl/friends.svg" ;
+  static const String cases = "$iconBaseUrl/cases.svg" ;
+
 
 
   static const String imageCard1= "$baseurl/cardImage.png" ;
@@ -39,6 +45,8 @@ class AppImages {
   static const String imageCard4 = "$baseurl/cardImage4.png" ;
   static const String directionIcon = "$iconBaseUrl/directionIcon.svg" ;
   static const String carlos = "$baseurl/carlos.png" ;
+  static const String writeBook = "$baseurl/write.png" ;
+  static const String files = "$baseurl/files.png" ;
 
 
 

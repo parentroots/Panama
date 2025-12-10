@@ -57,6 +57,7 @@ class _SignUpWithCategoryScreenState extends State<SignUpWithCategoryScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 52),
               child: CommonButton(
+                onTap:  () => Get.toNamed(AppRoutes.citizenSignUpScreen),
                 titleText: AppString.iAmCitizen,
                 borderColor: AppColors.commonButtonBorderColor,
                 buttonRadius: 24,
@@ -69,6 +70,7 @@ class _SignUpWithCategoryScreenState extends State<SignUpWithCategoryScreen> {
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 52),
               child: CommonButton(
+                onTap:  () => Get.toNamed(AppRoutes.lawyerSignUpScreen),
                 titleText: AppString.iAmLawyer,
                 borderColor: AppColors.commonButtonBorderColor,
                 buttonRadius: 24,

@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 
 class HomeBottomCurvedAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeBottomCurvedAppBar({
@@ -54,7 +56,7 @@ class HomeBottomCurvedAppBar extends StatelessWidget implements PreferredSizeWid
                     children: [
                       // Back button
                       GestureDetector(
-                        onTap: onBackPressed ?? () => Navigator.pop(context),
+                        onTap: onBackPressed ?? () => Get.back,
                         child: Image.asset(
                           backImage,
                           color: Colors.white,
@@ -62,7 +64,7 @@ class HomeBottomCurvedAppBar extends StatelessWidget implements PreferredSizeWid
                           height: 24.h,
                         ),
                       ),
-                      SizedBox(width: 20.w),
+                      SizedBox(width: 5.w),
                       // Leading icon
                       GestureDetector(
                         onTap: onLeadingPressed,
