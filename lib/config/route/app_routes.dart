@@ -99,18 +99,17 @@ class AppRoutes {
   ///---------------------citizen---------------------
    static const String citizenSignUpScreen = "/student_sign_up_screen.dart";
    static const String citizenInformationUploadScreen = "/citizen_information_upload_screen.dart";
-  // static const String fileScanScreen = "/file_scan_screen.dart";
-  // static const String bill_plan_screen = "/bill_plan_screen.dart";
-  // static const String payment_method_screen = "/payment_method_screen.dart";
-  // static const String pay_confirmation_screen = "/pay_confirmation_screen.dart";
-  // static const String paymentLoadingScreen = "/payment_loading_screen.dart";
-  // static const String pendingValidationScreen = "/pending_validation_screen.dart";
-  // static const String expertHomeScreen = "/student_home_screen.dart";
-  // static const String expertChatBotScreen = "/student_chat_bot_screen.dart";
-  // static const String expertImportantArticlesScreen = "/student_important_articles_screen.dart";
-  // static const String expertLibraryScreen = "/student_library_screen.dart";
-  // static const String expertProfileScreen = "/expert_profile_screen.dart";
-  // static const String expertBottomNavScreen = "/student_bottom_nav_screen.dart";
+    static const String citizen_bill_plan_screen = "/bill_plan_screen.dart";
+   static const String citizen_payment_method_screen = "/payment_method_screen.dart";
+  // static const String citizen_pay_confirmation_screen = "/pay_confirmation_screen.dart";
+  // static const String citizenPaymentLoadingScreen = "/payment_loading_screen.dart";
+  // static const String citizenPendingValidationScreen = "/pending_validation_screen.dart";
+  // static const String citizenHomeScreen = "/student_home_screen.dart";
+  // static const String citizenChatBotScreen = "/student_chat_bot_screen.dart";
+  // static const String citizenImportantArticlesScreen = "/student_important_articles_screen.dart";
+  // static const String citizenLibraryScreen = "/student_library_screen.dart";
+  // static const String citizenProfileScreen = "/expert_profile_screen.dart";
+  // static const String citizenBottomNavScreen = "/student_bottom_nav_screen.dart";
 
 
   ///--------------------------------lawyer------------------------------
@@ -141,13 +140,13 @@ class AppRoutes {
   // static const String fileScanScreen = "/file_scan_screen.dart";
 
      static const String studentLoadingScreen = "/payment_loading_screen.dart";
-     static const String studentpendingValidationScreen = "/pending_validation_screen.dart";
+     static const String studentPendingValidationScreen = "/pending_validation_screen.dart";
      static const String studentHomeScreen = "/student_home_screen.dart";
      static const String studentChatBotScreen = "/student_chat_bot_screen.dart";
      static const String studentImportantArticlesScreen = "/student_important_articles_screen.dart";
-  // static const String expertLibraryScreen = "/student_library_screen.dart";
-  // static const String expertProfileScreen = "/expert_profile_screen.dart";
-  // static const String expertBottomNavScreen = "/student_bottom_nav_screen.dart";
+  // static const String studentLibraryScreen = "/student_library_screen.dart";
+  // static const String studentProfileScreen = "/student_profile_screen.dart";
+  // static const String studentBottomNavScreen = "/student_bottom_nav_screen.dart";
 
 
 
@@ -199,19 +198,18 @@ class AppRoutes {
      GetPage(name: citizenSignUpScreen, page: () => const CitizenSignUpScreen()),
     // GetPage(name: expertSignUpScreen, page: () => const ExpertSignUpScreen()),
      GetPage(name: citizenInformationUploadScreen, page: () => const CitizenInformationUploadScreen()),
-    // GetPage(name: fileScanScreen, page: () => const FileScanScreen()),
-    // GetPage(name: bill_plan_screen, page: () => const BilPlanScreen()),
-    // GetPage(name: payment_method_screen, page: () => PaymentMethodScreen()),
-    // GetPage(name: pay_confirmation_screen, page: () => PayConfirmationScreen()),
-    // GetPage(name: paymentLoadingScreen, page: () => PaymentLoadingScreen()),
-    // GetPage(name: pendingValidationScreen, page: () => PendingValidationScreen()),
-    // GetPage(name: expertHomeScreen, page: () => ExpertHomeScreen()),
-    // GetPage(name: expertChatBotScreen, page: () => ExpertChatBotScreen()),
-    // GetPage(name: expertLibraryScreen, page: () => ExpertLibraryScreen()),
-    // GetPage(name: expertImportantArticlesScreen, page: () => ExpertImportantArticlesScreen()),
-    // GetPage(name: expertProfileScreen, page: () => ExpertProfileScreen()),
-    // GetPage(name: expertChatBotScreen, page: () => ExpertChatBotScreen()),
-    // // GetPage(name: expertBottomNavScreen, page: () => ExpertBottomNavScreen())
+       GetPage(name: citizen_bill_plan_screen, page: () => const BilPlanScreen()),
+    // GetPage(name: citizen_payment_method_screen, page: () => CitizenPaymentMethodScreen()),
+    // GetPage(name: citizen_pay_confirmation_screen, page: () => CitizenPayConfirmationScreen()),
+    // GetPage(name: citizen_paymentLoadingScreen, page: () => CitizenPaymentLoadingScreen()),
+    // GetPage(name: citizen_pendingValidationScreen, page: () => CitizenPendingValidationScreen()),
+    // GetPage(name: citizenHomeScreen, page: () => CitizenHomeScreen()),
+    // GetPage(name: citizenChatBotScreen, page: () => CitizenChatBotScreen()),
+    // GetPage(name: citizenLibraryScreen, page: () => CitizenLibraryScreen()),
+    // GetPage(name: citizenImportantArticlesScreen, page: () => CitizenImportantArticlesScreen()),
+    // GetPage(name: citizenProfileScreen, page: () => CitizenProfileScreen()),
+    // GetPage(name: citizenChatBotScreen, page: () => CitizenChatBotScreen()),
+    //  GetPage(name: citizenBottomNavScreen, page: () => CitizenBottomNavScreen())
 
     ///---------------------------------------------------lawyer--------------
 
