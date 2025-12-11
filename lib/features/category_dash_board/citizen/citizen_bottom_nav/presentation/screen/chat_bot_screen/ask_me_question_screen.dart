@@ -34,118 +34,122 @@ class _AskMeQuestionScreenState extends State<AskMeQuestionScreen> {
       body: SafeArea(
         child: Padding(
           padding: const EdgeInsets.symmetric(horizontal: 22, vertical: 10),
-          child: Column(
-            crossAxisAlignment: CrossAxisAlignment.start,
-            children: [
-
-              // 🔵 Title
-              Text(
-                "Write your question here?",
-                style: TextStyle(
-                  fontSize: 22,
-                  fontWeight: FontWeight.bold,
-                  color: Color(0xff2E5089),
-                ),
-              ),
-
-              SizedBox(height: 20),
-
-              // 🟦 Large TextField Box
-              Container(
-                padding: EdgeInsets.all(15),
-                height: 314,
-                decoration: BoxDecoration(
-                  border: Border.all(color: Colors.grey.shade300),
-                  borderRadius: BorderRadius.circular(20.r),
-                ),
-                child: TextField(
-                  controller: questionController,
-                  maxLines: null,
-                  expands: true,
-                  decoration: InputDecoration(
-                    border: InputBorder.none,
-                    hintText: "Write your question here...",
-                    hintStyle: TextStyle(
-                      fontSize: 15,
-                      color: Colors.grey.shade400,
-                    ),
-                  ),
-                ),
-              ),
-
-              SizedBox(height: 29),
-
-              // 🔘 Send Button
-              Center(
-                child: Padding(
-                  padding:EdgeInsets.symmetric(horizontal: 53.h),
-                  child: Container(
-                    height: 53,
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Color(0xff2E5089),
-                      borderRadius: BorderRadius.circular(30.r),
-                    ),
-                    child: TextButton(
-                      onPressed: () {},
-                      child: Text(
-                        "Send",
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontSize: 17,
-                          fontWeight: FontWeight.w600,
-                        ),
-                      ),
-                    ),
-                  ),
-                ),
-              ),
-
-              SizedBox(height: 28),
-
-              // Description Text
-              Center(
-                child: Text(
-                  "We offer a pre-programmed response based on your\n"
-                      "query. We suggest you contact a specialist lawyer.",
-                  textAlign: TextAlign.center,
+          child: SingleChildScrollView(
+            child: Column(
+              crossAxisAlignment: CrossAxisAlignment.start,
+              children: [
+            
+                // 🔵 Title
+                Text(
+                  "Write your question here?",
                   style: TextStyle(
-                    fontSize: 13,
+                    fontSize: 22,
+                    fontWeight: FontWeight.bold,
                     color: Color(0xff2E5089),
                   ),
                 ),
-              ),
-
-              SizedBox(height: 17),
-
-              // 🔘 Contact Lawyer Button
-              Center(
-                child: Padding(
-                  padding: EdgeInsets.symmetric(horizontal: 53.h),
-                  child: Container(
-                    width: double.infinity,
-                    decoration: BoxDecoration(
-                      color: Color(0xff121C3E),
-                      borderRadius: BorderRadius.circular(26.r),
+            
+                SizedBox(height: 20),
+            
+                // 🟦 Large TextField Box
+                Container(
+                  padding: EdgeInsets.all(15),
+                  height: 314,
+                  decoration: BoxDecoration(
+                    border: Border.all(color: Colors.grey.shade300),
+                    borderRadius: BorderRadius.circular(20.r),
+                  ),
+                  child: TextField(
+                    controller: questionController,
+                    maxLines: null,
+                    expands: true,
+                    decoration: InputDecoration(
+                      border: InputBorder.none,
+                      hintText: "Write your question here...",
+                      hintStyle: TextStyle(
+                        fontSize: 15,
+                        color: Colors.grey.shade400,
+                      ),
                     ),
-                    child: TextButton(
-                      onPressed: () {
-                        Get.to(LawyerFoundedLoadinScreen());
-                      },
-                      child: Text(
-                        "Contact a lawyer",
-                        style: TextStyle(
-                          color: Color(0xffF6EFD9),
-                          fontSize: 16,
-                          fontWeight: FontWeight.w600,
+                  ),
+                ),
+            
+                SizedBox(height: 29),
+            
+                // 🔘 Send Button
+                Center(
+                  child: Padding(
+                    padding:EdgeInsets.symmetric(horizontal: 53.h),
+                    child: Container(
+                      height: 53,
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Color(0xff2E5089),
+                        borderRadius: BorderRadius.circular(30.r),
+                      ),
+                      child: TextButton(
+                        onPressed: () {},
+                        child: Text(
+                          "Send",
+                          style: TextStyle(
+                            color: Colors.white,
+                            fontSize: 17,
+                            fontWeight: FontWeight.w600,
+                          ),
                         ),
                       ),
                     ),
                   ),
                 ),
-              ),
+            
+                SizedBox(height: 28),
+            
+                // Description Text
+                Center(
+                  child: Text(
+                    "We offer a pre-programmed response based on your\n"
+                        "query. We suggest you contact a specialist lawyer.",
+                    textAlign: TextAlign.center,
+                    style: TextStyle(
+                      fontSize: 13,
+                      color: Color(0xff2E5089),
+                    ),
+                  ),
+                ),
+            
+                SizedBox(height: 17),
+            
+                // 🔘 Contact Lawyer Button
+                Center(
+                  child: Padding(
+                    padding: EdgeInsets.symmetric(horizontal: 53.h),
+                    child: Container(
+                      width: double.infinity,
+                      decoration: BoxDecoration(
+                        color: Color(0xff121C3E),
+                        borderRadius: BorderRadius.circular(26.r),
+                      ),
+                      child: TextButton(
+                        onPressed: () {
+                          Get.to(LawyerFoundedLoadinScreen());
+                        },
+                        child: Text(
+                          "Contact a lawyer",
+                          style: TextStyle(
+                            color: Color(0xffF6EFD9),
+                            fontSize: 16,
+                            fontWeight: FontWeight.w600,
+                          ),
+                        ),
+                      ),
+                    ),
+                  ),
+                ),
 
-            ],
+                SizedBox(height: 20.h,)
+            
+              ],
+            ),
           ),
         ),
       ),

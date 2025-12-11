@@ -143,7 +143,7 @@ class _OtherQuestionAskScreenState extends State<OtherQuestionAskScreen> {
                     onTap: ()=>Get.to(AskMeQuestionScreen()),
                     child: Container(
                       height: 55,
-                      width: 216,
+                      width: 120,
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: AppColors.commonButtonBorderColor
