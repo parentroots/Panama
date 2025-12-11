@@ -1,95 +1,119 @@
 import 'package:flutter/material.dart';
-import '../../../../../../../config/route/app_routes.dart';
-import '../../../../../../../utils/extensions/extension.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:new_untitled/component/text_field/common_text_field.dart';
+import 'package:new_untitled/features/auth/sign%20in/presentation/screen/login_with_category_screen.dart';
+import 'package:new_untitled/utils/constants/app_colors.dart';
 import '../../../../../component/button/common_button.dart';
 import '../../../../../component/image/common_image.dart';
 import '../../../../../component/text/common_text.dart';
-import '../../../../../component/text_field/common_text_field.dart';
+import '../../../../../config/route/app_routes.dart';
 import '../../../../../utils/constants/app_images.dart';
-import '../controller/sign_in_controller.dart';
-
-import '../../../../../../../utils/constants/app_colors.dart';
-import '../../../../../../../utils/constants/app_string.dart';
-import '../../../../../../../utils/helpers/other_helper.dart';
-import '../widgets/do_not_account.dart';
-
+import '../../../../../utils/constants/app_string.dart';
+import '../../../../../utils/extensions/extension.dart';
 class SignInScreen extends StatelessWidget {
   const SignInScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+
       backgroundColor: AppColors.backgroundColor,
-      /// App Bar Sections Starts here
-      appBar: AppBar(
-        backgroundColor: AppColors.backgroundColor,
-      ),
-
-      /// Body Sections Starts here
-      body: GetBuilder<SignInController>(
-        builder: (controller) {
-          return SingleChildScrollView(
-            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
-            child: Form(
-              key: controller.formKey,
-              child: Column(
-                mainAxisAlignment: MainAxisAlignment.start,
-                crossAxisAlignment: CrossAxisAlignment.center,
-                children: [
-
-
-                  180.height,
-                  const Center(
-                    child: CommonImage(imageSrc: AppImages.profile, size: 70),
+      body: Container(
+        width: double.infinity,
+        height: double.infinity,
+        decoration: const BoxDecoration(
+          image: DecorationImage(
+            image: AssetImage(AppImages.onBoardingImage),
+            fit: BoxFit.cover,   // Full screen fill
+          ),
+        ),
+        child: Padding(
+          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
+          child: SingleChildScrollView(
+            child: Column(
+              children: [
+                40.height,
+                Padding(
+                  padding: const EdgeInsets.only(left: 38),
+                  child: Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      InkWell(
+                        onTap:Get.back,
+                          child: Image.asset(AppImages.back)),
+                    ],
                   ),
+                ),
+                200.height,
+                const Center(
+                  child: CommonImage(imageSrc: AppImages.appLogo, size: 70),
+                ),
 
-                  20.height,
+                60.height,
 
-                  CommonText(text: 'SignIn',style: TextStyle(
-                    fontWeight: FontWeight.w700,
-                      fontSize: 24,
-                      color: AppColors.commonButtonBorderColor
-                  ),),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 69),
+                  child: Column(
+                    children: [
 
-                  14.height,
 
-                 CommonTextField(
-                   borderRadius: 26,
-                   borderColor: AppColors.commonButtonBorderColor,
-                   hintText: AppString.email,
-                 ),
-
-                  24.height,
-
-                  CommonTextField(
-                    borderRadius: 26,
-                    fillColor: Color(0xff2E5089),
-                    borderColor: AppColors.commonButtonBorderColor,
-                    hintText: AppString.email,
+                      CommonText(
+                        text: 'Sign In',
+                        fontSize: 24,
+                        color: AppColors.commonButtonBorderColor,
+                        fontWeight: FontWeight.w700,
+                      ),
+                    ],
                   ),
+                ),
 
-                  SizedBox(height: 10,),
-                  CommonText(text: AppString.forgotPassword,
-                    color: AppColors.commonTextColor,fontSize: 11,),
+                80.height,
 
-                  SizedBox(height: 80,),
-                  
-                  CommonButton(
-                    onTap: () => Get.toNamed(AppRoutes.signInWithCategoryScreen),
-                    titleText: 'Enter',
-                  titleColor: AppColors.secondPrimaryTextColor,
-                  buttonColor: AppColors.white,
-                  borderColor: AppColors.commonButtonBorderColor,)
-                ],
-              ),
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 52),
+                  child: CommonTextField(
+                    hintText: 'E-mail',
+                                 hintTextColor: Color(0xffE1D49F),
+                                 fillColor: Color(0xff16253E),
+                    borderRadius: 26.h,
+                  ),
+                ),
+
+                40.height,
+
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 52),
+                  child: CommonTextField(
+                    hintText: 'Password',
+                    hintTextColor: Color(0xffE1D49F),
+                    fillColor: Color(0xff16253E),
+                    borderRadius: 26.h,
+                  ),
+                ),
+
+
+                14.height,
+                
+                CommonText(text: 'You forgot your password',fontSize: 11,fontWeight: FontWeight.w400,color: Color(0xffE1D49F),),
+
+
+                SizedBox(height: 102,),
+                
+                Padding(
+                  padding: const EdgeInsets.symmetric(horizontal: 52),
+                  child: CommonButton(
+                    onTap: ()=>Get.to(LoginWithCategoryScreen()),
+                    titleText: 'Enter',buttonRadius: 26,buttonColor: Color(0xFFFFFFFF),titleColor: Color(0xff104B5B),titleSize: 17,),
+                )
+
+
+              ],
             ),
-          );
-        },
+          ),
+        ),
       ),
     );
   }
-
-
 }

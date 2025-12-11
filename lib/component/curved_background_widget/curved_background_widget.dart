@@ -21,7 +21,7 @@ class CommonCurvedWidget extends StatelessWidget {
       height: height,
       width: double.maxFinite,
       decoration: BoxDecoration(
-        color: AppColors.commonButtonColor,
+        color: AppColors.commonAppColor,
         borderRadius: BorderRadius.only(
           bottomLeft: Radius.circular(40),
           bottomRight: Radius.circular(40),

@@ -9,14 +9,14 @@ import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 
-class FileScanScreen extends StatefulWidget {
-  const FileScanScreen({Key? key}) : super(key: key);
+class StudentFileScanScreen extends StatefulWidget {
+  const StudentFileScanScreen({Key? key}) : super(key: key);
 
   @override
-  State<FileScanScreen> createState() => _FileScanScreenState();
+  State<StudentFileScanScreen> createState() => _StudentFileScanScreenState();
 }
 
-class _FileScanScreenState extends State<FileScanScreen>
+class _StudentFileScanScreenState extends State<StudentFileScanScreen>
     with SingleTickerProviderStateMixin {
   late AnimationController _animationController;
   late Animation<double> _scanAnimation;

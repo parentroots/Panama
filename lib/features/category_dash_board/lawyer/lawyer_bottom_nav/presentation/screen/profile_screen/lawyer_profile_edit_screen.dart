@@ -36,7 +36,7 @@ class _LawyerProfileEditScreenState extends State<LawyerProfileEditScreen> {
         actionImage: AppImages.language,
         middleImage: AppImages.appLogo,
       ),
-      bottomNavigationBar: const LawyerBottomNavBar(currentIndex: 3),
+      bottomNavigationBar: const LawyerBottomNavBar(currentIndex: 4),
       body: SingleChildScrollView(
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,

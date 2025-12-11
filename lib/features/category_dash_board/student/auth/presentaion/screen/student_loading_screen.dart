@@ -1,17 +1,16 @@
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 import 'package:new_untitled/config/route/app_routes.dart';
-import 'package:new_untitled/features/category_dash_board/citizen/auth/presentaion/payment/citizen_pending_validation_screen.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
 
-class CitizenPaymentLoadingScreen extends StatefulWidget {
-  const CitizenPaymentLoadingScreen({super.key});
+class StudentLoadingScreen extends StatefulWidget {
+  const StudentLoadingScreen({super.key});
 
   @override
-  State<CitizenPaymentLoadingScreen> createState() => _CitizenPaymentLoadingScreenState();
+  State<StudentLoadingScreen> createState() => _StudentLoadingScreenState();
 }
 
-class _CitizenPaymentLoadingScreenState extends State<CitizenPaymentLoadingScreen> {
+class _StudentLoadingScreenState extends State<StudentLoadingScreen> {
 
   @override
   void initState() {
@@ -19,7 +18,7 @@ class _CitizenPaymentLoadingScreenState extends State<CitizenPaymentLoadingScree
     super.initState();
 
     Future.delayed(Duration(seconds: 2), () {
-      Get.to(CitizenPendingValidationScreen());
+      Get.toNamed(AppRoutes.studentPendingValidationScreen);
     });
 
 

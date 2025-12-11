@@ -2,6 +2,7 @@
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:new_untitled/component/text/common_text.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/home/citizen_home_screen.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 
@@ -24,8 +25,8 @@ class _CitizenPendingValidationScreenState extends State<CitizenPendingValidatio
     // TODO: implement initState
     super.initState();
 
-    Future.delayed(Duration(seconds: 2), () {
-      Get.toNamed(AppRoutes.expertHomeScreen);
+    Future.delayed(Duration(seconds: 3), () {
+      Get.to(CitizenHomeScreen());
     });
 
   }
@@ -38,9 +39,20 @@ class _CitizenPendingValidationScreenState extends State<CitizenPendingValidatio
           mainAxisAlignment: MainAxisAlignment.center,
           crossAxisAlignment: CrossAxisAlignment.center,
           children: [
-            Image.asset(AppImages.book),
-            CommonText(text: 'Pending ',fontSize: 30,fontWeight: FontWeight.bold,color: AppColors.secondPrimaryTextColor,),
-            CommonText(text: 'Validation',fontSize: 30,fontWeight: FontWeight.bold,color: AppColors.blueColor,),
+
+
+            Container(
+              height: 86,
+              width: 86,
+              decoration: BoxDecoration(
+                shape: BoxShape.circle,
+                color: Color(0xff5DCE5D)
+              ),
+              child: Icon(Icons.check,color: Colors.white,),
+            ),
+            
+            CommonText(text: 'Successful',fontSize: 30,fontWeight: FontWeight.bold,color:Color(0xff16253E),),
+            CommonText(text: 'Payment',fontSize: 45,fontWeight: FontWeight.w700,color: Color(0xff2E5089),),
 
             
             

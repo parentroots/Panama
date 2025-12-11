@@ -5,6 +5,7 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:new_untitled/component/app_bar/common_app_bar.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/text/common_text.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/auth/presentaion/payment/citizen_bil_plan_screen.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 import 'package:new_untitled/utils/constants/app_string.dart';
 import 'package:new_untitled/utils/extensions/extension.dart';
@@ -92,7 +93,7 @@ class _CitizenInformationUploadScreenState
           Spacer(),
 
           CommonButton(
-            onTap:  () => Get.toNamed(AppRoutes.bill_plan_screen),
+            onTap:  () => Get.to(CitizenBilPlanScreen()),
             buttonHeight: 53,
             buttonWidth: 336,
             titleText: AppString.continues,

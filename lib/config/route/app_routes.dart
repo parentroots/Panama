@@ -1,6 +1,6 @@
 import 'package:get/get.dart';
 import 'package:new_untitled/component/bottom_nav_bar/common_bottom_bar.dart';
-import 'package:new_untitled/features/auth/sign%20in/presentation/screen/sign_in_with_category_screen.dart';
+import 'package:new_untitled/features/auth/sign%20in/presentation/screen/login_with_category_screen.dart';
 import 'package:new_untitled/features/category_dash_board/citizen/auth/presentaion/screen/citizen_sign_up_screen.dart';
 import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/expert_bottom_nav_screen.dart';
 import 'package:new_untitled/features/category_dash_board/expert/home/expert_home_screen.dart';
@@ -11,6 +11,15 @@ import 'package:new_untitled/features/category_dash_board/expert/payment/present
 import 'package:new_untitled/features/category_dash_board/expert/payment/presentation/screen/payment_method_screen.dart';
 import 'package:new_untitled/features/category_dash_board/expert/payment/presentation/screen/pending_validation_screen.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/lawyer_profile_screen.dart';
+import 'package:new_untitled/features/category_dash_board/student/auth/presentaion/screen/student_information_upload_screen.dart';
+import 'package:new_untitled/features/category_dash_board/student/auth/presentaion/screen/student_loading_screen.dart';
+import 'package:new_untitled/features/category_dash_board/student/auth/presentaion/screen/student_pending_validation_screen.dart';
+import 'package:new_untitled/features/category_dash_board/student/auth/presentaion/screen/student_sign_up_screen.dart';
+import 'package:new_untitled/features/category_dash_board/student/student_bottom_nav/presentation/screen/chat_bot_screen/student_chat_bot_screen.dart';
+import 'package:new_untitled/features/category_dash_board/student/student_bottom_nav/presentation/screen/important_articles_screen/student_important_articles_screen.dart';
+import 'package:new_untitled/features/category_dash_board/student/student_bottom_nav/presentation/screen/library_screen/student_library_screen.dart';
+import 'package:new_untitled/features/category_dash_board/student/student_bottom_nav/presentation/screen/profile_screen/student_profile_edit_screen.dart';
+import 'package:new_untitled/features/category_dash_board/student/student_bottom_nav/presentation/screen/profile_screen/student_profile_screen.dart';
 import '../../features/auth/change_password/presentation/screen/change_password_screen.dart';
 import '../../features/auth/forgot password/presentation/screen/create_password.dart';
 import '../../features/auth/forgot password/presentation/screen/forgot_password.dart';
@@ -40,6 +49,7 @@ import '../../features/category_dash_board/lawyer/lawyer_bottom_nav/lawyer_botto
 import '../../features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/chat_bot_screen/lawyer_chat_bot_screen.dart';
 import '../../features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/important_articles_screen/lawyer_important_articles_screen.dart';
 import '../../features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/library_screen/lawyer_library_screen.dart';
+import '../../features/category_dash_board/student/home/student_home_screen.dart';
 import '../../features/message/presentation/screen/chat_screen.dart';
 import '../../features/message/presentation/screen/message_screen.dart';
 import '../../features/notifications/presentation/screen/notifications_screen.dart';
@@ -76,7 +86,7 @@ class AppRoutes {
 
 
 ///------------------------expert-------------------------
-  static const String signInWithCategoryScreen = "/sign_in_with_category_screen.dart";
+  static const String signInWithCategoryScreen = "/login_with_category_screen.dart";
   static const String signUpWithCategoryScreen = "/sign_up_with_category_screen.dart";
   static const String expertSignUpScreen = "/expert_sign_up_screen.dart";
   static const String expertInformationUploadScreen = "/expert_information_upload_screen.dart";
@@ -135,18 +145,19 @@ class AppRoutes {
 
   ///---------------------------------student---------------------------
 
-  // static const String studentSignUpScreen = "/student_sign_up_screen.dart";
-  // static const String studentInformationUploadScreen = "/citizen_information_upload_screen.dart";
-  // static const String fileScanScreen = "/file_scan_screen.dart";
-
-     static const String studentLoadingScreen = "/payment_loading_screen.dart";
-     static const String studentPendingValidationScreen = "/pending_validation_screen.dart";
-     static const String studentHomeScreen = "/student_home_screen.dart";
-     static const String studentChatBotScreen = "/student_chat_bot_screen.dart";
+     static const String studentSignUpScreen = "/student_sign_up_screen.dart";
+    static const String studentInformationUploadScreen = "/student_information_upload_screen.dart";
+  //  static const String fileScanScreen = "/file_scan_screen.dart";
+  //
+      static const String studentLoadingScreen = "/student_loading_screen.dart";
+      static const String studentPendingValidationScreen = "/student_pending_validation_screen.dart";
+      static const String studentHomeScreen = "/student_home_screen.dart";
+      static const String studentChatBotScreen = "/student_chat_bot_screen.dart";
      static const String studentImportantArticlesScreen = "/student_important_articles_screen.dart";
-  // static const String studentLibraryScreen = "/student_library_screen.dart";
-  // static const String studentProfileScreen = "/student_profile_screen.dart";
-  // static const String studentBottomNavScreen = "/student_bottom_nav_screen.dart";
+     static const String studentLibraryScreen = "/student_library_screen.dart";
+     static const String studentProfileScreen = "/student_profile_screen.dart";
+     static const String studentProfileScreenEditScreen = "/student_profile_edit_screen.dart";
+  //static const String studentBottomNavScreen = "/student_bottom_nav_screen.dart";
 
 
 
@@ -174,7 +185,7 @@ class AppRoutes {
 
     ///-------------------------------------------Expert Routes-----------------
 
-    GetPage(name: signInWithCategoryScreen, page: () => const SignInWithCategoryScreen()),
+    GetPage(name: signInWithCategoryScreen, page: () => const LoginWithCategoryScreen()),
     GetPage(name: signUpWithCategoryScreen, page: () => const SignUpWithCategoryScreen()),
     GetPage(name: expertSignUpScreen, page: () => const ExpertSignUpScreen()),
     GetPage(name: expertSignUpScreen, page: () => const ExpertSignUpScreen()),
@@ -233,20 +244,20 @@ class AppRoutes {
 
     ///---------------------------------------------------student--------------
 
-    // GetPage(name: citizenSignUpScreen, page: () => const CitizenSignUpScreen()),
-    // GetPage(name: expertSignUpScreen, page: () => const ExpertSignUpScreen()),
-    // GetPage(name: citizenInformationUploadScreen, page: () => const CitizenInformationUploadScreen()),
+     GetPage(name: studentSignUpScreen, page: () => const StudentSignUpScreen()),
+     GetPage(name: studentInformationUploadScreen, page: () => const StudentInformationUploadScreen()),
     // GetPage(name: fileScanScreen, page: () => const FileScanScreen()),
     // GetPage(name: bill_plan_screen, page: () => const BilPlanScreen()),
     // GetPage(name: payment_method_screen, page: () => PaymentMethodScreen()),
-    // GetPage(name: pay_confirmation_screen, page: () => PayConfirmationScreen()),
+      GetPage(name: studentLoadingScreen, page: () => StudentLoadingScreen()),
     // GetPage(name: paymentLoadingScreen, page: () => PaymentLoadingScreen()),
-    // GetPage(name: pendingValidationScreen, page: () => PendingValidationScreen()),
-    // GetPage(name: expertHomeScreen, page: () => ExpertHomeScreen()),
-    // GetPage(name: expertChatBotScreen, page: () => ExpertChatBotScreen()),
-    // GetPage(name: expertLibraryScreen, page: () => ExpertLibraryScreen()),
-    // GetPage(name: expertImportantArticlesScreen, page: () => ExpertImportantArticlesScreen()),
-    // GetPage(name: expertProfileScreen, page: () => ExpertProfileScreen()),
+        GetPage(name: studentPendingValidationScreen, page: () => StudentPendingValidationScreen()),
+      GetPage(name:  studentHomeScreen, page: () => StudentHomeScreen()),
+      GetPage(name: studentChatBotScreen, page: () => StudentChatBotScreen()),
+     GetPage(name: studentLibraryScreen, page: () => StudentLibraryScreen()),
+     GetPage(name: studentImportantArticlesScreen, page: () => StudentImportantArticlesScreen()),
+       GetPage(name: studentProfileScreen, page: () => StudentProfileScreen()),
+       GetPage(name: studentProfileScreenEditScreen, page: () => StudentProfileEditScreen()),
     // GetPage(name: expertChatBotScreen, page: () => ExpertChatBotScreen()),
     // GetPage(name: expertBottomNavScreen, page: () => ExpertBottomNavScreen())
 

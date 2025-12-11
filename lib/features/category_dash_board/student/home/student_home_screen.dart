@@ -5,6 +5,10 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:new_untitled/component/app_bar/home_screen_app_bar.dart';
 import 'package:new_untitled/component/home_card/home_card.dart';
 import 'package:new_untitled/component/text/common_text.dart';
+import 'package:new_untitled/features/category_dash_board/student/student_bottom_nav/presentation/screen/chat_bot_screen/student_chat_bot_screen.dart';
+import 'package:new_untitled/features/category_dash_board/student/student_bottom_nav/presentation/screen/important_articles_screen/student_important_articles_screen.dart';
+import 'package:new_untitled/features/category_dash_board/student/student_bottom_nav/presentation/screen/library_screen/student_library_screen.dart';
+import 'package:new_untitled/features/category_dash_board/student/student_bottom_nav/presentation/screen/profile_screen/student_profile_screen.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 
@@ -97,11 +101,11 @@ class StudentHomeScreen extends StatelessWidget {
                     children: [
 
                     HomeCard(boxColor: AppColors.card1, text: "Chatbot", image: AppImages.bot, onTap: () {
-                       Get.toNamed(AppRoutes.expertChatBotScreen);
+                      Get.to(StudentChatBotScreen());
                     },),
                     SizedBox(width: 20,),
                     HomeCard(boxColor: AppColors.card2, text: "Library", image: AppImages.library, onTap: () {
-                      Get.toNamed(AppRoutes.expertLibraryScreen);
+                      Get.to(StudentLibraryScreen());
                     },)
                   ],),
                 ),
@@ -113,11 +117,11 @@ class StudentHomeScreen extends StatelessWidget {
                     children: [
 
                       HomeCard(boxColor: AppColors.card3, text: "Important articles", image: AppImages.book2, onTap: () {
-                        Get.toNamed(AppRoutes.expertImportantArticlesScreen);
+                        Get.to(StudentImportantArticlesScreen());
                       },),
                       SizedBox(width: 20,),
                       HomeCard(boxColor: AppColors.card4, text: "Profile", image: AppImages.person, onTap: () {
-                        Get.toNamed(AppRoutes.expertProfileScreen);
+                        Get.to(StudentProfileScreen());
                       },)
                     ],),
                 ),

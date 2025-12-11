@@ -6,7 +6,9 @@ import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/text/common_text.dart';
+import 'package:new_untitled/features/auth/sign%20in/presentation/screen/sign_in_screen.dart';
 import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/presentation/screen/profile_screen/profile_edit_screen.dart';
+import 'package:new_untitled/utils/extensions/extension.dart';
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
@@ -20,12 +22,9 @@ class CitizenProfileScreen extends StatefulWidget {
 }
 
 class _CitizenProfileScreenState extends State<CitizenProfileScreen> {
-
-
-  Future<void>onTapEditProfileButton()async{
+  Future<void> onTapEditProfileButton() async {
     await Get.to(ProfileEditScreen());
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -47,7 +46,7 @@ class _CitizenProfileScreenState extends State<CitizenProfileScreen> {
               child: Row(
                 children: [
                   SvgPicture.asset(AppImages.bottomPerson),
-        
+
                   Padding(
                     padding: const EdgeInsets.only(left: 12),
                     child: CommonText(
@@ -58,7 +57,7 @@ class _CitizenProfileScreenState extends State<CitizenProfileScreen> {
                 ],
               ),
             ),
-        
+
             Padding(
               padding: EdgeInsets.only(left: 46.w, right: 46, top: 31),
               child: Column(
@@ -76,7 +75,7 @@ class _CitizenProfileScreenState extends State<CitizenProfileScreen> {
                           ),
                         ),
                       ),
-        
+
                       Padding(
                         padding: const EdgeInsets.only(left: 19),
                         child: Column(
@@ -88,7 +87,7 @@ class _CitizenProfileScreenState extends State<CitizenProfileScreen> {
                               fontSize: 30,
                               fontWeight: FontWeight.w700,
                             ),
-        
+
                             CommonText(
                               text: "Speciality",
                               fontSize: 13,
@@ -104,11 +103,11 @@ class _CitizenProfileScreenState extends State<CitizenProfileScreen> {
                       ),
                     ],
                   ),
-        
+
                   _buildEmailAndNumberSection(),
-        
+
                   SizedBox(height: 55.h),
-        
+
                   Row(
                     children: [
                       CommonText(
@@ -116,7 +115,7 @@ class _CitizenProfileScreenState extends State<CitizenProfileScreen> {
                         fontSize: 24,
                         color: AppColors.nameTextColor,
                       ),
-        
+
                       SizedBox(width: 17.w),
                       Container(
                         height: 13,
@@ -127,35 +126,135 @@ class _CitizenProfileScreenState extends State<CitizenProfileScreen> {
                         ),
                       ),
                       SizedBox(width: 5.w),
-                      CommonText(text: 'Active', color: AppColors.nameTextColor),
+                      CommonText(
+                        text: 'Active',
+                        color: AppColors.nameTextColor,
+                      ),
                     ],
                   ),
-        
+
                   SizedBox(height: 8),
-        
-                  CommonText(
-                    text: 'Expert Plan \$5 month',
-                    color: Color(0xff009FE3),
-                    fontSize: 17,
-                    fontWeight: FontWeight.w500,
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      CommonText(
+                        text: 'Premium Citizen',
+                        color: Color(0xff009FE3),
+                        fontSize: 17,
+                        fontWeight: FontWeight.w500,
+                      ),
+
+                      CommonText(
+                        text: '   \$1/Month',
+                        color: Color(0xff009FE3),
+                        fontSize: 20,
+                        fontWeight: FontWeight.w500,
+                      ),
+                    ],
                   ),
-        
-                  SizedBox(height: 34.h,),
-        
-        
-                  FeatureItem(text: "Unlimited consultations"),
-                  SizedBox(height: 12),
-                  FeatureItem(text: "Priority in assignment"),
-                  SizedBox(height: 12),
-                  FeatureItem(text: "Saved case history"),
-        
-        
+
+                  SizedBox(height: 28.h),
+
+                  Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    mainAxisAlignment: MainAxisAlignment.start,
+                    children: [
+                      buildReUsableRow('Unlimited consultand'),
+                      13.height,
+                      buildReUsableRow('Priority and assignment'),
+                      13.height,
+                      buildReUsableRow('Saved case history'),
+                    ],
+                  ),
+
+                  36.height,
+
+                  Padding(
+                    padding: const EdgeInsets.only(left: 36),
+                    child: Column(
+                      crossAxisAlignment: CrossAxisAlignment.start,
+                      children: [
+                        CommonButton(
+                          buttonRadius: 26,
+                          titleText: 'Manage Payment method',
+                        ),
+
+                        15.height,
+
+                        Padding(
+                          padding: EdgeInsets.only(right: 60.w),
+                          child: CommonButton(
+                            buttonRadius: 26,
+                            titleText: 'Cancel subscription',
+                          ),
+                        ),
+
+                        35.height,
+
+                        CommonText(
+                          text: 'Terms and conditions',
+                          fontSize: 12,
+                          color: Color(0xff2E5089),
+                        ),
+
+                        19.height,
+
+                        CommonText(
+                          text: 'Privacy policy',
+                          fontSize: 12,
+                          color: Color(0xff2E5089),
+                        ),
+                        19.height,
+
+                        CommonText(
+                          text: 'Help center',
+                          fontSize: 12,
+                          color: Color(0xff2E5089),
+                        ),
+
+                        19.height,
+
+                        InkWell(
+                          onTap: ()=>Get.offAll(SignInScreen()),
+                          child: CommonText(
+                            text: 'Sign out',
+                            fontSize: 12,
+                            color: Color(0xff2E5089),
+                          ),
+                        ),
+
+                        25.height,
+                      ],
+                    ),
+                  ),
                 ],
               ),
             ),
           ],
         ),
       ),
+    );
+  }
+
+  Row buildReUsableRow(String title) {
+    return Row(
+      children: [
+        SizedBox(
+          height: 24.h,
+          width: 24.w,
+          child: Container(
+            decoration: BoxDecoration(
+              color: Color(0xff19DB09),
+              shape: BoxShape.circle,
+            ),
+            child: Icon(Icons.check, color: Colors.white),
+          ),
+        ),
+
+        10.width,
+        CommonText(text: title),
+      ],
     );
   }
 
@@ -222,7 +321,8 @@ class _CitizenProfileScreenState extends State<CitizenProfileScreen> {
               padding: EdgeInsets.only(left: 12.w),
               child: CommonText(
                 text: '4.7',
-                fontSize: 22,
+                fontSize: 20,
+                fontWeight: FontWeight.w700,
                 color: AppColors.nameTextColor,
               ),
             ),
@@ -230,14 +330,14 @@ class _CitizenProfileScreenState extends State<CitizenProfileScreen> {
         ),
 
         CommonText(
-          text: 'Based on 32 lawyer ratings',
-          color: AppColors.nameTextColor,
+          text: 'Your customer score Based on 8 lawyer ratings.',
+          fontSize: 10,
+          color: Color(0xff2E5089),
         ),
       ],
     );
   }
 }
-
 
 class FeatureItem extends StatelessWidget {
   final String text;
@@ -256,11 +356,7 @@ class FeatureItem extends StatelessWidget {
             color: Colors.green,
             shape: BoxShape.circle,
           ),
-          child: const Icon(
-            Icons.check,
-            color: Colors.white,
-            size: 16,
-          ),
+          child: const Icon(Icons.check, color: Colors.white, size: 16),
         ),
         const SizedBox(width: 12),
 

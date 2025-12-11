@@ -7,7 +7,8 @@ class AppColors {
   static const Color background = Color(0xFFFAFAFA);
   static const Color splash = Color(0xFF16253E);
   static const Color backgroundColor = Color(0xFF16253E);
-  static const Color commonButtonColor= Color(0xFF16253E);
+  static const Color commonAppColor= Color(0xFF16253E);
+  static const Color commonButtonColor= Color(0xFF2E5089);
   static const Color commonButtonBorderColor= Color(0xFFE1D49F);
   static const Color commonTextColor= Color(0xFFE1D49F);
   static const Color secondPrimaryTextColor= Color(0xFF104B5B);

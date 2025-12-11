@@ -7,10 +7,12 @@ import 'package:new_untitled/component/home_card/home_card.dart';
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/cases_screen/lawyer_cases_scren.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/chat_bot_screen/lawyer_chat_bot_category_screen.dart';
+import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/my_profile_screen.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 
 import '../../../../config/route/app_routes.dart';
+import '../../citizen/citizen_bottom_nav/presentation/screen/chat_bot_screen/citizen_chat_bot_category_screen.dart';
 
 class LawyerHomeScreen extends StatelessWidget {
   const LawyerHomeScreen({super.key});
@@ -101,7 +103,7 @@ class LawyerHomeScreen extends StatelessWidget {
                           text: "Chatbot",
                           image: AppImages.bot,
                           onTap: () {
-                            Get.to(LawyerChatBotCategoryScreen());
+                            Get.to(CitizenChatBotCategoryScreen());
                           },
                         ),
                         SizedBox(width: 20),
@@ -152,7 +154,7 @@ class LawyerHomeScreen extends StatelessWidget {
                             text: "Profile",
                             image: AppImages.person,
                             onTap: () {
-                               Get.toNamed(AppRoutes.lawyerProfileScreen);
+                               Get.to(MyProfileScreen());
                             },
                           ),
 

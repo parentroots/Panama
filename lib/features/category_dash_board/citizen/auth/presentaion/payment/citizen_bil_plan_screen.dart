@@ -7,6 +7,7 @@ import 'package:new_untitled/component/curved_background_widget/curved_backgroun
 import 'package:new_untitled/component/pricing_card.dart';
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/config/route/app_routes.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/auth/presentaion/payment/citizen_payment_method_screen.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 import 'package:new_untitled/utils/constants/app_string.dart';
@@ -50,7 +51,7 @@ class _CitizenBilPlanScreenState extends State<CitizenBilPlanScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 69),
                   child: CommonText(
-                    text: AppString.expertBillPlan,
+                    text: "Citizen bill plan",
                     color: AppColors.commonTextColor,
                     fontSize: 24,
                     fontWeight: FontWeight.w700,
@@ -81,7 +82,7 @@ class _CitizenBilPlanScreenState extends State<CitizenBilPlanScreen> {
                 Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 52),
                   child: CommonButton(
-                    onTap: () => Get.toNamed(AppRoutes.payment_method_screen),
+                    onTap: () => Get.to(CitizenPaymentMethodScreen()),
                     titleText: AppString.selectPaymentMethod,
                     buttonHeight: 53,
                   ),

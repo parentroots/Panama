@@ -5,6 +5,12 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:new_untitled/component/app_bar/home_screen_app_bar.dart';
 import 'package:new_untitled/component/home_card/home_card.dart';
 import 'package:new_untitled/component/text/common_text.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/chat_bot_screen/citizen_chat_bot_category_screen.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/chat_bot_screen/citizen_chat_bot_screen.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/important_articles_screen/citizen_important_articles_screen.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/library_screen/citizen_library_screen.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/profile_screen/citizen_profile_screen.dart';
+import 'package:new_untitled/features/profile/presentation/screen/profile_screen.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 
@@ -38,7 +44,7 @@ class CitizenHomeScreen extends StatelessWidget {
                   ),
                   SizedBox(width: 120.h),
 
-                  Image.asset(AppImages.appLogo, height: 50.h, width: 50.h),
+                  Image.asset(AppImages.appLogo, height: 50.h, width: 50.h,color: Color(0xff2E5089),),
                   SizedBox(width: 130.h),
                   Image.asset(AppImages.language),
                 ],
@@ -97,11 +103,11 @@ class CitizenHomeScreen extends StatelessWidget {
                     children: [
 
                     HomeCard(boxColor: AppColors.card1, text: "Chatbot", image: AppImages.bot, onTap: () {
-                       Get.toNamed(AppRoutes.expertChatBotScreen);
+                       Get.to(CitizenChatBotCategoryScreen());
                     },),
                     SizedBox(width: 20,),
                     HomeCard(boxColor: AppColors.card2, text: "Library", image: AppImages.library, onTap: () {
-                      Get.toNamed(AppRoutes.expertLibraryScreen);
+                      Get.to(CitizenLibraryScreen());
                     },)
                   ],),
                 ),
@@ -113,11 +119,11 @@ class CitizenHomeScreen extends StatelessWidget {
                     children: [
 
                       HomeCard(boxColor: AppColors.card3, text: "Important articles", image: AppImages.book2, onTap: () {
-                        Get.toNamed(AppRoutes.expertImportantArticlesScreen);
+                        Get.to(CitizenImportantArticlesScreen());
                       },),
                       SizedBox(width: 20,),
                       HomeCard(boxColor: AppColors.card4, text: "Profile", image: AppImages.person, onTap: () {
-                        Get.toNamed(AppRoutes.expertProfileScreen);
+                        Get.to(CitizenProfileScreen());
                       },)
                     ],),
                 ),

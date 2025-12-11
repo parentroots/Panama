@@ -5,12 +5,13 @@ import 'package:new_untitled/component/text/common_text.dart';
 import '../../../../../../utils/constants/app_colors.dart';
 
 class NewSectionCard extends StatelessWidget {
-  const NewSectionCard({super.key, required this.title, required this.description, required this.time});
+  const NewSectionCard({super.key, required this.title, required this.description, required this.time, required this.onTap});
 
   final String title;
   final String description;
   final String time;
 
+  final VoidCallback onTap;
   @override
   Widget build(BuildContext context) {
     return Padding(

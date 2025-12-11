@@ -171,6 +171,7 @@ class _LawyerInformationUploadScreenState
 
             Center(
               child: CommonButton(
+                buttonColor: AppColors.commonButtonColor,
                 onTap: () => Get.toNamed(AppRoutes.lawyerBill_plan_screen),
                 buttonHeight: 53,
                 buttonWidth: 336,

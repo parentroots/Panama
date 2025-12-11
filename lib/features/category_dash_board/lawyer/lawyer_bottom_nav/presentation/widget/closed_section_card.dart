@@ -16,6 +16,7 @@ class CaseRatingCard extends StatelessWidget {
   final String adviceTitle;
   final String status;
   final double rating;
+  final VoidCallback onTap;
 
 
   const CaseRatingCard({
@@ -23,7 +24,7 @@ class CaseRatingCard extends StatelessWidget {
     required this.caseName,
     required this.adviceTitle,
     required this.status,
-    required this.rating,
+    required this.rating, required this.onTap,
   });
 
   @override
@@ -49,105 +50,114 @@ class CaseRatingCard extends StatelessWidget {
 
     return Padding(
       padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
-      child: Container(
-        padding: EdgeInsets.all(16.w),
-        decoration: BoxDecoration(
-          color: Color(0xffF6F6F6),
-          borderRadius: BorderRadius.circular(10.r),
-          boxShadow: [
-            BoxShadow(
-              color: Colors.black.withOpacity(0.05),
-              spreadRadius: 1,
-              blurRadius: 5,
-              offset: const Offset(0, 3),
-            ),
-          ],
-        ),
-        child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
-          children: [
-            Row(
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
-              children: [
-                // Case: Ana Torres
-                CommonText(
-                  text: 'Case: $caseName',
-                  color: AppColors.titleColor,
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.bold,
-                ),
+      child: GestureDetector(
+        onTap: onTap,
+        child: Container(
+          padding: EdgeInsets.all(16.w),
+          decoration: BoxDecoration(
+            color: Color(0xffF6F6F6),
+            borderRadius: BorderRadius.circular(10.r),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withOpacity(0.05),
+                spreadRadius: 1,
+                blurRadius: 5,
+                offset: const Offset(0, 3),
+              ),
+            ],
+          ),
+          child: Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
 
 
-                Row(
-                  children: [
-                    Icon(Icons.access_time, size: 16.sp, color: AppColors.subTextColor),
-                    SizedBox(width: 4.w),
-                    CommonText(
-                      text: 'Rate experience',
-                      color: AppColors.subTextColor,
-                      fontSize: 14.sp,
-                    ),
-                  ],
-                ),
-              ],
-            ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.end,
+                children: [
+                  Icon(Icons.access_time, size: 16.sp, color: AppColors.subTextColor),
+                  SizedBox(width: 4.w),
+                  CommonText(
+                    text: 'Rate experience',
+                    color: AppColors.subTextColor,
+                    fontSize: 14.sp,
+                  ),
+                ],
+              ),
 
-            SizedBox(height: 5.h),
 
-            // Complete advice
-            CommonText(
-              text: adviceTitle,
-              color: AppColors.adviceColor,
-              fontSize: 18.sp,
-              fontWeight: FontWeight.bold,
-            ),
+              Row(
+                mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                children: [
+                  // Case: Ana Torres
+                  CommonText(
+                    text: 'Case: $caseName',
+                    color: AppColors.titleColor,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.bold,
+                  ),
 
-            SizedBox(height: 15.h),
 
-            // Status: Closed
-            CommonText(
-              text: 'Status: $status',
-              color: AppColors.statusColor,
-              fontSize: 16.sp,
-            ),
 
-            SizedBox(height: 8.h),
+                ],
+              ),
 
-            // Qualification (Stars and Value)
-            Row(
-              children: [
-                CommonText(
-                  text: 'Qualification',
-                  color: AppColors.statusColor,
-                  fontSize: 16.sp,
-                ),
-                SizedBox(width: 8.w),
+              SizedBox(height: 5.h),
 
-                // Stars (Rating Bar simulation)
-                Row(
-                  children: List.generate(5, (index) {
-                    return Icon(
-                      index < rating.floor() ? Icons.star :
-                      index < rating && rating % 1 != 0 ? Icons.star_half :
-                      Icons.star_border,
-                      color: AppColors.starColor,
-                      size: 20.sp,
-                    );
-                  }),
-                ),
+              // Complete advice
+              CommonText(
+                text: adviceTitle,
+                color: AppColors.adviceColor,
+                fontSize: 18.sp,
+                fontWeight: FontWeight.bold,
+              ),
 
-                SizedBox(width: 8.w),
+              SizedBox(height: 15.h),
 
-                // Rating Value
-                CommonText(
-                  text: rating.toStringAsFixed(1), // এক দশমিক স্থান পর্যন্ত
-                  color: AppColors.titleColor,
-                  fontSize: 16.sp,
-                  fontWeight: FontWeight.bold,
-                ),
-              ],
-            ),
-          ],
+              // Status: Closed
+              CommonText(
+                text: 'Status: $status',
+                color: AppColors.statusColor,
+                fontSize: 16.sp,
+              ),
+
+              SizedBox(height: 8.h),
+
+              // Qualification (Stars and Value)
+              Row(
+                children: [
+                  CommonText(
+                    text: 'Qualification',
+                    color: AppColors.statusColor,
+                    fontSize: 16.sp,
+                  ),
+                  SizedBox(width: 8.w),
+
+                  // Stars (Rating Bar simulation)
+                  Row(
+                    children: List.generate(5, (index) {
+                      return Icon(
+                        index < rating.floor() ? Icons.star :
+                        index < rating && rating % 1 != 0 ? Icons.star_half :
+                        Icons.star_border,
+                        color: AppColors.starColor,
+                        size: 20.sp,
+                      );
+                    }),
+                  ),
+
+                  SizedBox(width: 8.w),
+
+                  // Rating Value
+                  CommonText(
+                    text: rating.toStringAsFixed(1), // এক দশমিক স্থান পর্যন্ত
+                    color: AppColors.titleColor,
+                    fontSize: 16.sp,
+                    fontWeight: FontWeight.bold,
+                  ),
+                ],
+              ),
+            ],
+          ),
         ),
       ),
     );

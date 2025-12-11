@@ -4,6 +4,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/cases_screen/lawyer_cases_scren.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/lawyer_profile_screen.dart';
+import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/my_profile_screen.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 import '../../../../config/route/app_routes.dart';
 import '../../../../utils/constants/app_colors.dart';
@@ -132,7 +133,7 @@ class _LawyerBottomNavBarState extends State<LawyerBottomNavBar> {
       Get.to(LawyerCasesScreen());
     }
     else if (index == 4 && widget.currentIndex != 4) {
-      Get.to(LawyerProfileScreen());
+      Get.to(MyProfileScreen());
     }
   }
 }

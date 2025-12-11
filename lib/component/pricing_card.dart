@@ -35,6 +35,7 @@ class PricingCard extends StatelessWidget {
     return GestureDetector(
       onTap: onTap,
       child: Container(
+        width: 301,
         padding:  EdgeInsets.symmetric(horizontal: 70.w),
         decoration: BoxDecoration(
           color: backgroundColor,

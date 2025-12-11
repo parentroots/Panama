@@ -47,6 +47,10 @@ class AppImages {
   static const String carlos = "$baseurl/carlos.png" ;
   static const String writeBook = "$baseurl/write.png" ;
   static const String files = "$baseurl/files.png" ;
+  static const String hammer = "assets/icons/hammer.png" ;
+  static const String jonson= "assets/icons/jonson.png" ;
+  static const String onBoardingImage= "assets/icons/onBoarding.png" ;
+  static const String peterImage= "assets/icons/peter.png" ;
 
 
 

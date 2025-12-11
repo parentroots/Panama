@@ -129,7 +129,7 @@ class _StudentSignUpScreenState extends State<StudentSignUpScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 52.w),
                 child: CommonButton(
-                onTap:  () => Get.toNamed(AppRoutes.citizenInformationUploadScreen),
+                onTap:  () => Get.toNamed(AppRoutes.studentInformationUploadScreen),
                  titleText: AppString.continues,buttonHeight: 53,buttonWidth: 336,
                 borderColor: AppColors.commonButtonBorderColor,
                 buttonRadius: 24,),

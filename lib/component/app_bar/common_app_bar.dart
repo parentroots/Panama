@@ -22,7 +22,7 @@ class CommonAppBar extends StatelessWidget {
                 leadingIcon),
           ),
         ),
-        backgroundColor: AppColors.commonButtonColor,
+        backgroundColor: AppColors.commonAppColor,
       ),
     );
   }

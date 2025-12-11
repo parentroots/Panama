@@ -6,20 +6,21 @@ import 'package:new_untitled/component/curved_background_widget/curved_backgroun
 import 'package:new_untitled/component/payment_card/payment_card.dart';
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/config/route/app_routes.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/auth/presentaion/payment/citizen_payment_loading_screen.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 import 'package:new_untitled/utils/constants/app_string.dart';
 
 import '../../../../../../component/app_bar/common_app_bar.dart';
 import '../../../../../../utils/constants/app_colors.dart';
 
-class PayConfirmationScreen extends StatefulWidget {
-  const PayConfirmationScreen({super.key});
+class CitizenPayConfirmationScreen extends StatefulWidget {
+  const CitizenPayConfirmationScreen({super.key});
 
   @override
-  State<PayConfirmationScreen> createState() => _PayConfirmationScreenState();
+  State<CitizenPayConfirmationScreen> createState() => _CitizenPayConfirmationScreenState();
 }
 
-class _PayConfirmationScreenState extends State<PayConfirmationScreen> {
+class _CitizenPayConfirmationScreenState extends State<CitizenPayConfirmationScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -92,7 +93,7 @@ class _PayConfirmationScreenState extends State<PayConfirmationScreen> {
                 Padding(
                   padding:  EdgeInsets.symmetric(horizontal: 52.w),
                   child: CommonButton(
-                      onTap: () => Get.toNamed(AppRoutes.paymentLoadingScreen),
+                      onTap: () => Get.to(CitizenPaymentLoadingScreen()),
                       titleText: 'Pay'),
                 ),
 

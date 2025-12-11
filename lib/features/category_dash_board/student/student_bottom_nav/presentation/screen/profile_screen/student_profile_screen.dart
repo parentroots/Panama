@@ -71,7 +71,7 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
                           image: DecorationImage(
-                            image: AssetImage(AppImages.carlos),
+                            image: AssetImage(AppImages.jonson),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -83,7 +83,7 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
                           crossAxisAlignment: CrossAxisAlignment.start,
                           children: [
                             CommonText(
-                              text: "Carlos Torres",
+                              text: "Jon Son",
                               color: AppColors.nameTextColor,
                               fontSize: 30,
                               fontWeight: FontWeight.w700,

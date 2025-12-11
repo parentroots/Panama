@@ -5,6 +5,7 @@ import 'package:get/get.dart';
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/lawyer_bottom_nav_screen.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/controller/cases_screen_controller.dart';
+import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/cases_screen/lawyer_case_details_screen.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/active_section_card.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/closed_section_card.dart' hide AppColors;
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/new_section_card.dart';
@@ -21,6 +22,14 @@ class LawyerCasesScreen extends StatefulWidget {
 }
 
 class _LawyerCasesScreenState extends State<LawyerCasesScreen> {
+
+
+  Future<void>onTapCaseItem()async{
+    Get.to(CaseDetailsScreen());
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return GetBuilder<CasesScreenController>(
@@ -160,7 +169,9 @@ class _LawyerCasesScreenState extends State<LawyerCasesScreen> {
                                     NewSectionCard(
                                       title: 'Labour Consultation',
                                       description: 'i was fired for cause',
-                                      time: '4:59',
+                                      time: '4:59', onTap: () {
+                                        onTapCaseItem();
+                                    },
                                     ),
                                   ],
                                 );
@@ -182,6 +193,7 @@ class _LawyerCasesScreenState extends State<LawyerCasesScreen> {
                                   children: [
                                     SizedBox(height: 20),
                                     ActiveSectionCard(
+                                      onTap: onTapCaseItem,
                                       name: 'Maria Perez',
                                       category: 'Labour statement',
                                       status: 'Active',
@@ -208,7 +220,9 @@ class _LawyerCasesScreenState extends State<LawyerCasesScreen> {
                                       caseName: 'Case :Anna toress',
                                       adviceTitle: 'Completed advice',
                                       status: "Closed",
-                                      rating: 4,
+                                      rating: 4, onTap: () {
+                                        onTapCaseItem();
+                                    },
                                     ),
                                   ],
                                 );
