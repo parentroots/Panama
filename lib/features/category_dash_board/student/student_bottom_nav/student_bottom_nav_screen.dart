@@ -6,16 +6,16 @@ import 'package:new_untitled/utils/constants/app_images.dart';
 import '../../../../config/route/app_routes.dart';
 import '../../../../utils/constants/app_colors.dart';
 
-class CitizenBottomNavBar extends StatefulWidget {
+class StudentBottomNavBar extends StatefulWidget {
   final int currentIndex;
 
-  const CitizenBottomNavBar({required this.currentIndex, super.key});
+  const StudentBottomNavBar({required this.currentIndex, super.key});
 
   @override
-  State<CitizenBottomNavBar> createState() => _CitizenBottomNavBarState();
+  State<StudentBottomNavBar> createState() => _StudentBottomNavBarState();
 }
 
-class _CitizenBottomNavBarState extends State<CitizenBottomNavBar> {
+class _StudentBottomNavBarState extends State<StudentBottomNavBar> {
   var bottomNavIndex = 0;
 
   /// --- SVG ICON PATHS ---

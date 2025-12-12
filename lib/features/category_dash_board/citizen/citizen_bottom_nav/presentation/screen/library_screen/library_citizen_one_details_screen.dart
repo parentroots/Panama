@@ -6,6 +6,7 @@ import 'package:new_untitled/features/category_dash_board/expert/home/expert_hom
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
+import '../../../../home/citizen_home_screen.dart';
 import '../../../citizen_bottom_nav_screen.dart';
 
 
@@ -19,7 +20,7 @@ class LibraryCitizenOneDetailsScreen extends StatefulWidget {
 class _LibraryCitizenOneDetailsScreenState extends State<LibraryCitizenOneDetailsScreen> {
 
   Future<void>onTapLeading()async{
-    Get.to(ExpertHomeScreen());
+    Get.to(CitizenHomeScreen());
 
   }
 
@@ -27,6 +28,7 @@ class _LibraryCitizenOneDetailsScreenState extends State<LibraryCitizenOneDetail
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeBottomCurvedAppBar(
+        onBackPressed: ()=>Get.back(),
         onLeadingPressed: onTapLeading,
         height: 100,
         backgroundColor: AppColors.backgroundColor,

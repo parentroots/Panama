@@ -2,6 +2,10 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/cases/citizen_cases_screen.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/chat_bot_screen/citizen_chat_bot_screen.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/important_articles_screen/citizen_important_articles_screen.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/profile_screen/citizen_profile_screen.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 import '../../../../config/route/app_routes.dart';
 import '../../../../utils/constants/app_colors.dart';
@@ -21,15 +25,15 @@ class _CitizenBottomNavBarState extends State<CitizenBottomNavBar> {
   /// --- SVG ICON PATHS ---
   List<String> unselectedIcons = [
     AppImages.chatSvg,
-    AppImages.bottomLibrary,
     AppImages.bottomArticles,
+    AppImages.cases,
     AppImages.bottomPerson,
   ];
 
   List<String> selectedIcons = [
     AppImages.chatSvg,
-    AppImages.bottomLibrary,
     AppImages.bottomArticles,
+    AppImages.cases,
     AppImages.bottomPerson,
   ];
 
@@ -105,9 +109,9 @@ class _CitizenBottomNavBarState extends State<CitizenBottomNavBar> {
       case 0:
         return "Chatbot";
       case 1:
-        return "Library";
+        return "Important Articles";
       case 2:
-        return "Articles";
+        return "Cases";
       case 3:
         return "Profile";
       default:
@@ -117,13 +121,13 @@ class _CitizenBottomNavBarState extends State<CitizenBottomNavBar> {
 
   void onTap(int index) async {
     if (index == 0 && widget.currentIndex != 0) {
-      Get.toNamed(AppRoutes.expertChatBotScreen);
+      Get.to(CitizenChatBotScreen());
     } else if (index == 1 && widget.currentIndex != 1) {
-      Get.toNamed(AppRoutes.expertLibraryScreen);
+      Get.to(CitizenImportantArticlesScreen());
     } else if (index == 2 && widget.currentIndex != 2) {
-      Get.toNamed(AppRoutes.expertImportantArticlesScreen);
+      Get.to(CitizenCasesScreen());
     } else if (index == 3 && widget.currentIndex != 3) {
-      Get.toNamed(AppRoutes.expertProfileScreen);
+      Get.to(CitizenProfileScreen());
     }
   }
 }

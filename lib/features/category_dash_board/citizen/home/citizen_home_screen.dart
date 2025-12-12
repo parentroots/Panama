@@ -5,6 +5,7 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:new_untitled/component/app_bar/home_screen_app_bar.dart';
 import 'package:new_untitled/component/home_card/home_card.dart';
 import 'package:new_untitled/component/text/common_text.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/cases/citizen_cases_screen.dart';
 import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/chat_bot_screen/citizen_chat_bot_category_screen.dart';
 import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/chat_bot_screen/citizen_chat_bot_screen.dart';
 import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/important_articles_screen/citizen_important_articles_screen.dart';
@@ -15,6 +16,7 @@ import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 
 import '../../../../config/route/app_routes.dart';
+import '../../../auth/sign in/presentation/screen/sign_in_screen.dart';
 
 class CitizenHomeScreen extends StatelessWidget {
   const CitizenHomeScreen({super.key});
@@ -36,16 +38,20 @@ class CitizenHomeScreen extends StatelessWidget {
                     padding: const EdgeInsets.only(left: 20),
                     child: Row(
                       children: [
-                        Image.asset(AppImages.back, color: Colors.black),
+                        InkWell(
+                          onTap:Get.back,
+                            child: Image.asset(AppImages.back, color: Colors.black)),
                         SizedBox(width: 10.h),
-                        Image.asset(AppImages.appBarHome),
+                        InkWell(
+                            onTap: ()=>Get.to(SignInScreen),
+                            child: Image.asset(AppImages.appBarHome)),
                       ],
                     ),
                   ),
-                  SizedBox(width: 120.h),
+                  SizedBox(width: 100.w),
 
                   Image.asset(AppImages.appLogo, height: 50.h, width: 50.h,color: Color(0xff2E5089),),
-                  SizedBox(width: 130.h),
+                  SizedBox(width: 120.w),
                   Image.asset(AppImages.language),
                 ],
               ),
@@ -106,8 +112,8 @@ class CitizenHomeScreen extends StatelessWidget {
                        Get.to(CitizenChatBotCategoryScreen());
                     },),
                     SizedBox(width: 20,),
-                    HomeCard(boxColor: AppColors.card2, text: "Library", image: AppImages.library, onTap: () {
-                      Get.to(CitizenLibraryScreen());
+                    HomeCard(boxColor: AppColors.card2, text: "Cases", image: AppImages.casesFile, onTap: () {
+                      Get.to(CitizenCasesScreen());
                     },)
                   ],),
                 ),

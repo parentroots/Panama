@@ -67,7 +67,10 @@ class CommonTextField extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Obx(
-          () => TextFormField(
+      () => TextFormField(
+        cursorColor: AppColors.commonTextColor,
+        enableInteractiveSelection: true,
+        textAlign: TextAlign.center,
         autovalidateMode: AutovalidateMode.onUnfocus,
         keyboardType: keyboardType,
         controller: controller,
@@ -76,7 +79,7 @@ class CommonTextField extends StatelessWidget {
         maxLength: mexLength,
         onChanged: onChanged,
         inputFormatters: inputFormatters,
-        style: TextStyle(fontSize: 14, color: textColor),
+        style: TextStyle(fontSize: 14, color: AppColors.commonTextColor),
         onFieldSubmitted: onSubmitted,
         onTap: onTap,
         validator: validator,
@@ -88,6 +91,7 @@ class CommonTextField extends StatelessWidget {
           prefixIconConstraints: BoxConstraints(maxWidth: 30, maxHeight: 30),
           prefixIcon: prefixIcon,
           fillColor: fillColor,
+
 
           counterText: "",
           contentPadding: EdgeInsets.symmetric(
@@ -118,9 +122,9 @@ class CommonTextField extends StatelessWidget {
       borderRadius: BorderRadius.circular(borderRadius.r),
       borderSide: BorderSide(
         color:
-        borderColor == AppColors.transparent
-            ? Colors.grey.withOpacity(0.3)
-            : borderColor,
+            borderColor == AppColors.transparent
+                ? Colors.grey.withOpacity(0.3)
+                : borderColor,
       ),
     );
   }
@@ -131,7 +135,7 @@ class CommonTextField extends StatelessWidget {
       child: Padding(
         padding: EdgeInsetsDirectional.only(end: 10.w),
         child: Obx(
-              () => Icon(
+          () => Icon(
             obscureText.value
                 ? Icons.visibility_off_outlined
                 : Icons.visibility_outlined,

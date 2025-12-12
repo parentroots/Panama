@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
-import 'package:get/get_core/src/get_main.dart';
 
 class HomeBottomCurvedAppBar extends StatelessWidget implements PreferredSizeWidget {
   const HomeBottomCurvedAppBar({
@@ -18,8 +17,8 @@ class HomeBottomCurvedAppBar extends StatelessWidget implements PreferredSizeWid
   });
 
   final double height;
-  final String backImage;
   final Color backgroundColor;
+  final String backImage;
   final String leadingImage;
   final String actionImage;
   final String middleImage;
@@ -33,7 +32,7 @@ class HomeBottomCurvedAppBar extends StatelessWidget implements PreferredSizeWid
       preferredSize: Size.fromHeight(height),
       child: Container(
         height: height,
-        width: double.maxFinite,
+        width: double.infinity,
         decoration: BoxDecoration(
           color: backgroundColor,
           borderRadius: BorderRadius.only(
@@ -44,60 +43,53 @@ class HomeBottomCurvedAppBar extends StatelessWidget implements PreferredSizeWid
         child: SafeArea(
           bottom: false,
           child: Padding(
-            padding: EdgeInsets.only(bottom: 15.h, top: 10.h),
+            padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
             child: Row(
-              crossAxisAlignment: CrossAxisAlignment.center,
-              mainAxisAlignment: MainAxisAlignment.spaceBetween,
               children: [
-                // Left side icons
-                Padding(
-                  padding: EdgeInsets.only(left: 20.w),
-                  child: Row(
-                    children: [
-                      // Back button
-                      GestureDetector(
-                        onTap: onBackPressed ?? () => Get.back,
-                        child: Image.asset(
-                          backImage,
-                          color: Colors.white,
-                          width: 24.w,
-                          height: 24.h,
-                        ),
+                /// ------ LEFT ICONS ------
+                Row(
+                  children: [
+                    GestureDetector(
+                      onTap: onBackPressed ?? () => Get.back(),
+                      child: Image.asset(
+                        backImage,
+                        color: Colors.white,
+                        width: 24.w,
+                        height: 24.h,
                       ),
-                      SizedBox(width: 5.w),
-                      // Leading icon
-                      GestureDetector(
-                        onTap: onLeadingPressed,
-                        child: Image.asset(
-                          leadingImage,
-                          color: Colors.white,
-                          width: 24.w,
-                          height: 24.h,
-                        ),
+                    ),
+                    SizedBox(width: 10.w),
+                    GestureDetector(
+                      onTap: onLeadingPressed,
+                      child: Image.asset(
+                        leadingImage,
+                        color: Colors.white,
+                        width: 24.w,
+                        height: 24.h,
                       ),
-                    ],
+                    ),
+                  ],
+                ),
+
+                /// ------ MIDDLE IMAGE ------
+                Expanded(
+                  child: Center(
+                    child: Image.asset(
+                      middleImage,
+                      height: 45.h,
+                      width: 45.w,
+                      fit: BoxFit.contain,
+                    ),
                   ),
                 ),
 
-
-
-                Image.asset(
-                  middleImage,
-                  height: 50.h,
-                  width: 50.w,
-                ),
-
-
-
-                Padding(
-                  padding: EdgeInsets.only(right: 20.w),
-                  child: GestureDetector(
-                    onTap: onActionPressed,
-                    child: Image.asset(
-                      actionImage,
-                      width: 24.w,
-                      height: 24.h,
-                    ),
+                /// ------ RIGHT ACTION ICON ------
+                GestureDetector(
+                  onTap: onActionPressed,
+                  child: Image.asset(
+                    actionImage,
+                    width: 24.w,
+                    height: 24.h,
                   ),
                 ),
               ],

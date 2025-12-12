@@ -9,6 +9,7 @@ import '../../../../../../../component/curved_background_widget/home_bottom_curv
 import '../../../../../../../component/law_library_card/law_library_card.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
+import '../../../../home/citizen_home_screen.dart';
 import '../../../citizen_bottom_nav_screen.dart';
 import 'library_citizen_one_screen.dart';
 
@@ -24,6 +25,8 @@ class _CitizenLibraryScreenState extends State<CitizenLibraryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(CitizenHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 100,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,

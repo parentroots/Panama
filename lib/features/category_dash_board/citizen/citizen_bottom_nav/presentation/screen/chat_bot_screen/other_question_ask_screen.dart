@@ -14,22 +14,16 @@ import 'package:new_untitled/utils/extensions/extension.dart';
 
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../lawyer/lawyer_bottom_nav/lawyer_bottom_nav_screen.dart';
+import '../../../../home/citizen_home_screen.dart';
 
-class OtherQuestionAskScreen extends StatefulWidget {
-  const OtherQuestionAskScreen({super.key});
+class CitizenOtherQuestionAskScreen extends StatefulWidget {
+  const CitizenOtherQuestionAskScreen({super.key});
 
   @override
-  State<OtherQuestionAskScreen> createState() => _OtherQuestionAskScreenState();
+  State<CitizenOtherQuestionAskScreen> createState() => _CitizenOtherQuestionAskScreenState();
 }
 
-class _OtherQuestionAskScreenState extends State<OtherQuestionAskScreen> {
-
-
-  Future<void>onTapQuestionButton()async{
-    Get.to(LawyerAskScreen());
-
-  }
-
+class _CitizenOtherQuestionAskScreenState extends State<CitizenOtherQuestionAskScreen> {
 
   @override
   Widget build(BuildContext context) {
@@ -38,6 +32,8 @@ class _OtherQuestionAskScreenState extends State<OtherQuestionAskScreen> {
 
       bottomNavigationBar: CitizenBottomNavBar(currentIndex: 0),
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(CitizenHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 140,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,
@@ -47,7 +43,7 @@ class _OtherQuestionAskScreenState extends State<OtherQuestionAskScreen> {
       ),
 
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 40),
+        padding: const EdgeInsets.symmetric(horizontal: 53, vertical: 40),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -140,10 +136,10 @@ class _OtherQuestionAskScreenState extends State<OtherQuestionAskScreen> {
 
 
                   InkWell(
-                    onTap: ()=>Get.to(AskMeQuestionScreen()),
+                    onTap: ()=>Get.to(CitizenAskMeQuestionScreen()),
                     child: Container(
                       height: 55,
-                      width: 120,
+                      width: 160.w,
                       decoration: BoxDecoration(
                         border: Border.all(
                           color: AppColors.commonButtonBorderColor
@@ -185,31 +181,28 @@ class _OtherQuestionAskScreenState extends State<OtherQuestionAskScreen> {
     required String text,
     required VoidCallback onTap,
   }) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 52.w),
-      child: InkWell(
-        onTap: onTap,
-        child: Container(
-          height: 55,
-          decoration: BoxDecoration(
-            color: const Color(0xff16253E),
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SizedBox(width: 12.w),
-                Text(
-                  text,
-                  style: const TextStyle(
-                    color: AppColors.commonTextColor,
-                    fontSize: 17,
-                    fontWeight: FontWeight.w600,
-                  ),
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        height: 55,
+        decoration: BoxDecoration(
+          color: const Color(0xff16253E),
+          borderRadius: BorderRadius.circular(30),
+        ),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.center,
+            children: [
+              SizedBox(width: 12.w),
+              Text(
+                text,
+                style: const TextStyle(
+                  color: AppColors.commonTextColor,
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

@@ -3,6 +3,7 @@ import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:new_untitled/component/text/common_text.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/citizen_bottom_nav_screen.dart';
 import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/chat_bot_screen/lawyer_profile_screen.dart';
 import 'package:new_untitled/features/category_dash_board/citizen/home/citizen_home_screen.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
@@ -37,6 +38,8 @@ class _LawyerFoundConfirmationScreenState
       backgroundColor: Color(0xffCADAE6),
       bottomNavigationBar: CitizenBottomNavBar(currentIndex: 0),
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(CitizenHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 140,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,

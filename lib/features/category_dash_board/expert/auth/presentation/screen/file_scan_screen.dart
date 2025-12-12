@@ -36,7 +36,7 @@ class _FileScanScreenState extends State<FileScanScreen>
       CurvedAnimation(parent: _animationController, curve: Curves.easeInOut),
     );
 
-    _openCamera(); // --> Screen open হলেই camera খুলবে
+    _openCamera();
   }
 
   @override

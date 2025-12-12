@@ -34,7 +34,7 @@ class AppImages {
   static const String paper= "$iconBaseUrl/paper.svg" ;
   static const String bag = "$iconBaseUrl/bag.svg" ;
   static const String property = "$iconBaseUrl/property.svg" ;
-  static const String friends = "$iconBaseUrl/friends.svg" ;
+  static const String friends = "$iconBaseUrl/fiends.svg" ;
   static const String cases = "$iconBaseUrl/cases.svg" ;
 
 
@@ -51,6 +51,10 @@ class AppImages {
   static const String jonson= "assets/icons/jonson.png" ;
   static const String onBoardingImage= "assets/icons/onBoarding.png" ;
   static const String peterImage= "assets/icons/peter.png" ;
+  static const String  lawyer1= "assets/images/aiMan.png" ;
+  static const String  casesFile= "assets/images/casesFile.png" ;
+  static const String  friends1= "assets/images/fiends.png" ;
+  static const String  friends2= "assets/images/friends2.png" ;
 
 
 

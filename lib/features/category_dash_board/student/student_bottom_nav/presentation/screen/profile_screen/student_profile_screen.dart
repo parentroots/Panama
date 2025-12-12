@@ -38,7 +38,7 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
         actionImage: AppImages.language,
         middleImage: AppImages.appLogo,
       ),
-      bottomNavigationBar: const CitizenBottomNavBar(currentIndex: 3),
+      bottomNavigationBar: const StudentBottomNavBar(currentIndex: 3),
       body: SingleChildScrollView(
         child: Column(
           children: [

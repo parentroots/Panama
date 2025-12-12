@@ -36,7 +36,7 @@ class SignInScreen extends StatelessWidget {
               children: [
                 40.height,
                 Padding(
-                  padding: const EdgeInsets.only(left: 38),
+                  padding: const EdgeInsets.only(left: 25),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.start,
                     children: [
@@ -46,7 +46,7 @@ class SignInScreen extends StatelessWidget {
                     ],
                   ),
                 ),
-                200.height,
+                106.height,
                 const Center(
                   child: CommonImage(imageSrc: AppImages.appLogo, size: 70),
                 ),
@@ -106,7 +106,10 @@ class SignInScreen extends StatelessWidget {
                   child: CommonButton(
                     onTap: ()=>Get.to(LoginWithCategoryScreen()),
                     titleText: 'Enter',buttonRadius: 26,buttonColor: Color(0xFFFFFFFF),titleColor: Color(0xff104B5B),titleSize: 17,),
-                )
+                ),
+
+
+                SizedBox(height: 223.h,)
 
 
               ],

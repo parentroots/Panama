@@ -11,6 +11,8 @@ import '../../../../../../../component/curved_background_widget/home_bottom_curv
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
 import '../../../../../student/student_bottom_nav/student_bottom_nav_screen.dart';
+import '../../../../home/citizen_home_screen.dart';
+import '../../../citizen_bottom_nav_screen.dart';
 
 class LawyerProfileScreen extends StatefulWidget {
   const LawyerProfileScreen({super.key});
@@ -25,6 +27,8 @@ class _LawyerProfileScreenState extends State<LawyerProfileScreen> {
     return Scaffold(
       bottomNavigationBar: CitizenBottomNavBar(currentIndex: 0),
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(CitizenHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 140,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,

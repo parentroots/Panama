@@ -73,7 +73,7 @@ class _LoginWithCategoryScreenState extends State<LoginWithCategoryScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 69),
                 child: CommonText(
-                  text: AppString.howWillYouRegister,
+                  text: "Sign in",
                   color: AppColors.commonTextColor,
                   fontSize: 24,
                   fontWeight: FontWeight.w700,

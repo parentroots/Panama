@@ -1,21 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/citizen_bottom_nav_screen.dart';
 import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/chat_bot_screen/lawyer_founded_loading_screen.dart';
 
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
 import '../../../../../student/student_bottom_nav/student_bottom_nav_screen.dart';
+import '../../../../home/citizen_home_screen.dart';
 
-class AskMeQuestionScreen extends StatefulWidget {
-  const AskMeQuestionScreen({super.key});
+class CitizenAskMeQuestionScreen extends StatefulWidget {
+  const CitizenAskMeQuestionScreen({super.key});
 
   @override
-  State<AskMeQuestionScreen> createState() => _AskMeQuestionScreenState();
+  State<CitizenAskMeQuestionScreen> createState() => _CitizenAskMeQuestionScreenState();
 }
 
-class _AskMeQuestionScreenState extends State<AskMeQuestionScreen> {
+class _CitizenAskMeQuestionScreenState extends State<CitizenAskMeQuestionScreen> {
   final TextEditingController questionController = TextEditingController();
 
   @override
@@ -24,6 +26,8 @@ class _AskMeQuestionScreenState extends State<AskMeQuestionScreen> {
       backgroundColor: Colors.white,
       bottomNavigationBar: CitizenBottomNavBar(currentIndex: 0),
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(CitizenHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 140,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,

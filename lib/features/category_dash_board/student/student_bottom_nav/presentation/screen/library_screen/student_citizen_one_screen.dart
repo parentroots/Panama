@@ -33,7 +33,7 @@ class _LibraryStudentOneScreenState extends State<LibraryStudentOneScreen> {
         middleImage: AppImages.appLogo,
       ),
 
-      bottomNavigationBar: const CitizenBottomNavBar(currentIndex: 1),
+      bottomNavigationBar: const StudentBottomNavBar(currentIndex: 1),
 
       body: SingleChildScrollView(
         child: Column(

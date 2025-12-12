@@ -1,8 +1,7 @@
-
 import 'package:flutter/material.dart';
 import 'package:get/get.dart';
 
-class CasesScreenController extends GetxController{
+class CitizenController extends GetxController{
 
   PageController controller = PageController();
 

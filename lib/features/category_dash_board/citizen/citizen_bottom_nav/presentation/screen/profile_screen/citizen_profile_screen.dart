@@ -12,6 +12,7 @@ import 'package:new_untitled/utils/extensions/extension.dart';
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
+import '../../../../home/citizen_home_screen.dart';
 import '../../../citizen_bottom_nav_screen.dart';
 
 class CitizenProfileScreen extends StatefulWidget {
@@ -30,6 +31,8 @@ class _CitizenProfileScreenState extends State<CitizenProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(CitizenHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 100,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,

@@ -44,7 +44,7 @@ class _StudentChatBotScreenState extends State<StudentChatBotScreen> {
         actionImage: AppImages.language,
         middleImage: AppImages.appLogo,
       ),
-      bottomNavigationBar: const CitizenBottomNavBar(currentIndex: 0),
+      bottomNavigationBar: const StudentBottomNavBar(currentIndex: 0),
       body: Column(
         children: [
           Expanded(

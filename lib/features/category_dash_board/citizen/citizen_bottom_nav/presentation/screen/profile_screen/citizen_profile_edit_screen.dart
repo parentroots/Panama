@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/component/text_field/common_text_field.dart';
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
+import '../../../../home/citizen_home_screen.dart';
 import '../../../citizen_bottom_nav_screen.dart';
 
 class CitizenProfileEditScreen extends StatefulWidget {
@@ -29,6 +32,8 @@ class _CitizenProfileEditScreenState extends State<CitizenProfileEditScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(CitizenHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 100,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,

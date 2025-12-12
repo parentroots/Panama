@@ -1,7 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
-import 'package:get/get_core/src/get_main.dart';
-import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:get/get.dart';
 import 'package:new_untitled/component/app_bar/common_app_bar.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/text/common_text.dart';
@@ -25,126 +24,138 @@ class StudentInformationUploadScreen extends StatefulWidget {
 class _StudentInformationUploadScreenState
     extends State<StudentInformationUploadScreen> {
 
-
-  Future<void>onTapFileUpLoadButton()async{
-
+  Future<void> onTapFileUpLoadButton() async {
     Get.to(StudentFileScanScreen());
   }
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(preferredSize: Size.fromHeight(100), child: CommonAppBar(
-        leadingIcon: AppImages.back, onTap: () {
-          Get.back();
-      },
-      )),
-      body: Column(
-        children: [
-          CommonCurvedWidget(
-            height: 120,
-            text: AppString.register,
 
-            imageSource: AppImages.appLogo,
-            textColor: AppColors.commonTextColor,
-          ),
+      // App Bar
+      appBar: PreferredSize(
+        preferredSize: Size.fromHeight(100.h),
+        child: CommonAppBar(
+          leadingIcon: AppImages.back,
+          onTap: () => Get.back(),
+        ),
+      ),
 
-          SizedBox(height: 40.h),
+      // 🚀 Body scrollable to avoid overflow
+      body: SingleChildScrollView(
+        padding: EdgeInsets.only(bottom: 20.h),
+        child: Column(
+          children: [
 
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 69),
-            child: CommonText(
-              text: 'Student Information',
-              fontWeight: FontWeight.w700,
-              fontSize: 24,
+            // Top Curved Widget
+            CommonCurvedWidget(
+              height: 120.h,
+              text: AppString.register,
+              imageSource: AppImages.appLogo,
+              textColor: AppColors.commonTextColor,
             ),
-          ),
-          SizedBox(height: 70.h),
 
+            SizedBox(height: 40.h),
 
-
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 52.w),
-            child: CommonButton(
-              onTap:  () => Get.toNamed(AppRoutes.fileScanScreen),
-              borderColor: AppColors.buttonBorderColor,
-              buttonWidth: 380,
-              buttonHeight: 53,
-              titleSize: 17,
-              titleText: 'University',
-              buttonColor: AppColors.white,
-              titleColor:  Color(0xff878A90),
+            // Title
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 69.w),
+              child: CommonText(
+                text: 'Student Information',
+                fontWeight: FontWeight.w700,
+                fontSize: 24.sp,
+              ),
             ),
-          ),
 
-          SizedBox(height: 40.h,),
+            SizedBox(height: 40.h),
 
-
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 52.w),
-            child: CommonButton(
-              onTap:  () => Get.toNamed(AppRoutes.fileScanScreen),
-              borderColor: AppColors.buttonBorderColor,
-              buttonWidth: 380,
-              buttonHeight: 53,
-              titleSize: 17,
-              titleText: 'Current year',
-              buttonColor: AppColors.white,
-              titleColor:  Color(0xff878A90),
+            // University Button
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 52.w),
+              child: CommonButton(
+                onTap: () => Get.toNamed(AppRoutes.fileScanScreen),
+                borderColor: AppColors.buttonBorderColor,
+                buttonWidth: double.infinity,
+                buttonHeight: 53.h,
+                titleSize: 17.sp,
+                titleText: 'University',
+                buttonColor: AppColors.white,
+                titleColor: Color(0xff878A90),
+              ),
             ),
-          ),
 
-          SizedBox(height: 100.h),
+            SizedBox(height: 30.h),
 
-          CommonText(text: 'Student ID or Enrollment Proof',color: Color(0xff2E5089),),
+            // Current Year Button
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 52.w),
+              child: CommonButton(
+                onTap: () => Get.toNamed(AppRoutes.fileScanScreen),
+                borderColor: AppColors.buttonBorderColor,
+                buttonWidth: double.infinity,
+                buttonHeight: 53.h,
+                titleSize: 17.sp,
+                titleText: 'Current year',
+                buttonColor: AppColors.white,
+                titleColor: Color(0xff878A90),
+              ),
+            ),
 
-          SizedBox(height: 18.h,),
+            SizedBox(height: 60.h),
 
-          Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 51),
-            child: InkWell(
-              onTap: onTapFileUpLoadButton,
-              child: Container(
-                height: 53.h,
-                decoration: BoxDecoration(
-                  borderRadius: BorderRadius.circular(26),
-                  color: AppColors.white,
-                  border: Border.all(
-                    color: AppColors.buttonBorderColor
-                  )
-                ),
-                child: Center(
+            // Upload Title
+            CommonText(
+              text: 'Student ID or Enrollment Proof',
+              color: Color(0xff2E5089),
+              fontSize: 16.sp,
+            ),
+
+            SizedBox(height: 18.h),
+
+            // Upload Button
+            Padding(
+              padding: EdgeInsets.symmetric(horizontal: 51.w),
+              child: InkWell(
+                onTap: onTapFileUpLoadButton,
+                child: Container(
+                  height: 53.h,
+                  decoration: BoxDecoration(
+                    borderRadius: BorderRadius.circular(26.r),
+                    color: AppColors.white,
+                    border: Border.all(
+                      color: AppColors.buttonBorderColor,
+                    ),
+                  ),
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-                    Icon(Icons.file_upload_outlined,color: Color(0xff878A90),),
-                    CommonText(text: 'Upload file',color: Color(0xff878A90),)
-                  ],),
+                      Icon(Icons.file_upload_outlined, color: Color(0xff878A90)),
+                      SizedBox(width: 10.w),
+                      CommonText(
+                        text: 'Upload file',
+                        color: Color(0xff878A90),
+                        fontSize: 15.sp,
+                      ),
+                    ],
+                  ),
                 ),
-                // borderColor: AppColors.buttonBorderColor,
-                // buttonHeight: 53,
-                // titleSize: 17,
-                // titleText: AppString.technicalSpeciality,
-                // buttonColor: AppColors.white,
-                // titleColor: AppColors.secondary,
               ),
             ),
-            
-          ),
 
-          Spacer(),
+            SizedBox(height: 40.h),
+          ],
+        ),
+      ),
 
-          CommonButton(
-            onTap:  () => Get.toNamed(AppRoutes.studentLoadingScreen),
-            buttonHeight: 53,
-            buttonWidth: 336,
-            titleText: AppString.continues,
-          ),
-
-          SizedBox(height: 60.h),
-
-
-        ],
+      // 🚀 Bottom Button — Always visible, no overflow
+      bottomNavigationBar: Padding(
+        padding: EdgeInsets.all( 52.h),
+        child: CommonButton(
+          onTap: () => Get.toNamed(AppRoutes.studentLoadingScreen),
+          buttonHeight: 53.h,
+          buttonWidth: 336.w,
+          titleText: AppString.continues,
+        ),
       ),
     );
   }

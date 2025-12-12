@@ -3,9 +3,11 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:get/get_core/src/get_main.dart';
+import 'package:new_untitled/features/auth/sign%20in/presentation/screen/sign_in_screen.dart';
 import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/citizen_bottom_nav_screen.dart';
 import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/chat_bot_screen/citizen_chat_bot_screen.dart';
 import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/chat_bot_screen/other_question_ask_screen.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/home/citizen_home_screen.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/chat_bot_screen/lawyer_ask_screen.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/chat_bot_screen/lawyer_chat_bot_screen.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
@@ -37,6 +39,8 @@ class _CitizenChatBotCategoryScreenState extends State<CitizenChatBotCategoryScr
 
       bottomNavigationBar: CitizenBottomNavBar(currentIndex: 0),
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(SignInScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 140,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,
@@ -46,7 +50,7 @@ class _CitizenChatBotCategoryScreenState extends State<CitizenChatBotCategoryScr
       ),
 
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 40),
+        padding: const EdgeInsets.symmetric(horizontal: 53, vertical: 40),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -109,12 +113,12 @@ class _CitizenChatBotCategoryScreenState extends State<CitizenChatBotCategoryScr
               ),
 
               const SizedBox(height: 35),
-
               // Another Question Button
+
               InkWell(
-                onTap:()=>Get.to(OtherQuestionAskScreen()),
+                onTap:()=>Get.to(CitizenOtherQuestionAskScreen()),
                 child: Container(
-                  height: 55,
+                  height: 53,
                   width: double.infinity,
                   decoration: BoxDecoration(
                     borderRadius: BorderRadius.circular(30),
@@ -153,32 +157,30 @@ class _CitizenChatBotCategoryScreenState extends State<CitizenChatBotCategoryScr
     required String text,
     required VoidCallback onTap,
   }) {
-    return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 52.w),
-      child: InkWell(
-        onTap: onTap,
-        child: Container(
-          height: 55,
-          decoration: BoxDecoration(
-            color: const Color(0xff16253E),
-            borderRadius: BorderRadius.circular(30),
-          ),
-          child: Center(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.center,
-              children: [
-                SvgPicture.asset(Icons),
-                SizedBox(width: 12.w),
-                Text(
-                  text,
-                  style: const TextStyle(
-                    color: AppColors.commonTextColor,
-                    fontSize: 17,
-                    fontWeight: FontWeight.w600,
-                  ),
+    return InkWell(
+      onTap: onTap,
+      child: Container(
+        height: 53,
+        decoration: BoxDecoration(
+          color: const Color(0xff16253E),
+          borderRadius: BorderRadius.circular(30),
+        ),
+        padding: EdgeInsets.symmetric(horizontal: 21.w),
+        child: Center(
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+            children: [
+              SvgPicture.asset(Icons),
+              SizedBox(width: 12.w),
+              Text(
+                text,
+                style: const TextStyle(
+                  color: AppColors.commonTextColor,
+                  fontSize: 17,
+                  fontWeight: FontWeight.w600,
                 ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),

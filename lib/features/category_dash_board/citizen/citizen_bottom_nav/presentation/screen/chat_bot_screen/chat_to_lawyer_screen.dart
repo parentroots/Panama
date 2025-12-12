@@ -1,13 +1,17 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get_core/src/get_main.dart';
+import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:new_untitled/component/app_bar/home_screen_app_bar.dart';
 import 'package:new_untitled/component/curved_background_widget/home_bottom_curved_app_bar.dart';
+import 'package:new_untitled/component/text/common_text.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/citizen_bottom_nav_screen.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 
 import '../../../../../expert/expert_bottom_nav/expert_bottom_nav_screen.dart';
-
+import '../../../../home/citizen_home_screen.dart';
 
 class ChatToLawyerScreen extends StatefulWidget {
   const ChatToLawyerScreen({super.key});
@@ -38,6 +42,8 @@ class _ChatToLawyerScreenState extends State<ChatToLawyerScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFE9F0F7),
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(CitizenHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 140,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,
@@ -45,27 +51,74 @@ class _ChatToLawyerScreenState extends State<ChatToLawyerScreen> {
         actionImage: AppImages.language,
         middleImage: AppImages.appLogo,
       ),
-      bottomNavigationBar: const ExpertBottomNavBar(currentIndex: 0),
+      bottomNavigationBar: const CitizenBottomNavBar(currentIndex: 0),
       body: Column(
         children: [
-
           Container(
             height: 60,
             width: double.maxFinite,
             decoration: BoxDecoration(
               color: Color(0xff458AFF),
-              borderRadius: BorderRadius.only(bottomRight: Radius.circular(15),bottomLeft: Radius.circular(15))
-
+              borderRadius: BorderRadius.only(
+                bottomRight: Radius.circular(15),
+                bottomLeft: Radius.circular(15),
+              ),
             ),
-            child: Row(children: [
+            child: Row(
+              children: [
+                Padding(
+                  padding: EdgeInsets.only(left: 20.w),
+                  child: ClipRRect(
+                    borderRadius: BorderRadiusGeometry.circular(100),
+                    child: Image.asset(
+                      height: 50.h,
+                      width: 50.h,
+                      AppImages.carlos,
+                    ),
+                  ),
+                ),
 
-              CircleAvatar(
-                  
-                child: Image.asset(AppImages.carlos),
-              )
+                Padding(
+                  padding: const EdgeInsets.only(left: 17, top: 16),
+                  child: Column(
+                    crossAxisAlignment: CrossAxisAlignment.start,
+                    children: [
+                      CommonText(
+                        text: 'Johan Torres',
+                        fontSize: 22,
+                        fontWeight: FontWeight.w700,
+                        color: Color(0xFFFFFFFF),
+                      ),
 
-            ],),
+                      Row(
+                        mainAxisAlignment: MainAxisAlignment.start,
+                        children: [
+                          Container(
+                            height: 12,
+                            width: 12,
+                            decoration: BoxDecoration(
+                              color: Color(0xff14F056),
+                              shape: BoxShape.circle,
+                            ),
+                          ),
+
+                          SizedBox(width: 10.w),
+
+                          Text('Online',style: TextStyle(
+                            fontSize: 12,
+                            color: Color(0xFFFFFFFF)
+                          ),),
+                        ],
+                      ),
+                    ],
+                  ),
+                ),
+              ],
+            ),
           ),
+
+          SizedBox(height: 15.h,),
+
           Expanded(
             child: ListView.builder(
               itemCount: messageList.length,
@@ -141,7 +194,7 @@ class _ChatToLawyerScreenState extends State<ChatToLawyerScreen> {
                     child: IconButton(
                       color: Colors.white,
                       onPressed: () {},
-                      icon: Icon(Icons.mic,size: 22,),
+                      icon: Icon(Icons.mic, size: 22),
                     ),
                   ),
                 ),
@@ -154,7 +207,7 @@ class _ChatToLawyerScreenState extends State<ChatToLawyerScreen> {
   }
 
   void onTapSendButton() {
-    messageList.add({'type': "user", 'message': messageTEController.text});
+    messageList.add({'type': "bot", 'message': messageTEController.text});
     messageTEController.clear();
 
     if (mounted) {
@@ -187,16 +240,6 @@ class _BotMessage extends StatelessWidget {
       child: Row(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
-          CircleAvatar(
-            radius: 22,
-            backgroundColor: Colors.blue,
-            child: Image.asset(
-              AppImages.aiAvatarMiddle,
-              height: 24.h,
-              width: 24.h,
-            ),
-          ),
-          const SizedBox(width: 10),
           Expanded(
             child: Padding(
               padding: const EdgeInsets.only(right: 70),

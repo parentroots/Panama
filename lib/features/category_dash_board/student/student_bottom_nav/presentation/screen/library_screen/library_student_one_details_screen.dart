@@ -36,7 +36,7 @@ class _LibraryStudentOneDetailsScreenState extends State<LibraryStudentOneDetail
         middleImage: AppImages.appLogo,
       ),
 
-      bottomNavigationBar: CitizenBottomNavBar( currentIndex: 1,),
+      bottomNavigationBar: StudentBottomNavBar( currentIndex: 1,),
       backgroundColor: const Color(0xffF1F4F9),
       body: SingleChildScrollView(
         child: Column(

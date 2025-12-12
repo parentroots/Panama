@@ -40,10 +40,10 @@ class StudentHomeScreen extends StatelessWidget {
                       ],
                     ),
                   ),
-                  SizedBox(width: 120.h),
+                  SizedBox(width: 100.h),
 
                   Image.asset(AppImages.appLogo, height: 50.h, width: 50.h),
-                  SizedBox(width: 130.h),
+                  SizedBox(width: 120.h),
                   Image.asset(AppImages.language),
                 ],
               ),
