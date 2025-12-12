@@ -1,12 +1,15 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:get/get.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/component/text_field/common_text_field.dart';
+import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/main_profile_screen.dart';
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
+import '../../../../home/lawyer_home_screen.dart';
 import '../../../lawyer_bottom_nav_screen.dart';
 
 class LawyerProfileEditScreen extends StatefulWidget {
@@ -29,6 +32,8 @@ class _LawyerProfileEditScreenState extends State<LawyerProfileEditScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(LawyerHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 100,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,
@@ -183,6 +188,30 @@ class _LawyerProfileEditScreenState extends State<LawyerProfileEditScreen> {
                 ],
               ),
             ),
+
+
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 52),
+              child: CommonButton(
+                onTap: ()=>Get.to(MainProfileScreen()),
+                  titleText: 'Save Change'),
+            ),
+
+            SizedBox(height: 15.h,),
+
+            Padding(
+              padding: const EdgeInsets.symmetric(horizontal: 52),
+              child: CommonButton(
+                onTap: ()=>Get.back(),
+                  buttonColor: AppColors.backgroundColor,
+                  titleText: 'Cancel'),
+            )
+
+
+
+
+
           ],
         ),
       ),

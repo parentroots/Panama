@@ -13,6 +13,7 @@ import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_n
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
+import '../../../../home/lawyer_home_screen.dart';
 
 class LawyerCasesScreen extends StatefulWidget {
   const LawyerCasesScreen({super.key});
@@ -36,6 +37,8 @@ class _LawyerCasesScreenState extends State<LawyerCasesScreen> {
       builder: (controller) {
         return Scaffold(
           appBar: HomeBottomCurvedAppBar(
+            onLeadingPressed: ()=>Get.to(LawyerHomeScreen()),
+            onBackPressed: ()=>Get.back(),
             height: 140,
             backgroundColor: AppColors.backgroundColor,
             backImage: AppImages.back,

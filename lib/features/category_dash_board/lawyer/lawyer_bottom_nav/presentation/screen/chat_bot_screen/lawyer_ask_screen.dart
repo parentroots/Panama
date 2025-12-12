@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/component/text_field/common_text_field.dart';
@@ -7,6 +8,7 @@ import 'package:new_untitled/component/text_field/common_text_field.dart';
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
+import '../../../../home/lawyer_home_screen.dart';
 import '../../../lawyer_bottom_nav_screen.dart';
 
 class LawyerAskScreen extends StatelessWidget {
@@ -17,6 +19,8 @@ class LawyerAskScreen extends StatelessWidget {
     return Scaffold(
       bottomNavigationBar: const LawyerBottomNavBar(currentIndex: 0),
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(LawyerHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 140.h,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,

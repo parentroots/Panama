@@ -6,6 +6,7 @@ import 'package:new_untitled/features/category_dash_board/expert/home/expert_hom
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
+import '../../../../home/lawyer_home_screen.dart';
 import '../../../lawyer_bottom_nav_screen.dart';
 
 
@@ -27,7 +28,8 @@ class _LibraryLawyerOneDetailsScreenState extends State<LibraryLawyerOneDetailsS
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeBottomCurvedAppBar(
-        onLeadingPressed: onTapLeading,
+        onLeadingPressed: ()=>Get.to(LawyerHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 100,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,

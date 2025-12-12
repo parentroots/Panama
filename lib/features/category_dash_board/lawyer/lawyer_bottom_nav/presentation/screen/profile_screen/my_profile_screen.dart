@@ -3,8 +3,8 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
 import 'package:new_untitled/component/text/common_text.dart';
-import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/expert_details_screen.dart';
-import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/expert_directory_screen.dart';
+import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/lawyer_details_screen.dart';
+import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/lawyer_directory_screen.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/lawyer_profile_edit_screen.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/rating_screen.dart';
 
@@ -33,99 +33,106 @@ class MyProfileScreen extends StatelessWidget {
       body: Padding(
         padding: const EdgeInsets.all(20),
         child: Column(
-          crossAxisAlignment: CrossAxisAlignment.start,
           children: [
-
-
-            SizedBox(height: 25.h,),
-
-            Row(children: [
-              
-              SvgPicture.asset(AppImages.bottomPerson),
-              SizedBox(width: 10,),
-              CommonText(text: "My Professional Profile",color: Color(0xff2E5089),)
-
-            ],),
-
-
-            SizedBox(height: 32.h,),
-
-
-            Row(
-              children: [
-                GestureDetector(
-                  onTap: (){
-                    Get.to(ExpertDirectoryScreen());
-                  },
-                  child: const CircleAvatar(
-                    radius: 40,
-                    backgroundImage: AssetImage(AppImages.carlos), // Change
-                  ),
-                ),
-                const SizedBox(width: 15),
-                Column(
+            // Scrollable content
+            Expanded(
+              child: SingleChildScrollView(
+                child: Column(
                   crossAxisAlignment: CrossAxisAlignment.start,
-                  children: const [
-                    Text(
-                      "Mario Núñez",
-                      style: TextStyle(
-                        fontSize: 22,
-                        fontWeight: FontWeight.bold,
-                      ),
-                    ),
+                  children: [
+
+                    SizedBox(height: 25.h,),
+
                     Row(
                       children: [
-                        Icon(Icons.mail,size: 15,color: Color(0xff2E5089),),
+                        SvgPicture.asset(AppImages.bottomPerson),
                         SizedBox(width: 10,),
-                        Text("mario@gmail.com",style: TextStyle(
+                        CommonText(
+                          text: "My Professional Profile",
                           color: Color(0xff2E5089),
-                        ),),
+                        ),
                       ],
                     ),
+
+                    SizedBox(height: 32.h,),
+
                     Row(
                       children: [
-                        Icon(Icons.call,size: 15,color: Color(0xff2E5089),),
-                        SizedBox(width: 10,),
-                        Text("mario@gmail.com",style: TextStyle(
-                          color: Color(0xff2E5089),
-                        ),),
+                        GestureDetector(
+                          onTap: (){
+                            Get.to(LawyerDirectoryScreen());
+                          },
+                          child: const CircleAvatar(
+                            radius: 40,
+                            backgroundImage: AssetImage(AppImages.carlos),
+                          ),
+                        ),
+                        const SizedBox(width: 15),
+                        Column(
+                          crossAxisAlignment: CrossAxisAlignment.start,
+                          children: const [
+                            Text(
+                              "Mario Núñez",
+                              style: TextStyle(
+                                fontSize: 22,
+                                fontWeight: FontWeight.bold,
+                              ),
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.mail, size: 15, color: Color(0xff2E5089),),
+                                SizedBox(width: 10,),
+                                Text(
+                                  "mario@gmail.com",
+                                  style: TextStyle(color: Color(0xff2E5089)),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              children: [
+                                Icon(Icons.call, size: 15, color: Color(0xff2E5089),),
+                                SizedBox(width: 10,),
+                                Text(
+                                  "mario@gmail.com",
+                                  style: TextStyle(color: Color(0xff2E5089)),
+                                ),
+                              ],
+                            ),
+                          ],
+                        )
                       ],
                     ),
+
+                    SizedBox(height: 33.h),
+
+                    _card("Description",
+                        "Lawyer with 8 years of experience in labor and civil law.",(){
+                          Get.to(LawyerDetailsScreen());
+                        }),
+
+                    SizedBox(height: 10),
+
+                    _card("Work area", "Panama City, Panama",() {
+                      Get.to(RatingScreen());
+                    }),
+
+                    SizedBox(height: 16.h),
+
+                    _card("Punctuation", "⭐ 4.8",(){
+                      Get.to(RatingScreen());
+                    }),
+
+                    SizedBox(height: 20.h), // bottom spacing
                   ],
-                )
-              ],
+                ),
+              ),
             ),
 
-            SizedBox(height: 33.h),
-
-            _card("Description",
-                "Lawyer with 8 years of experience in labor and civil law.",(){
-
-                  Get.to(ExpertDetailsScreen());
-                }),
-
-            SizedBox(height: 10),
-
-            _card("Work area", "Panama City, Panama",() {
-              Get.to(RatingScreen());
-            }
-            ),
-
-            SizedBox(height: 16.h),
-            
-           
-
-            _card("Punctuation", "⭐ 4.8",(){
-              
-              Get.to(RatingScreen());
-            }),
-               Spacer(),
-
-            // Edit button
+            // Bottom Edit button
             SizedBox(
               width: double.infinity,
               child: Padding(
-                padding:  EdgeInsets.symmetric(horizontal: 27.w),
+                padding: EdgeInsets.symmetric(horizontal: 27.w),
                 child: ElevatedButton(
                   style: ElevatedButton.styleFrom(
                     backgroundColor: Color(0xff16253E),
@@ -142,7 +149,8 @@ class MyProfileScreen extends StatelessWidget {
                   ),
                 ),
               ),
-            )
+            ),
+            SizedBox(height: 20.h), // extra bottom spacing
           ],
         ),
       ),
@@ -150,7 +158,7 @@ class MyProfileScreen extends StatelessWidget {
   }
 
   // Card Widget
-  Widget _card(String title, String value,VoidCallback onTap) {
+  Widget _card(String title, String value, VoidCallback onTap) {
     return GestureDetector(
       onTap: onTap,
       child: Padding(
@@ -158,7 +166,7 @@ class MyProfileScreen extends StatelessWidget {
         child: Container(
           width: double.maxFinite,
           height: 119,
-          padding:  EdgeInsets.all(15.w),
+          padding: EdgeInsets.all(15.w),
           decoration: BoxDecoration(
             color: Color(0xFFF4F4F4),
             borderRadius: BorderRadius.circular(39),

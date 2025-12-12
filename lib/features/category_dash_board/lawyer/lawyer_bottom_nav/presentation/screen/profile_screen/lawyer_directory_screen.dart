@@ -2,20 +2,23 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:new_untitled/component/text/common_text.dart';
-import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/expert_details_screen.dart';
+import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/lawyer_details_screen.dart';
 
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
+import '../../../../home/lawyer_home_screen.dart';
 import '../../../lawyer_bottom_nav_screen.dart';
 
-class ExpertDirectoryScreen extends StatelessWidget {
-  const ExpertDirectoryScreen({super.key});
+class LawyerDirectoryScreen extends StatelessWidget {
+  const LawyerDirectoryScreen({super.key});
 
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(LawyerHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 100,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,
@@ -54,16 +57,16 @@ class ExpertDirectoryScreen extends StatelessWidget {
               child: ListView(
                 children: [
                   expertTile("Ricardo Paredes", "Forensic", 4.8,(){
-                    Get.to(ExpertDetailsScreen());
+                    Get.to(LawyerDetailsScreen());
                   }),
                   expertTile("Rodrigo Goes", "Contable", 4.2,(){
-                    Get.to(ExpertDetailsScreen());
+                    Get.to(LawyerDetailsScreen());
                   }),
                   expertTile("Juliano Gomez", "Informatics", 3.0,(){
-                    Get.to(ExpertDetailsScreen());
+                    Get.to(LawyerDetailsScreen());
                   }),
                   expertTile("Jennifer Lopez", "Forensic", 3.8,(){
-                    Get.to(ExpertDetailsScreen());
+                    Get.to(LawyerDetailsScreen());
                   }),
                 ],
               ),

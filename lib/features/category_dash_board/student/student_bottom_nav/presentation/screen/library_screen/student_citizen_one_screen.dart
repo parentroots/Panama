@@ -9,6 +9,7 @@ import 'package:new_untitled/component/text/common_text.dart';
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
+import '../../../../home/student_home_screen.dart';
 import '../../../student_bottom_nav_screen.dart';
 import 'library_student_one_details_screen.dart';
 
@@ -25,6 +26,8 @@ class _LibraryStudentOneScreenState extends State<LibraryStudentOneScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(StudentHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 100,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,

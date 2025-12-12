@@ -10,6 +10,7 @@ import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_n
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
+import '../../../../home/student_home_screen.dart';
 import '../../../student_bottom_nav_screen.dart';
 
 class StudentProfileScreen extends StatefulWidget {
@@ -31,6 +32,8 @@ class _StudentProfileScreenState extends State<StudentProfileScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(StudentHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 100,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,

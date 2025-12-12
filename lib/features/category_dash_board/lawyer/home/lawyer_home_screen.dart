@@ -103,7 +103,7 @@ class LawyerHomeScreen extends StatelessWidget {
                           text: "Chatbot",
                           image: AppImages.bot,
                           onTap: () {
-                            Get.to(CitizenChatBotCategoryScreen());
+                            Get.to(LawyerChatBotCategoryScreen());
                           },
                         ),
                         SizedBox(width: 20),

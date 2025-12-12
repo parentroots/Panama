@@ -3,6 +3,7 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
+import 'package:new_untitled/features/category_dash_board/lawyer/home/lawyer_home_screen.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/chat_bot_screen/user_chat_screen.dart';
 
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
@@ -18,6 +19,8 @@ class CaseDetailsScreen extends StatelessWidget {
     return Scaffold(
 
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(LawyerHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 140,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,

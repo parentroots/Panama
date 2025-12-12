@@ -1,11 +1,14 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
+import 'package:get/get.dart';
+import 'package:get/get_core/src/get_main.dart';
 import 'package:image_picker/image_picker.dart';
 import 'package:new_untitled/component/app_bar/home_screen_app_bar.dart';
 import 'package:new_untitled/component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 
+import '../../../../home/lawyer_home_screen.dart';
 import '../../../lawyer_bottom_nav_screen.dart';
 
 class UserChatBotScreen extends StatefulWidget {
@@ -37,6 +40,8 @@ class _UserChatBotScreenState extends State<UserChatBotScreen> {
     return Scaffold(
       backgroundColor: const Color(0xFFE9F0F7),
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(LawyerHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 140,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,

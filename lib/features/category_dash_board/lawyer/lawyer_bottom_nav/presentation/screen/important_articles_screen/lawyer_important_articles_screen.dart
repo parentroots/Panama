@@ -15,6 +15,7 @@ import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
 import '../../../../../expert/expert_bottom_nav/presentation/widget/advertising_card.dart';
 import '../../../../../expert/expert_bottom_nav/presentation/widget/criminal_card.dart';
+import '../../../../home/lawyer_home_screen.dart';
 
 class LawyerImportantArticlesScreen extends StatefulWidget {
   const LawyerImportantArticlesScreen({super.key});
@@ -38,6 +39,8 @@ class _LawyerImportantArticlesScreenState extends State<LawyerImportantArticlesS
       builder: (controller) {
         return Scaffold(
           appBar: HomeBottomCurvedAppBar(
+            onLeadingPressed: ()=>Get.to(LawyerHomeScreen()),
+            onBackPressed: ()=>Get.back(),
             height: 140,
             backgroundColor: AppColors.backgroundColor,
             backImage: AppImages.back,

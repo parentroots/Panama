@@ -9,6 +9,7 @@ import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_n
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/active_section_card.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/closed_section_card.dart' hide AppColors;
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/new_section_card.dart';
+import 'package:new_untitled/features/category_dash_board/student/home/student_home_screen.dart';
 
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
@@ -38,6 +39,8 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
       builder: (controller) {
         return Scaffold(
           appBar: HomeBottomCurvedAppBar(
+            onLeadingPressed: ()=>Get.to(StudentHomeScreen()),
+            onBackPressed: ()=>Get.back(),
             height: 140,
             backgroundColor: AppColors.backgroundColor,
             backImage: AppImages.back,

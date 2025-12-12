@@ -9,6 +9,7 @@ import '../../../../../../../component/curved_background_widget/home_bottom_curv
 import '../../../../../../../component/law_library_card/law_library_card.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
+import '../../../../home/expert_home_screen.dart';
 import '../../../expert_bottom_nav_screen.dart';
 import 'library_expert_one_screen.dart';
 
@@ -24,6 +25,8 @@ class _ExpertLibraryScreenState extends State<ExpertLibraryScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: ()=>Get.to(ExpertHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 100,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,

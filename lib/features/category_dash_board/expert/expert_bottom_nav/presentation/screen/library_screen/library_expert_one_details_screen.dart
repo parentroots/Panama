@@ -27,7 +27,8 @@ class _LibraryExpertOneDetailsScreenState extends State<LibraryExpertOneDetailsS
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: HomeBottomCurvedAppBar(
-        onLeadingPressed: onTapLeading,
+        onLeadingPressed: ()=>Get.to(ExpertHomeScreen()),
+        onBackPressed: ()=>Get.back(),
         height: 100,
         backgroundColor: AppColors.backgroundColor,
         backImage: AppImages.back,
