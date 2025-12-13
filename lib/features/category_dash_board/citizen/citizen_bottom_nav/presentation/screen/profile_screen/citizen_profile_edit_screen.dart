@@ -6,6 +6,7 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/component/text_field/common_text_field.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/profile_screen/citizen_profile_screen.dart';
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
@@ -130,6 +131,7 @@ class _CitizenProfileEditScreenState extends State<CitizenProfileEditScreen> {
                       top: 10.h,
                     ),
                     child: CommonButton(
+                      onTap:()=>  Get.offAll(CitizenProfileScreen()),
                       titleText: 'Save changes',
                       titleColor: Colors.white,
                       titleSize: 14.sp,

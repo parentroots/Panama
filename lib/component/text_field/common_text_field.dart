@@ -79,7 +79,7 @@ class CommonTextField extends StatelessWidget {
         maxLength: mexLength,
         onChanged: onChanged,
         inputFormatters: inputFormatters,
-        style: TextStyle(fontSize: 14, color: AppColors.commonTextColor),
+        style: TextStyle(fontSize: 14, color: AppColors.black),
         onFieldSubmitted: onSubmitted,
         onTap: onTap,
         validator: validator,

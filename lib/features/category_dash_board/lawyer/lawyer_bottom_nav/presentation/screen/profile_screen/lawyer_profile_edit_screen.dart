@@ -1,7 +1,10 @@
+import 'dart:io';
+
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:flutter_svg/flutter_svg.dart';
 import 'package:get/get.dart';
+import 'package:image_picker/image_picker.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/component/text_field/common_text_field.dart';
@@ -28,6 +31,21 @@ final TextEditingController phoneTEController = TextEditingController();
 final TextEditingController emailTEController = TextEditingController();
 
 class _LawyerProfileEditScreenState extends State<LawyerProfileEditScreen> {
+
+
+  final ImagePicker picker = ImagePicker();
+      File? file;
+  Future<void> onTapSelectImage()async{
+    final XFile? pickedImage = await picker.pickImage(source: ImageSource.gallery);
+    if(pickedImage!=null){
+      setState(() {
+        file=File(pickedImage.path);
+      });
+    }
+
+  }
+
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -75,7 +93,9 @@ class _LawyerProfileEditScreenState extends State<LawyerProfileEditScreen> {
                         decoration: BoxDecoration(
                           borderRadius: BorderRadius.circular(100),
                           image: DecorationImage(
-                            image: AssetImage(AppImages.carlos),
+                            image: file != null
+                                ? FileImage(file!)
+                                : const AssetImage(AppImages.carlos),
                             fit: BoxFit.cover,
                           ),
                         ),
@@ -102,14 +122,14 @@ class _LawyerProfileEditScreenState extends State<LawyerProfileEditScreen> {
                                   child: Center(
                                     child: Row(
                                       children: [
-                                        const Icon(
-                                          Icons.image_outlined,
-                                          color: Color(0xff577EBD),
-                                        ),
+                                        Image.asset(AppImages.editImage),
                                         SizedBox(width: 8.w),
-                                        CommonText(
-                                          text: 'Select image',
-                                          color: const Color(0xff577EBD),
+                                        InkWell(
+                                          onTap: onTapSelectImage,
+                                          child: CommonText(
+                                            text: 'Select image',
+                                            color: const Color(0xff577EBD),
+                                          ),
                                         ),
                                       ],
                                     ),

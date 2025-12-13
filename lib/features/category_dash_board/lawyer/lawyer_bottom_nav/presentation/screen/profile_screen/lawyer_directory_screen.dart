@@ -3,6 +3,7 @@ import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/lawyer_details_screen.dart';
+import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/profile_screen/lawyer_submit_rating_screen.dart';
 
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
@@ -111,7 +112,9 @@ class LawyerDirectoryScreen extends StatelessWidget {
                           const TextStyle(color: Colors.blue, fontWeight: FontWeight.w600),
                         ),
                         const Spacer(),
-                        Text("$rating ⭐"),
+                        InkWell(
+                          onTap:()=> Get.to(LawyerSubmitRatingScreen()),
+                            child: Text("$rating ⭐")),
                       ],
                     ),
                   ),

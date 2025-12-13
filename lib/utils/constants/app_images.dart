@@ -55,6 +55,7 @@ class AppImages {
   static const String  casesFile= "assets/images/casesFile.png" ;
   static const String  friends1= "assets/images/fiends.png" ;
   static const String  friends2= "assets/images/friends2.png" ;
+  static const String  editImage= "assets/images/editImage.png" ;
 
 
 

@@ -72,7 +72,7 @@ class AppString {
   static const String startServer = "Please, start the Server";
   static const String unknownError = "Unknown Error";
 
-//-------------------------------------------------------------------------------------------------
+  //-------------------------------------------------------------------------------------------------
   static const String howWillYouRegister = "How will you register?";
   static const String iAmCitizen = "I am a Citizen";
   static const String iAmLawyer = "I am a Lawyer";
@@ -88,12 +88,7 @@ class AppString {
   static const String continuePaymentMethod = "Select Payment Method";
   static const String continuePayment = "continue to payment";
 
-  static const String accessevaluationrequestschatwithlawyersandtheprofessionaldirectory = "Access evaluation requests, chat with lawyers, and the professional directory";
-
-
-
-
-
-
-
+  static const String
+  accessevaluationrequestschatwithlawyersandtheprofessionaldirectory =
+      "Access evaluation requests, chat with lawyers, and the professional directory";
 }

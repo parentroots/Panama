@@ -7,7 +7,7 @@ import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/features/auth/sign%20in/presentation/screen/sign_in_screen.dart';
-import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/presentation/screen/profile_screen/profile_edit_screen.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/profile_screen/citizen_profile_edit_screen.dart';
 import 'package:new_untitled/utils/extensions/extension.dart';
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
@@ -24,7 +24,7 @@ class CitizenProfileScreen extends StatefulWidget {
 
 class _CitizenProfileScreenState extends State<CitizenProfileScreen> {
   Future<void> onTapEditProfileButton() async {
-    await Get.to(ProfileEditScreen());
+    await Get.to(CitizenProfileEditScreen());
   }
 
   @override
