@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/curved_background_widget/curved_background_widget.dart';
 import 'package:new_untitled/config/route/app_routes.dart';
+import 'package:new_untitled/features/category_dash_board/lawyer/auth/presentaion/payment/lawyer_pay_confirmation_screen.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 import 'package:new_untitled/utils/constants/app_string.dart';
@@ -170,7 +171,7 @@ class _LawyerPaymentMethodScreenState
               padding: EdgeInsets.symmetric(horizontal: 52.w),
               child: CommonButton(
                 onTap: () =>
-                    Get.toNamed(AppRoutes.lawyer_pay_confirmation_screen),
+                    Get.to(LawyerPayConfirmationScreen()),
                 titleText: AppString.continuePayment,
               ),
             ),

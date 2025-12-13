@@ -24,88 +24,91 @@ class _CitizenPayConfirmationScreenState extends State<CitizenPayConfirmationScr
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(preferredSize: Size.fromHeight(100), child: CommonAppBar(
+      appBar: PreferredSize(preferredSize: Size.fromHeight(70), child: CommonAppBar(
         leadingIcon: AppImages.back, onTap: () {
           Get.back();
       },
       )),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-        
-            CommonCurvedWidget(height: 100, text: "Payment Method", imageSource: AppImages.appLogo, textColor: AppColors.commonTextColor),
-        
-            Column(
-              children: [
-                  
-                SizedBox(height: 70,),
-                  
-                PaymentCard( text: 'Card Number', icon: Icons.card_membership,),
-                SizedBox(height: 33.h,),
-                PaymentCard( text: 'expiration date', icon: Icons.payment,),
-                SizedBox(height: 33.h,),
-                PaymentCard(text: 'CCV', icon: Icons.lock,),
-                SizedBox(height: 33.h,),
-                PaymentCard( text: 'Card holder name', icon:Icons.person),
-                  
-                  
-                SizedBox(height: 76.h,),
-                  
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children:[
-                    Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        color: Color(0xff0E4595),
-                      ),
-                      child: Image.asset(
-                        AppImages.visaCard,
-                        color: Colors.white,
-                      ),
-                    ),
+      body: Column(
+        children: [
+      
+          CommonCurvedWidget(height: 100, text: "Payment Method", imageSource: AppImages.appLogo, textColor: AppColors.commonTextColor),
+      
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
 
-                    SizedBox(width: 6.w,),
-                    Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        color: Color(0xff0E4595),
+                  SizedBox(height: 70,),
+
+                  PaymentCard( text: 'Card Number', icon: Icons.card_membership,),
+                  SizedBox(height: 33.h,),
+                  PaymentCard( text: 'expiration date', icon: Icons.payment,),
+                  SizedBox(height: 33.h,),
+                  PaymentCard(text: 'CCV', icon: Icons.lock,),
+                  SizedBox(height: 33.h,),
+                  PaymentCard( text: 'Card holder name', icon:Icons.person),
+
+
+                  SizedBox(height: 76.h,),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children:[
+                      Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          color: Color(0xff0E4595),
+                        ),
+                        child: Image.asset(
+                          AppImages.visaCard,
+                          color: Colors.white,
+                        ),
                       ),
-                      child: Image.asset(
-                        AppImages.masterCard,
-                        color: Colors.white,
+
+                      SizedBox(width: 6.w,),
+                      Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          color: Color(0xff0E4595),
+                        ),
+                        child: Image.asset(
+                          AppImages.masterCard,
+                          height: 20,
+                          width: 30,
+                        ),
                       ),
-                    ),
-                ],),
-            SizedBox(height: 20,),
-                  
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.lock),
-                   SizedBox(width: 10,),
-                   CommonText(text: 'SSL-secured transaction')
                   ],),
-                  
-                SizedBox(height: 40,),
-                Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: 52.w),
-                  child: CommonButton(
-                      onTap: () => Get.to(CitizenPaymentLoadingScreen()),
-                      titleText: 'Pay'),
-                ),
+              SizedBox(height: 20,),
 
-                SizedBox(height: 82,)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.lock),
+                     SizedBox(width: 10,),
+                     CommonText(text: 'SSL-secured transaction')
+                    ],),
+
+                  SizedBox(height: 40,),
+                  Padding(
+                    padding:  EdgeInsets.symmetric(horizontal: 52.w),
+                    child: CommonButton(
+                        onTap: () => Get.to(CitizenPaymentLoadingScreen()),
+                        titleText: 'Pay'),
+                  ),
+
+                  SizedBox(height: 82,)
 
 
 
-              ],
-            )
-        
-          ],
-        ),
+                ],
+              ),
+            ),
+          )
+      
+        ],
       ),
     );
   }

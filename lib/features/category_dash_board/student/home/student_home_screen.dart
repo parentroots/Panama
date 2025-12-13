@@ -13,6 +13,7 @@ import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 
 import '../../../../config/route/app_routes.dart';
+import '../../../auth/sign in/presentation/screen/sign_in_screen.dart';
 
 class StudentHomeScreen extends StatelessWidget {
   const StudentHomeScreen({super.key});
@@ -36,7 +37,9 @@ class StudentHomeScreen extends StatelessWidget {
                       children: [
                         Image.asset(AppImages.back, color: Colors.black),
                         SizedBox(width: 10.h),
-                        Image.asset(AppImages.appBarHome),
+                        InkWell(
+                            onTap: ()=>Get.offAll(SignInScreen()),
+                            child: Image.asset(AppImages.appBarHome)),
                       ],
                     ),
                   ),

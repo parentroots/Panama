@@ -55,7 +55,7 @@ class _ChatToLawyerScreenState extends State<ChatToLawyerScreen> {
       body: Column(
         children: [
           Container(
-            height: 60,
+            height: 70,
             width: double.maxFinite,
             decoration: BoxDecoration(
               color: Color(0xff458AFF),

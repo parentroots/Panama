@@ -6,6 +6,7 @@ import 'package:new_untitled/component/app_bar/common_app_bar.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/curved_background_widget/curved_background_widget.dart';
 import 'package:new_untitled/component/text_field/common_text_field.dart';
+import 'package:new_untitled/features/category_dash_board/student/auth/presentaion/screen/student_information_upload_screen.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 import 'package:new_untitled/utils/constants/app_string.dart';
@@ -129,7 +130,7 @@ class _StudentSignUpScreenState extends State<StudentSignUpScreen> {
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 52.w),
                 child: CommonButton(
-                onTap:  () => Get.toNamed(AppRoutes.studentInformationUploadScreen),
+                onTap:  () => Get.to(StudentInformationUploadScreen()),
                  titleText: AppString.continues,buttonHeight: 53,buttonWidth: 336,
                 borderColor: AppColors.commonButtonBorderColor,
                 buttonRadius: 24,),

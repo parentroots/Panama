@@ -93,6 +93,7 @@ class _CitizenPaymentMethodScreenState
                           child: Image.asset(
                             AppImages.masterCard,
                             height: 20,
+                            width: 30,
                           ),
                         ),
                       ],

@@ -5,6 +5,7 @@ import 'package:new_untitled/component/app_bar/common_app_bar.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/features/category_dash_board/student/auth/presentaion/screen/file_scan_screen.dart';
+import 'package:new_untitled/features/category_dash_board/student/auth/presentaion/screen/student_loading_screen.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 import 'package:new_untitled/utils/constants/app_string.dart';
 import 'package:new_untitled/utils/extensions/extension.dart';
@@ -151,7 +152,7 @@ class _StudentInformationUploadScreenState
       bottomNavigationBar: Padding(
         padding: EdgeInsets.all( 52.h),
         child: CommonButton(
-          onTap: () => Get.toNamed(AppRoutes.studentLoadingScreen),
+          onTap: () => Get.to(StudentPaymentLoadingScreen()),
           buttonHeight: 53.h,
           buttonWidth: 336.w,
           titleText: AppString.continues,

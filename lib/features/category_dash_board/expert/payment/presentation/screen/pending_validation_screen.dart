@@ -7,15 +7,15 @@ import 'package:new_untitled/utils/constants/app_images.dart';
 
 import '../../../../../../config/route/app_routes.dart';
 
-class PendingValidationScreen extends StatefulWidget {
-  const PendingValidationScreen({super.key});
+class ExpertPendingValidationScreen extends StatefulWidget {
+  const ExpertPendingValidationScreen({super.key});
 
   @override
-  State<PendingValidationScreen> createState() => _PendingValidationScreenState();
+  State<ExpertPendingValidationScreen> createState() => _ExpertPendingValidationScreenState();
 }
 
 
-class _PendingValidationScreenState extends State<PendingValidationScreen> {
+class _ExpertPendingValidationScreenState extends State<ExpertPendingValidationScreen> {
 
 
 

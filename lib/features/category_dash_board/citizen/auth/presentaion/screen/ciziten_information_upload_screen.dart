@@ -65,13 +65,53 @@ class _CitizenInformationUploadScreenState
           18.height,
 
           Padding(
+            padding: const EdgeInsets.symmetric(horizontal: 52),
+            child: Container(
+              height: 53,
+              width: double.maxFinite,
+              decoration: BoxDecoration(
+                borderRadius: BorderRadiusGeometry.circular(26),
+                border: Border.all(
+                  width: 1,
+                  color: Colors.black
+                )
+
+
+              ),
+              child: Row(
+                mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                children: [
+                  CommonButton(
+                    onTap:  () => Get.toNamed(AppRoutes.fileScanScreen),
+                    borderColor: Colors.transparent,
+                    buttonWidth: 100,
+                    buttonHeight: 53,
+                    titleText: 'Residential Aria',
+                    buttonColor: AppColors.white,
+                    titleColor: AppColors.secondary,
+                  ),
+                  
+                  CircleAvatar(
+                    radius: 15.r,
+                    backgroundColor: Color(0xff2E5089),
+                      child: Icon(Icons.arrow_drop_up,color: Colors.white,))
+                  
+                  
+                ],
+              ),
+            ),
+          ),
+
+          SizedBox(height: 30),
+
+          Padding(
             padding: EdgeInsets.symmetric(horizontal: 52.w),
             child: CommonButton(
               onTap:  () => Get.toNamed(AppRoutes.fileScanScreen),
               borderColor: AppColors.buttonBorderColor,
               buttonWidth: 380,
               buttonHeight: 53,
-              titleText: 'Upload File',
+              titleText: 'Extract Address',
               buttonColor: AppColors.white,
               titleColor: AppColors.secondary,
             ),
@@ -84,7 +124,7 @@ class _CitizenInformationUploadScreenState
             child: CommonButton(
               borderColor: AppColors.buttonBorderColor,
               buttonHeight: 53,
-              titleText: AppString.technicalSpeciality,
+              titleText: 'Date of Birth',
               buttonColor: AppColors.white,
               titleColor: AppColors.secondary,
             ),
@@ -92,11 +132,14 @@ class _CitizenInformationUploadScreenState
 
           Spacer(),
 
-          CommonButton(
-            onTap:  () => Get.to(CitizenBilPlanScreen()),
-            buttonHeight: 53,
-            buttonWidth: 336,
-            titleText: AppString.continues,
+          Padding(
+            padding: EdgeInsetsGeometry.symmetric(horizontal: 52),
+            child: CommonButton(
+              onTap:  () => Get.to(CitizenBilPlanScreen()),
+              buttonHeight: 53,
+              buttonWidth: 336,
+              titleText: AppString.continues,
+            ),
           ),
 
           SizedBox(height: 60.h),

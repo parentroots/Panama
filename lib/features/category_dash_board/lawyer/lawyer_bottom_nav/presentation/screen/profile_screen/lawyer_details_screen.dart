@@ -34,6 +34,7 @@ class LawyerDetailsScreen extends StatelessWidget {
         padding: const EdgeInsets.all(20),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.center,
+
           children: [
 
 
@@ -63,7 +64,7 @@ class LawyerDetailsScreen extends StatelessWidget {
                 allowHalfRating: true,
                 itemCount: 5,
                 itemBuilder: (context, _) =>
-                Icon(Icons.star, size: 22, color: Colors.amber),
+                Icon(Icons.star, size: 16, color: Colors.amber),
                 onRatingUpdate: (rating) {},
               ),
             ),
@@ -73,6 +74,7 @@ class LawyerDetailsScreen extends StatelessWidget {
 
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
+              crossAxisAlignment: CrossAxisAlignment.start,
               children: const [
                 Icon(Icons.email_outlined,color: Color(0xff2E5089),),
                 SizedBox(width: 8),

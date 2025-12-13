@@ -26,7 +26,7 @@ class _CitizenBilPlanScreenState extends State<CitizenBilPlanScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100),
+        preferredSize: Size.fromHeight(60),
         child: CommonAppBar(
           leadingIcon: AppImages.back,
           onTap: () {
@@ -37,7 +37,7 @@ class _CitizenBilPlanScreenState extends State<CitizenBilPlanScreen> {
       body: Column(
         children: [
           CommonCurvedWidget(
-            height: 100,
+            height: 80,
             text: "",
             imageSource: AppImages.appLogo,
             textColor: AppColors.commonTextColor,
@@ -45,53 +45,55 @@ class _CitizenBilPlanScreenState extends State<CitizenBilPlanScreen> {
 
           SizedBox(height: 34.h),
 
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 69),
-                  child: CommonText(
-                    text: "Citizen bill plan",
-                    color: AppColors.commonTextColor,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 69),
+                    child: CommonText(
+                      text: "Citizen bill plan",
+                      color: AppColors.commonTextColor,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                ),
-                SizedBox(height: 67.h),
+                  SizedBox(height: 67.h),
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    AppString
-                        .accessevaluationrequestschatwithlawyersandtheprofessionaldirectory,
-                    style: TextStyle(fontSize: 17),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      AppString
+                          .accessevaluationrequestschatwithlawyersandtheprofessionaldirectory,
+                      style: TextStyle(fontSize: 17),
+                    ),
                   ),
-                ),
 
-                SizedBox(height: 40),
+                  SizedBox(height: 40),
 
-                PricingCard(
-                  title: 'Profesional Expert',
-                  price: "\$5.00",
-                  subtitle: "+ ITBMS per month",
-                ),
-
-                SizedBox(height: 80.h),
-
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 52),
-                  child: CommonButton(
-                    onTap: () => Get.to(CitizenPaymentMethodScreen()),
-                    titleText: AppString.selectPaymentMethod,
-                    buttonHeight: 53,
+                  PricingCard(
+                    title: 'Profesional Expert',
+                    price: "\$5.00",
+                    subtitle: "+ ITBMS per month",
                   ),
-                ),
 
-                SizedBox(height: 82.h,)
+                  SizedBox(height: 80.h),
+
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 52),
+                    child: CommonButton(
+                      onTap: () => Get.to(CitizenPaymentMethodScreen()),
+                      titleText: AppString.selectPaymentMethod,
+                      buttonHeight: 53,
+                    ),
+                  ),
+
+                  SizedBox(height: 82.h,)
 
 
-              ],
+                ],
+              ),
             ),
           ),
         ],

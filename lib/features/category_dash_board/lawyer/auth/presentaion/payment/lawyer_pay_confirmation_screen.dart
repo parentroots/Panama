@@ -6,6 +6,7 @@ import 'package:new_untitled/component/curved_background_widget/curved_backgroun
 import 'package:new_untitled/component/payment_card/payment_card.dart';
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/config/route/app_routes.dart';
+import 'package:new_untitled/features/category_dash_board/lawyer/auth/presentaion/payment/lawyer_payment_loading_screen.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 import 'package:new_untitled/utils/constants/app_string.dart';
 
@@ -23,88 +24,90 @@ class _LawyerPayConfirmationScreenState extends State<LawyerPayConfirmationScree
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: PreferredSize(preferredSize: Size.fromHeight(100), child: CommonAppBar(
+      appBar: PreferredSize(preferredSize: Size.fromHeight(70), child: CommonAppBar(
         leadingIcon: AppImages.back, onTap: () {
           Get.back();
       },
       )),
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-        
-            CommonCurvedWidget(height: 100, text: "Payment Method", imageSource: AppImages.appLogo, textColor: AppColors.commonTextColor),
-        
-            Column(
-              children: [
-                  
-                SizedBox(height: 70,),
-                  
-                PaymentCard( text: 'Card Number', icon: Icons.card_membership,),
-                SizedBox(height: 33.h,),
-                PaymentCard( text: 'expiration date', icon: Icons.payment,),
-                SizedBox(height: 33.h,),
-                PaymentCard(text: 'CCV', icon: Icons.lock,),
-                SizedBox(height: 33.h,),
-                PaymentCard( text: 'Card holder name', icon:Icons.person),
-                  
-                  
-                SizedBox(height: 76.h,),
-                  
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children:[
-                    Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        color: Color(0xff0E4595),
-                      ),
-                      child: Image.asset(
-                        AppImages.visaCard,
-                        color: Colors.white,
-                      ),
-                    ),
+      body: Column(
+        children: [
 
-                    SizedBox(width: 6.w,),
-                    Container(
-                      height: 40,
-                      width: 40,
-                      decoration: BoxDecoration(
-                        color: Color(0xff0E4595),
+          CommonCurvedWidget(height: 100, text: "Payment Method", imageSource: AppImages.appLogo, textColor: AppColors.commonTextColor),
+
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+
+                  SizedBox(height: 70,),
+
+                  PaymentCard( text: 'Card Number', icon: Icons.card_membership,),
+                  SizedBox(height: 33.h,),
+                  PaymentCard( text: 'expiration date', icon: Icons.payment,),
+                  SizedBox(height: 33.h,),
+                  PaymentCard(text: 'CCV', icon: Icons.lock,),
+                  SizedBox(height: 33.h,),
+                  PaymentCard( text: 'Card holder name', icon:Icons.person),
+
+
+                  SizedBox(height: 76.h,),
+
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children:[
+                      Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          color: Color(0xff0E4595),
+                        ),
+                        child: Image.asset(
+                          AppImages.visaCard,
+                          color: Colors.white,
+                        ),
                       ),
-                      child: Image.asset(
-                        AppImages.masterCard,
-                        color: Colors.white,
+
+                      SizedBox(width: 6.w,),
+                      Container(
+                        height: 40,
+                        width: 40,
+                        decoration: BoxDecoration(
+                          color: Color(0xff0E4595),
+                        ),
+                        child: Image.asset(
+                          AppImages.masterCard,
+                          color: Colors.white,
+                        ),
                       ),
-                    ),
-                ],),
-            SizedBox(height: 20,),
-                  
-                Row(
-                  mainAxisAlignment: MainAxisAlignment.center,
-                  children: [
-                    Icon(Icons.lock),
-                   SizedBox(width: 10,),
-                   CommonText(text: 'SSL-secured transaction')
                   ],),
-                  
-                SizedBox(height: 40,),
-                Padding(
-                  padding:  EdgeInsets.symmetric(horizontal: 52.w),
-                  child: CommonButton(
-                      onTap: () => Get.toNamed(AppRoutes.lawyerPaymentLoadingScreen),
-                      titleText: 'Pay'),
-                ),
+              SizedBox(height: 20,),
 
-                SizedBox(height: 82,)
+                  Row(
+                    mainAxisAlignment: MainAxisAlignment.center,
+                    children: [
+                      Icon(Icons.lock),
+                     SizedBox(width: 10,),
+                     CommonText(text: 'SSL-secured transaction')
+                    ],),
+
+                  SizedBox(height: 40,),
+                  Padding(
+                    padding:  EdgeInsets.symmetric(horizontal: 52.w),
+                    child: CommonButton(
+                        onTap: () => Get.to(LawyerPaymentLoadingScreen()),
+                        titleText: 'Pay'),
+                  ),
+
+                  SizedBox(height: 82,)
 
 
 
-              ],
-            )
-        
-          ],
-        ),
+                ],
+              ),
+            ),
+          )
+
+        ],
       ),
     );
   }

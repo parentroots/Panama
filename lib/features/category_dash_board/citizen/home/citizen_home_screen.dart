@@ -43,7 +43,7 @@ class CitizenHomeScreen extends StatelessWidget {
                             child: Image.asset(AppImages.back, color: Colors.black)),
                         SizedBox(width: 10.h),
                         InkWell(
-                            onTap: ()=>Get.to(SignInScreen),
+                            onTap: ()=>Get.offAll(SignInScreen()),
                             child: Image.asset(AppImages.appBarHome)),
                       ],
                     ),

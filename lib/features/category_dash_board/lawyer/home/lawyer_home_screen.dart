@@ -12,6 +12,7 @@ import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 
 import '../../../../config/route/app_routes.dart';
+import '../../../auth/sign in/presentation/screen/sign_in_screen.dart';
 import '../../citizen/citizen_bottom_nav/presentation/screen/chat_bot_screen/citizen_chat_bot_category_screen.dart';
 
 class LawyerHomeScreen extends StatelessWidget {
@@ -36,7 +37,9 @@ class LawyerHomeScreen extends StatelessWidget {
                       children: [
                         Image.asset(AppImages.back, color: Colors.black),
                         SizedBox(width: 10.h),
-                        Image.asset(AppImages.appBarHome),
+                        InkWell(
+                            onTap: ()=>Get.offAll(SignInScreen()),
+                            child: Image.asset(AppImages.appBarHome)),
                       ],
                     ),
                   ),

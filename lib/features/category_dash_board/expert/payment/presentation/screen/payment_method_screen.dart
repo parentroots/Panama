@@ -4,6 +4,7 @@ import 'package:get/get.dart';
 import 'package:new_untitled/component/button/common_button.dart';
 import 'package:new_untitled/component/curved_background_widget/curved_background_widget.dart';
 import 'package:new_untitled/config/route/app_routes.dart';
+import 'package:new_untitled/features/category_dash_board/expert/payment/presentation/screen/payment_loading_screen.dart';
 import 'package:new_untitled/utils/constants/app_colors.dart';
 import 'package:new_untitled/utils/constants/app_images.dart';
 import 'package:new_untitled/utils/constants/app_string.dart';
@@ -128,8 +129,8 @@ class _PaymentMethodScreenState extends State<PaymentMethodScreen> {
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 52),
             child: CommonButton(
-              onTap: () => Get.toNamed(AppRoutes.pay_confirmation_screen),
-              titleText: AppString.continuePayment,
+              onTap: () => Get.to(ExpertPaymentLoadingScreen()),
+              titleText: "Continue",
             ),
           ),
 

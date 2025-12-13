@@ -30,24 +30,24 @@ class _CitizenSignUpScreenState extends State<CitizenSignUpScreen> {
       },
       )),
       backgroundColor: Colors.white,
-      body: SingleChildScrollView(
-        child: Column(
-          children: [
-            CommonCurvedWidget(
-              height: 120,
-              text: AppString.register,
-              imageSource: AppImages.appLogo,
-              textColor: AppColors.commonTextColor,
-            ),
-            SizedBox(height: 30.h,),
-        
-            SingleChildScrollView(
+      body: Column(
+        children: [
+          CommonCurvedWidget(
+            height: 120,
+            text: AppString.register,
+            imageSource: AppImages.appLogo,
+            textColor: AppColors.commonTextColor,
+          ),
+          SizedBox(height: 30.h,),
+
+          Expanded(
+            child: SingleChildScrollView(
               child: Column(
                 children: [
-                  
-                  
-                    
-              
+
+
+
+
               SizedBox(
                 height: 53,
                 child: Padding(
@@ -60,9 +60,9 @@ class _CitizenSignUpScreenState extends State<CitizenSignUpScreen> {
                   ),
                 ),
               ),
-              
+
               SizedBox(height: 33,),
-              
+
               SizedBox(
                 height: 53,
                 child: Padding(
@@ -79,7 +79,7 @@ class _CitizenSignUpScreenState extends State<CitizenSignUpScreen> {
 
 
                   SizedBox(height: 33,),
-              
+
               SizedBox(
                 height: 53,
                 child: Padding(
@@ -94,7 +94,7 @@ class _CitizenSignUpScreenState extends State<CitizenSignUpScreen> {
               ),
 
                   SizedBox(height: 33,),
-              
+
               SizedBox(
                 height: 53,
                 child: Padding(
@@ -110,7 +110,7 @@ class _CitizenSignUpScreenState extends State<CitizenSignUpScreen> {
 
 
                   SizedBox(height: 33,),
-              
+
               SizedBox(
                 height: 53,
                 child: Padding(
@@ -125,7 +125,7 @@ class _CitizenSignUpScreenState extends State<CitizenSignUpScreen> {
               ),
 
                   SizedBox(height: 49.h),
-              
+
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 52.w),
                 child: CommonButton(
@@ -136,16 +136,16 @@ class _CitizenSignUpScreenState extends State<CitizenSignUpScreen> {
               ),
 
                   SizedBox(height: 90.h,)
-              
-              
+
+
                 ],
               ),
-            )
-        
-        
-        
-          ],
-        ),
+            ),
+          )
+
+
+
+        ],
       ),
     );
   }

@@ -13,14 +13,14 @@ import 'package:new_untitled/utils/constants/app_string.dart';
 
 import '../../../../../../component/app_bar/common_app_bar.dart';
 
-class BilPlanScreen extends StatefulWidget {
-  const BilPlanScreen({super.key});
+class ExpertBilPlanScreen extends StatefulWidget {
+  const ExpertBilPlanScreen({super.key});
 
   @override
-  State<BilPlanScreen> createState() => _BilPlanScreenState();
+  State<ExpertBilPlanScreen> createState() => _ExpertBilPlanScreenState();
 }
 
-class _BilPlanScreenState extends State<BilPlanScreen> {
+class _ExpertBilPlanScreenState extends State<ExpertBilPlanScreen> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -44,53 +44,55 @@ class _BilPlanScreenState extends State<BilPlanScreen> {
 
           SizedBox(height: 34.h),
 
-          SingleChildScrollView(
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 69),
-                  child: CommonText(
-                    text: AppString.expertBillPlan,
-                    color: AppColors.commonTextColor,
-                    fontSize: 24,
-                    fontWeight: FontWeight.w700,
+          Expanded(
+            child: SingleChildScrollView(
+              child: Column(
+                children: [
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 69),
+                    child: CommonText(
+                      text: AppString.expertBillPlan,
+                      color: AppColors.commonTextColor,
+                      fontSize: 24,
+                      fontWeight: FontWeight.w700,
+                    ),
                   ),
-                ),
-                SizedBox(height: 67.h),
+                  SizedBox(height: 67.h),
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 30),
-                  child: Text(
-                    textAlign: TextAlign.center,
-                    AppString
-                        .accessevaluationrequestschatwithlawyersandtheprofessionaldirectory,
-                    style: TextStyle(fontSize: 17),
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 30),
+                    child: Text(
+                      textAlign: TextAlign.center,
+                      AppString
+                          .accessevaluationrequestschatwithlawyersandtheprofessionaldirectory,
+                      style: TextStyle(fontSize: 17),
+                    ),
                   ),
-                ),
 
-                SizedBox(height: 40),
+                  SizedBox(height: 40),
 
-                PricingCard(
-                  title: 'Profesional Expert',
-                  price: "\$5.00",
-                  subtitle: "+ ITBMS per month",
-                ),
-
-                SizedBox(height: 80.h),
-
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 52),
-                  child: CommonButton(
-                    onTap: () => Get.toNamed(AppRoutes.payment_method_screen),
-                    titleText: AppString.selectPaymentMethod,
-                    buttonHeight: 53,
+                  PricingCard(
+                    title: 'Profesional Expert',
+                    price: "\$5.00",
+                    subtitle: "+ ITBMS per month",
                   ),
-                ),
 
-                SizedBox(height: 82.h,)
+                  SizedBox(height: 80.h),
+
+                  Padding(
+                    padding: const EdgeInsets.symmetric(horizontal: 52),
+                    child: CommonButton(
+                      onTap: () => Get.toNamed(AppRoutes.payment_method_screen),
+                      titleText: AppString.selectPaymentMethod,
+                      buttonHeight: 53,
+                    ),
+                  ),
+
+                  SizedBox(height: 82.h,)
 
 
-              ],
+                ],
+              ),
             ),
           ),
         ],
