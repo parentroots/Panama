@@ -6,6 +6,7 @@ import '../../features/auth/change_password/presentation/controller/change_passw
 import '../../features/auth/forgot password/presentation/controller/forget_password_controller.dart';
 import '../../features/auth/sign in/presentation/controller/sign_in_controller.dart';
 import '../../features/auth/sign up/presentation/controller/sign_up_controller.dart';
+import '../../features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/important_articles_screen/controller/controller.dart';
 import '../../features/message/presentation/controller/chat_controller.dart';
 import '../../features/message/presentation/controller/message_controller.dart';
 import '../../features/notifications/presentation/controller/notifications_controller.dart';
@@ -28,6 +29,7 @@ class DependencyInjection extends Bindings {
     Get.lazyPut(() => SettingController(), fenix: true);
     Get.lazyPut(() => PrivacyPolicyController(), fenix: true);
     Get.lazyPut(() => TermsOfServicesController(), fenix: true);
-    Get.lazyPut(() => CasesScreenController(), fenix: true);
+    Get.lazyPut(() => CitizenCasesScreenController(), fenix: true);
+    Get.lazyPut(() => CitizenImportantArticlesController(), fenix: true);
   }
 }

@@ -15,9 +15,9 @@ class NewSectionCard extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: EdgeInsets.symmetric(horizontal: 30.w),
+      padding: EdgeInsets.symmetric(horizontal: 20.w),
       child: Container(
-        height: 117.h,
+        height: 125.h,
         width: double.maxFinite,
         decoration: BoxDecoration(
           color: Color(0xffF6F6F6),
@@ -29,16 +29,16 @@ class NewSectionCard extends StatelessWidget {
             crossAxisAlignment: CrossAxisAlignment.start,
 
             children: [
-              CommonText(text: title,fontSize: 16,color: AppColors.nameTextColor),
-              CommonText(text: description),
+              CommonText(text: title,fontSize: 22,color: AppColors.nameTextColor),
+              CommonText(text: description,fontSize: 18,),
 
-              SizedBox(height: 30.h,),
+              SizedBox(height: 25.h,),
 
               Row(children: [
                 Icon(Icons.watch_later_outlined,color: Color(0xff458AFF),),
 
                 SizedBox(width: 12.w,),
-                CommonText(text: 'Remaining: ${time}',fontSize: 12,)
+                CommonText(text: 'Remaining: ${time}',fontSize: 14,)
               ],)
 
             ],

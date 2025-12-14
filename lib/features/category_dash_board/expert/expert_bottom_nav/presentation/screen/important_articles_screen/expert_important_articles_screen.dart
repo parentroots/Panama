@@ -2,19 +2,16 @@ import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+
 import 'package:new_untitled/component/text/common_text.dart';
 import 'package:new_untitled/features/category_dash_board/expert/expert_bottom_nav/expert_bottom_nav_screen.dart';
-import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/lawyer_bottom_nav_screen.dart';
-import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/controller/cases_screen_controller.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/cases_screen/lawyer_case_details_screen.dart';
-import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/active_section_card.dart';
-import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/closed_section_card.dart' hide AppColors;
-import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/new_section_card.dart';
 
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
 import '../../../../../../../utils/constants/app_images.dart';
 import '../../../../home/expert_home_screen.dart';
+
 import '../../widget/advertising_card.dart';
 import '../../widget/criminal_card.dart';
 
@@ -22,396 +19,231 @@ class ExpertImportantArticlesScreen extends StatefulWidget {
   const ExpertImportantArticlesScreen({super.key});
 
   @override
-  State<ExpertImportantArticlesScreen> createState() => _ExpertImportantArticlesScreenState();
+  State<ExpertImportantArticlesScreen> createState() =>
+      _ExpertImportantArticlesScreenState();
 }
 
-class _ExpertImportantArticlesScreenState extends State<ExpertImportantArticlesScreen> {
+class _ExpertImportantArticlesScreenState
+    extends State<ExpertImportantArticlesScreen> {
 
+  int selectedIndex = 0;
+  final PageController pageController = PageController();
 
-  Future<void>onTapCaseItem()async{
-    Get.to(CaseDetailsScreen());
+  void changeIndex(int index) {
+    setState(() {
+      selectedIndex = index;
+    });
 
+    pageController.animateToPage(
+      index,
+      duration: const Duration(milliseconds: 300),
+      curve: Curves.easeInOut,
+    );
   }
 
+  Future<void> onTapCaseItem() async {
+    Get.to(() => CaseDetailsScreen());
+  }
+
+  @override
+  void dispose() {
+    pageController.dispose();
+    super.dispose();
+  }
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<CasesScreenController>(
-      builder: (controller) {
-        return Scaffold(
-          appBar: HomeBottomCurvedAppBar(
-            onLeadingPressed: ()=>Get.to(ExpertHomeScreen()),
-            onBackPressed: ()=>Get.back(),
-            height: 140,
-            backgroundColor: AppColors.backgroundColor,
-            backImage: AppImages.back,
-            leadingImage: AppImages.appBarHome,
-            actionImage: AppImages.language,
-            middleImage: AppImages.appLogo,
-          ),
-          bottomNavigationBar: ExpertBottomNavBar(currentIndex: 2),
-          body: Padding(
-            padding: const EdgeInsets.symmetric(horizontal: 26),
-            child: Column(
-              children: [
-                Padding(
-                  padding: const EdgeInsets.only(top: 36),
-                  child: Row(
-                    children: [
-                      Image.asset(AppImages.files, height: 26.w, width: 26.w),
-                      SizedBox(width: 8.w),
+    return Scaffold(
+      appBar: HomeBottomCurvedAppBar(
+        onLeadingPressed: () => Get.to(() => ExpertHomeScreen()),
+        onBackPressed: () => Get.back(),
+        height: 140,
+        backgroundColor: AppColors.backgroundColor,
+        backImage: AppImages.back,
+        leadingImage: AppImages.appBarHome,
+        actionImage: AppImages.language,
+        middleImage: AppImages.appLogo,
+      ),
+      bottomNavigationBar: ExpertBottomNavBar(currentIndex: 2),
+      body: Padding(
+        padding: const EdgeInsets.symmetric(horizontal: 26),
+        child: Column(
+          children: [
 
-                      CommonText(
-                        text: "Important Articles",
-                        fontSize: 24,
-                        color: Color(0xff2E5089),
-                      ),
-                    ],
+            /// TITLE
+            Padding(
+              padding: const EdgeInsets.only(top: 36),
+              child: Row(
+                children: [
+                  Image.asset(AppImages.files, height: 26.w, width: 26.w),
+                  SizedBox(width: 8.w),
+                  CommonText(
+                    text: "Important Articles",
+                    fontSize: 24,
+                    color: const Color(0xff2E5089),
                   ),
-                ),
+                ],
+              ),
+            ),
 
-                SizedBox(height: 40.h),
+            SizedBox(height: 40.h),
 
-                Column(
+            /// TABS
+            Column(
+              children: [
+
+                Row(
                   children: [
-
-
-                    Row(
-                      children: [
-                        InkWell(
-                          onTap: () => controller.changeIndex(0),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-
-
-                              Container(
-                                height:40,
-                                width: 80,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(26),
-                                  color: Color(0xffD5FFED)
-
-                                ),
-                                child: Center(
-                                  child: CommonText(
-
-                                    text: 'Criminal',
-                                    fontSize: 16,
-                                    color:
-                                    controller.selectedIndex == 0
-                                        ? Colors.green
-                                        : AppColors.nameTextColor,
-                                  ),
-                                ),
-                              ),
-
-
-
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 20.w),
-                        InkWell(
-                          onTap: () => controller.changeIndex(1),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-
-
-                              Container(
-                                height:40,
-                                width: 80,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(26),
-                                    color: Color(0xffC2DCFF)
-
-                                ),
-                                child: Center(
-                                  child: CommonText(
-
-                                    text: 'Civil',
-                                    fontSize: 16,
-                                    color:
-                                    controller.selectedIndex == 1
-                                        ? Colors.green
-                                        : AppColors.nameTextColor,
-                                  ),
-                                ),
-                              ),
-
-
-
-                            ],
-                          ),
-                        ),
-                        SizedBox(width: 20.w),
-
-                        InkWell(
-                          onTap: () => controller.changeIndex(2),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-
-
-                              Container(
-                                height:40,
-                                width: 80,
-                                decoration: BoxDecoration(
-                                  borderRadius: BorderRadius.circular(26),
-                                    color: Color(0xffFAD9CD)
-
-                                ),
-                                child: Center(
-                                  child: CommonText(
-
-                                    text: 'Labour',
-                                    fontSize: 16,
-                                    color:
-                                    controller.selectedIndex == 2
-                                        ? Colors.green
-                                        : AppColors.nameTextColor,
-                                  ),
-                                ),
-                              ),
-
-
-
-                            ],
-                          ),
-                        ),
-                      ],
-                    ),
-
-
-                    SizedBox(height: 12,),
-
-
-                    SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        children: [
-                          InkWell(
-                            onTap: () => controller.changeIndex(3),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-
-
-                                Container(
-                                  height:40,
-                                  width: 80,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(26),
-                                      color: Color(0xffF9E8A3)
-
-                                  ),
-                                  child: Center(
-                                    child: CommonText(
-
-                                      text: 'Family',
-                                      fontSize: 16,
-                                      color:
-                                      controller.selectedIndex == 3
-                                          ? Colors.green
-                                          : AppColors.nameTextColor,
-                                    ),
-                                  ),
-                                ),
-
-
-
-                              ],
-                            ),
-                          ),
-                          SizedBox(width: 20.w),
-                          InkWell(
-                            onTap: () => controller.changeIndex(4),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-
-
-                                Container(
-                                  height:40,
-                                  width: 120,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(26),
-                                      color: Color(0xffC2DCFF)
-
-                                  ),
-                                  child: Center(
-                                    child: CommonText(
-
-                                      text: 'Immigration',
-                                      fontSize: 16,
-                                      color:
-                                      controller.selectedIndex == 4
-                                          ? Colors.green
-                                          : AppColors.nameTextColor,
-                                    ),
-                                  ),
-                                ),
-
-
-
-                              ],
-                            ),
-                          ),
-                          SizedBox(width: 20.w),
-
-                          InkWell(
-                            onTap: () => controller.changeIndex(5),
-                            child: Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-
-
-                                Container(
-                                  height:40,
-                                  width: 80,
-                                  decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(26),
-                                      color: Color(0xffD9D9D9)
-
-                                  ),
-                                  child: Center(
-                                    child:Icon(Icons.add_circle_outline_rounded),
-                                  ),
-                                ),
-
-
-
-                              ],
-                            ),
-                          ),
-                        ],
-                      ),
-                    )
-
-
+                    buildTab("Criminal", 0, const Color(0xffD5FFED)),
+                    SizedBox(width: 20.w),
+                    buildTab("Civil", 1, const Color(0xffC2DCFF)),
+                    SizedBox(width: 20.w),
+                    buildTab("Labour", 2, const Color(0xffFAD9CD)),
                   ],
                 ),
 
-                Expanded(
-                  child: PageView(
-                    controller: controller.controller,
-                    onPageChanged: (index) {
-                      controller.changeIndex(index);
-                    },
+                SizedBox(height: 12),
+
+                SingleChildScrollView(
+                  scrollDirection: Axis.horizontal,
+                  child: Row(
                     children: [
-                      Column(
-                        children: [
-                          SizedBox(height: 45.h),
-
-                          Expanded(
-                            child: ListView.builder(
-                              itemCount: 10,
-                              itemBuilder: (context, index) {
-                                return Column(
-                                  children: [
-                                    SizedBox(height: 20),
-                                    CriminalCard(),
-                                  ],
-                                );
-                              },
-                            ),
-                          ),
-                        ],
+                      buildTab("Family", 3, const Color(0xffF9E8A3)),
+                      SizedBox(width: 20.w),
+                      buildTab(
+                        "Immigration",
+                        4,
+                        const Color(0xffC2DCFF),
+                        width: 120,
                       ),
-
-                      Column(
-                        children: [
-                          SizedBox(height: 45.h),
-
-                          Expanded(
-                            child: ListView.builder(
-                              itemCount: 10,
-                              itemBuilder: (context, index) {
-                                return Column(
-                                  children: [
-                                    SizedBox(height: 20),
-                                    CriminalCard(),
-                                  ],
-                                );
-                              },
-                            ),
+                      SizedBox(width: 20.w),
+                      InkWell(
+                        onTap: () => changeIndex(5),
+                        child: Container(
+                          height: 40,
+                          width: 80,
+                          decoration: BoxDecoration(
+                            borderRadius: BorderRadius.circular(26),
+                            color: const Color(0xffD9D9D9),
                           ),
-                        ],
-                      ),
-                      Column(
-                        children: [
-                          SizedBox(height: 45.h),
-
-                          Expanded(
-                            child: ListView.builder(
-                              itemCount: 10,
-                              itemBuilder: (context, index) {
-                                return Column(
-                                  children: [
-                                    CriminalCard(),
-                                    AdvertisingCardArticles()
-
-                                  ],
-                                );
-                              },
-                            ),
+                          child: const Center(
+                            child: Icon(Icons.add_circle_outline_rounded),
                           ),
-                        ],
+                        ),
                       ),
-
-
-                      Column(
-                        children: [
-                          SizedBox(height: 45.h),
-
-                          Expanded(
-                            child: ListView.builder(
-                              itemCount: 10,
-                              itemBuilder: (context, index) {
-                                return Column(
-                                  children: [
-                                    CriminalCard(),
-                                  ],
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-
-
-
-                      Column(
-                        children: [
-                          SizedBox(height: 45.h),
-
-                          Expanded(
-                            child: ListView.builder(
-                              itemCount: 10,
-                              itemBuilder: (context, index) {
-                                return Column(
-                                  children: [
-                                    CriminalCard(),
-                                    AdvertisingCardArticles()
-                                  ],
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-
-
-
                     ],
                   ),
                 ),
               ],
             ),
+
+            /// PAGE VIEW
+            Expanded(
+              child: PageView(
+                controller: pageController,
+                onPageChanged: (index) {
+                  setState(() {
+                    selectedIndex = index;
+                  });
+                },
+                children: [
+
+                  /// Criminal
+                  buildListPage(
+                    List.generate(10, (_) => CriminalCard()),
+                  ),
+
+                  /// Civil
+                  buildListPage(
+                    List.generate(10, (_) => CriminalCard()),
+                  ),
+
+                  /// Labour
+                  buildListPage(
+                    List.generate(
+                      10,
+                          (_) => Column(
+                        children: [
+                          CriminalCard(),
+                          AdvertisingCardArticles(),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  /// Family
+                  buildListPage(
+                    List.generate(10, (_) => CriminalCard()),
+                  ),
+
+                  /// Immigration
+                  buildListPage(
+                    List.generate(
+                      10,
+                          (_) => Column(
+                        children: [
+                          CriminalCard(),
+                          AdvertisingCardArticles(),
+                        ],
+                      ),
+                    ),
+                  ),
+
+                  /// Add Page
+                  const Center(
+                    child: Text("More Content Page"),
+                  ),
+                ],
+              ),
+            ),
+          ],
+        ),
+      ),
+    );
+  }
+
+  /// TAB WIDGET
+  Widget buildTab(
+      String text,
+      int index,
+      Color color, {
+        double width = 80,
+      }) {
+    return InkWell(
+      onTap: () => changeIndex(index),
+      child: Container(
+        height: 40,
+        width: width,
+        decoration: BoxDecoration(
+          borderRadius: BorderRadius.circular(26),
+          color: color,
+        ),
+        child: Center(
+          child: CommonText(
+            text: text,
+            fontSize: 16,
+            color: selectedIndex == index
+                ? Colors.green
+                : AppColors.nameTextColor,
           ),
-        );
-      },
+        ),
+      ),
+    );
+  }
+
+  /// LIST PAGE BUILDER
+  Widget buildListPage(List<Widget> children) {
+    return Column(
+      children: [
+        SizedBox(height: 45.h),
+        Expanded(
+          child: ListView.separated(
+            itemCount: children.length,
+            separatorBuilder: (_, __) => const SizedBox(height: 20),
+            itemBuilder: (_, index) => children[index],
+          ),
+        ),
+      ],
     );
   }
 }

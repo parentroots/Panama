@@ -29,91 +29,88 @@ class SignInScreen extends StatelessWidget {
             fit: BoxFit.cover,   // Full screen fill
           ),
         ),
-        child: Padding(
-          padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 24.h),
-          child: SingleChildScrollView(
-            child: Column(
-              children: [
-                40.height,
-                Padding(
-                  padding: const EdgeInsets.only(left: 25),
-                  child: Row(
-                    mainAxisAlignment: MainAxisAlignment.start,
-                    children: [
-                      InkWell(
-                        onTap:Get.back,
-                          child: Image.asset(AppImages.back)),
-                    ],
-                  ),
+        child: SingleChildScrollView(
+          child: Column(
+            children: [
+              60.height,
+              Padding(
+                padding: const EdgeInsets.only(left: 25),
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.start,
+                  children: [
+                    InkWell(
+                      onTap:Get.back,
+                        child: Image.asset(AppImages.back)),
+                  ],
                 ),
-                106.height,
-                const Center(
-                  child: CommonImage(imageSrc: AppImages.appLogo, size: 70),
+              ),
+              106.height,
+              const Center(
+                child: CommonImage(imageSrc: AppImages.appLogo, size: 70),
+              ),
+
+              60.height,
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 69),
+                child: Column(
+                  children: [
+
+
+                    CommonText(
+                      text: 'Sign In',
+                      fontSize: 24,
+                      color: AppColors.commonButtonBorderColor,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ],
                 ),
+              ),
 
-                60.height,
+              80.height,
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 69),
-                  child: Column(
-                    children: [
-
-
-                      CommonText(
-                        text: 'Sign In',
-                        fontSize: 24,
-                        color: AppColors.commonButtonBorderColor,
-                        fontWeight: FontWeight.w700,
-                      ),
-                    ],
-                  ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 52),
+                child: CommonTextField(
+                  hintText: 'E-mail',
+                               hintTextColor: Color(0xffE1D49F),
+                               fillColor: Color(0xff16253E),
+                  borderRadius: 26.h,
                 ),
+              ),
 
-                80.height,
+              40.height,
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 52),
-                  child: CommonTextField(
-                    hintText: 'E-mail',
-                                 hintTextColor: Color(0xffE1D49F),
-                                 fillColor: Color(0xff16253E),
-                    borderRadius: 26.h,
-                  ),
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 52),
+                child: CommonTextField(
+                  hintText: 'Password',
+                  hintTextColor: Color(0xffE1D49F),
+                  fillColor: Color(0xff16253E),
+                  borderRadius: 26.h,
                 ),
-
-                40.height,
-
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 52),
-                  child: CommonTextField(
-                    hintText: 'Password',
-                    hintTextColor: Color(0xffE1D49F),
-                    fillColor: Color(0xff16253E),
-                    borderRadius: 26.h,
-                  ),
-                ),
+              ),
 
 
-                14.height,
-                
-                CommonText(text: 'You forgot your password',fontSize: 11,fontWeight: FontWeight.w400,color: Color(0xffE1D49F),),
+              14.height,
+
+              CommonText(text: 'You forgot your password',fontSize: 11,fontWeight: FontWeight.w400,color: Color(0xffE1D49F),),
 
 
-                SizedBox(height: 102,),
-                
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 52),
-                  child: CommonButton(
-                    onTap: ()=>Get.to(LoginWithCategoryScreen()),
-                    titleText: 'Enter',buttonRadius: 26,buttonColor: Color(0xFFFFFFFF),titleColor: Color(0xff104B5B),titleSize: 17,),
-                ),
+              SizedBox(height: 70,),
+
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 52),
+                child: CommonButton(
+                  onTap: ()=>Get.to(LoginWithCategoryScreen()),
+                  titleText: 'Enter',buttonRadius: 26,buttonColor: Color(0xFFFFFFFF),titleColor: Color(0xff104B5B),titleSize: 17,),
+              ),
 
 
-                SizedBox(height: 223.h,)
+              SizedBox(height: 223.h,)
 
 
-              ],
-            ),
+            ],
           ),
         ),
       ),

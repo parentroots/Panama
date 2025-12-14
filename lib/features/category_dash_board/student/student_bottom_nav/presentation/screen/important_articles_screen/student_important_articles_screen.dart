@@ -36,7 +36,7 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
 
   @override
   Widget build(BuildContext context) {
-    return GetBuilder<CasesScreenController>(
+    return GetBuilder<CitizenCasesScreenController>(
       builder: (controller) {
         return Scaffold(
           appBar: HomeBottomCurvedAppBar(
