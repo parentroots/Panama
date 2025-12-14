@@ -48,7 +48,7 @@ class _LawyerImportantArticlesScreenState extends State<LawyerImportantArticlesS
             actionImage: AppImages.language,
             middleImage: AppImages.appLogo,
           ),
-          bottomNavigationBar: LawyerBottomNavBar(currentIndex: 1),
+          bottomNavigationBar: LawyerBottomNavBar(currentIndex: 2),
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 26),
             child: Column(

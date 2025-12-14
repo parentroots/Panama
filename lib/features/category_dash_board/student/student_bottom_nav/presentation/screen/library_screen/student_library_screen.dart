@@ -36,7 +36,7 @@ class _StudentLibraryScreenState extends State<StudentLibraryScreen> {
       ),
 
 
-      bottomNavigationBar: const StudentBottomNavBar(currentIndex: 1),
+      bottomNavigationBar: StudentBottomNavBar(currentIndex: 1),
 
       body: SingleChildScrollView(
         child: Column(

@@ -10,6 +10,7 @@ import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_n
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/closed_section_card.dart' hide AppColors;
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/new_section_card.dart';
 import 'package:new_untitled/features/category_dash_board/student/home/student_home_screen.dart';
+import 'package:new_untitled/features/category_dash_board/student/student_bottom_nav/student_bottom_nav_screen.dart';
 
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
 import '../../../../../../../utils/constants/app_colors.dart';
@@ -48,7 +49,7 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
             actionImage: AppImages.language,
             middleImage: AppImages.appLogo,
           ),
-          bottomNavigationBar: LawyerBottomNavBar(currentIndex: 1),
+          bottomNavigationBar: StudentBottomNavBar(currentIndex: 1),
           body: Padding(
             padding: const EdgeInsets.symmetric(horizontal: 26),
             child: Column(
@@ -186,103 +187,106 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
                     SizedBox(height: 12,),
 
 
-                    Row(
-                      children: [
-                        InkWell(
-                          onTap: () => controller.changeIndex(3),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
+                    SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        children: [
+                          InkWell(
+                            onTap: () => controller.changeIndex(3),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
 
 
-                              Container(
-                                height:40,
-                                width: 80,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(26),
-                                    color: Color(0xffF9E8A3)
+                                Container(
+                                  height:40,
+                                  width: 80,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(26),
+                                      color: Color(0xffF9E8A3)
 
-                                ),
-                                child: Center(
-                                  child: CommonText(
+                                  ),
+                                  child: Center(
+                                    child: CommonText(
 
-                                    text: 'Family',
-                                    fontSize: 16,
-                                    color:
-                                    controller.selectedIndex == 3
-                                        ? Colors.green
-                                        : AppColors.nameTextColor,
+                                      text: 'Family',
+                                      fontSize: 16,
+                                      color:
+                                      controller.selectedIndex == 3
+                                          ? Colors.green
+                                          : AppColors.nameTextColor,
+                                    ),
                                   ),
                                 ),
-                              ),
 
 
 
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 20.w),
-                        InkWell(
-                          onTap: () => controller.changeIndex(4),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
+                          SizedBox(width: 20.w),
+                          InkWell(
+                            onTap: () => controller.changeIndex(4),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
 
 
-                              Container(
-                                height:40,
-                                width: 120,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(26),
-                                    color: Color(0xffC2DCFF)
+                                Container(
+                                  height:40,
+                                  width: 120,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(26),
+                                      color: Color(0xffC2DCFF)
 
-                                ),
-                                child: Center(
-                                  child: CommonText(
+                                  ),
+                                  child: Center(
+                                    child: CommonText(
 
-                                    text: 'Immigration',
-                                    fontSize: 16,
-                                    color:
-                                    controller.selectedIndex == 4
-                                        ? Colors.green
-                                        : AppColors.nameTextColor,
+                                      text: 'Immigration',
+                                      fontSize: 16,
+                                      color:
+                                      controller.selectedIndex == 4
+                                          ? Colors.green
+                                          : AppColors.nameTextColor,
+                                    ),
                                   ),
                                 ),
-                              ),
 
 
 
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                        SizedBox(width: 20.w),
+                          SizedBox(width: 20.w),
 
-                        InkWell(
-                          onTap: () => controller.changeIndex(5),
-                          child: Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
+                          InkWell(
+                            onTap: () => controller.changeIndex(5),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
 
 
-                              Container(
-                                height:40,
-                                width: 80,
-                                decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(26),
-                                    color: Color(0xffD9D9D9)
+                                Container(
+                                  height:40,
+                                  width: 80,
+                                  decoration: BoxDecoration(
+                                      borderRadius: BorderRadius.circular(26),
+                                      color: Color(0xffD9D9D9)
 
+                                  ),
+                                  child: Center(
+                                    child:Icon(Icons.add_circle_outline_rounded),
+                                  ),
                                 ),
-                                child: Center(
-                                  child:Icon(Icons.add_circle_outline_rounded),
-                                ),
-                              ),
 
 
 
-                            ],
+                              ],
+                            ),
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     )
 
 

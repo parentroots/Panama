@@ -122,7 +122,8 @@ class _LawyerProfileEditScreenState extends State<LawyerProfileEditScreen> {
                                   child: Center(
                                     child: Row(
                                       children: [
-                                        Image.asset(AppImages.editImage),
+                                        // Image.asset(AppImages.editImage),
+                                        SvgPicture.asset(AppImages.editImage),
                                         SizedBox(width: 8.w),
                                         InkWell(
                                           onTap: onTapSelectImage,

@@ -2,7 +2,8 @@ import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
 
-class HomeBottomCurvedAppBar extends StatelessWidget implements PreferredSizeWidget {
+class HomeBottomCurvedAppBar extends StatelessWidget
+    implements PreferredSizeWidget {
   const HomeBottomCurvedAppBar({
     super.key,
     required this.height,
@@ -46,32 +47,35 @@ class HomeBottomCurvedAppBar extends StatelessWidget implements PreferredSizeWid
             padding: EdgeInsets.symmetric(horizontal: 20.w, vertical: 10.h),
             child: Row(
               children: [
-                /// ------ LEFT ICONS ------
-                Row(
-                  children: [
-                    GestureDetector(
-                      onTap: onBackPressed ?? () => Get.back(),
-                      child: Image.asset(
-                        backImage,
-                        color: Colors.white,
-                        width: 24.w,
-                        height: 24.h,
+                /// ---------- LEFT (FIXED WIDTH) ----------
+                SizedBox(
+                  width: 70.w, // same as right
+                  child: Row(
+                    children: [
+                      GestureDetector(
+                        onTap: onBackPressed ?? () => Get.back(),
+                        child: Image.asset(
+                          backImage,
+                          color: Colors.white,
+                          width: 24.w,
+                          height: 24.h,
+                        ),
                       ),
-                    ),
-                    SizedBox(width: 10.w),
-                    GestureDetector(
-                      onTap: onLeadingPressed,
-                      child: Image.asset(
-                        leadingImage,
-                        color: Colors.white,
-                        width: 24.w,
-                        height: 24.h,
+                      SizedBox(width: 10.w),
+                      GestureDetector(
+                        onTap: onLeadingPressed,
+                        child: Image.asset(
+                          leadingImage,
+                          color: Colors.white,
+                          width: 24.w,
+                          height: 24.h,
+                        ),
                       ),
-                    ),
-                  ],
+                    ],
+                  ),
                 ),
 
-                /// ------ MIDDLE IMAGE ------
+                /// ---------- MIDDLE (PERFECT CENTER) ----------
                 Expanded(
                   child: Center(
                     child: Image.asset(
@@ -83,13 +87,19 @@ class HomeBottomCurvedAppBar extends StatelessWidget implements PreferredSizeWid
                   ),
                 ),
 
-                /// ------ RIGHT ACTION ICON ------
-                GestureDetector(
-                  onTap: onActionPressed,
-                  child: Image.asset(
-                    actionImage,
-                    width: 24.w,
-                    height: 24.h,
+                /// ---------- RIGHT (FIXED WIDTH) ----------
+                SizedBox(
+                  width: 70.w, // same as left
+                  child: Align(
+                    alignment: Alignment.centerRight,
+                    child: GestureDetector(
+                      onTap: onActionPressed,
+                      child: Image.asset(
+                        actionImage,
+                        width: 24.w,
+                        height: 24.h,
+                      ),
+                    ),
                   ),
                 ),
               ],
