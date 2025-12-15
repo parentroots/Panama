@@ -56,15 +56,18 @@ class LawyerAskScreen extends StatelessWidget {
                 child: Padding(
                   padding: const EdgeInsets.symmetric(horizontal: 12,vertical: 5),
                   child: Expanded(
-                    child: TextFormField(
-                      decoration: InputDecoration(
-                        hintText: 'Write your question here...',
-                        hintStyle: TextStyle(
-                          fontSize: 17.sp
+                    child: SizedBox(
+                      height: 350.h,
+                      child: TextFormField(
+                        decoration: InputDecoration(
+                          hintText: 'Write your question here...',
+                          hintStyle: TextStyle(
+                            fontSize: 17.sp
+                          ),
+                          border: InputBorder.none
+                          )
                         ),
-                        border: InputBorder.none
-                        )
-                      ),
+                    ),
                   ),
                 ),
         

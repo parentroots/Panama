@@ -46,7 +46,7 @@ class _LawyerChatBotCategoryScreenState extends State<LawyerChatBotCategoryScree
       ),
 
       body: Padding(
-        padding: const EdgeInsets.symmetric(horizontal: 35, vertical: 40),
+        padding:  EdgeInsets.symmetric(horizontal: 10.w, vertical: 40),
         child: SingleChildScrollView(
           child: Column(
             crossAxisAlignment: CrossAxisAlignment.center,
@@ -113,20 +113,23 @@ class _LawyerChatBotCategoryScreenState extends State<LawyerChatBotCategoryScree
               // Another Question Button
               InkWell(
                 onTap: onTapQuestionButton,
-                child: Container(
-                  height: 55,
-                  width: double.infinity,
-                  decoration: BoxDecoration(
-                    borderRadius: BorderRadius.circular(30),
-                    color: const Color(0xff395886),
-                  ),
-                  child: Center(
-                    child: Text(
-                      "My question is another",
-                      style: TextStyle(
-                        color: Colors.white,
-                        fontSize: 17,
-                        fontWeight: FontWeight.w600,
+                child: Padding(
+                  padding: EdgeInsets.symmetric(horizontal: 52.w),
+                  child: Container(
+                    height: 55,
+                    width: double.infinity,
+                    decoration: BoxDecoration(
+                      borderRadius: BorderRadius.circular(30),
+                      color: const Color(0xff395886),
+                    ),
+                    child: Center(
+                      child: Text(
+                        "My question is another",
+                        style: TextStyle(
+                          color: Colors.white,
+                          fontSize: 17,
+                          fontWeight: FontWeight.w600,
+                        ),
                       ),
                     ),
                   ),

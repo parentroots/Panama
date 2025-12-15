@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get.dart';
+import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/citizen_bottom_nav_screen.dart';
 import 'package:new_untitled/features/category_dash_board/citizen/citizen_bottom_nav/presentation/screen/chat_bot_screen/lawyer_founded_loading_screen.dart';
 
 import '../../../../../../../component/curved_background_widget/home_bottom_curved_app_bar.dart';
@@ -23,7 +24,7 @@ class _ChangeNewLawyerScreenState extends State<ChangeNewLawyerScreen> {
   Widget build(BuildContext context) {
     return Scaffold(
       backgroundColor: Colors.white,
-      bottomNavigationBar: StudentBottomNavBar(currentIndex: 0),
+      bottomNavigationBar: CitizenBottomNavBar(currentIndex: 0),
       appBar: HomeBottomCurvedAppBar(
         onLeadingPressed: ()=>Get.to(CitizenHomeScreen()),
         onBackPressed: ()=>Get.back(),
@@ -100,7 +101,7 @@ class _ChangeNewLawyerScreenState extends State<ChangeNewLawyerScreen> {
                 // 🔘 Send Button
                 Center(
                   child: Padding(
-                    padding:EdgeInsets.symmetric(horizontal: 53.h),
+                    padding:EdgeInsets.symmetric(horizontal: 30.h),
                     child: Container(
                       height: 53,
                       width: double.infinity,
@@ -132,7 +133,7 @@ class _ChangeNewLawyerScreenState extends State<ChangeNewLawyerScreen> {
                 // 🔘 Contact Lawyer Button
                 Center(
                   child: Padding(
-                    padding: EdgeInsets.symmetric(horizontal: 53.h),
+                    padding: EdgeInsets.symmetric(horizontal: 30.h),
                     child: Container(
                       width: double.infinity,
                       decoration: BoxDecoration(
