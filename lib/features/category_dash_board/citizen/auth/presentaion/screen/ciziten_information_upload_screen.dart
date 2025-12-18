@@ -44,6 +44,9 @@ class _CitizenInformationUploadScreenState
 
           SizedBox(height: 74.h),
 
+
+
+
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 69),
             child: CommonText(
@@ -71,6 +74,7 @@ class _CitizenInformationUploadScreenState
 
 
               ),
+
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
@@ -92,7 +96,7 @@ class _CitizenInformationUploadScreenState
 
                   CircleAvatar(
                     radius: 15.r,
-                    backgroundColor: Color(0xff2E5089),
+                    backgroundColor: Color(0xff2E5089).withOpacity(0.5),
                       child: Icon(Icons.arrow_drop_up,color: Colors.white,)),
                   SizedBox(width: 15.w,),
 
@@ -102,8 +106,9 @@ class _CitizenInformationUploadScreenState
             ),
           ),
 
-          SizedBox(height: 30),
 
+          SizedBox(height: 30),
+          
           Padding(
             padding: EdgeInsets.symmetric(horizontal: 52.w),
             child: CommonButton(

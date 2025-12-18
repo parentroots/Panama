@@ -7,7 +7,8 @@ import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_n
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/controller/cases_screen_controller.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/screen/cases_screen/lawyer_case_details_screen.dart';
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/active_section_card.dart';
-import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/closed_section_card.dart' hide AppColors;
+import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/closed_section_card.dart'
+    hide AppColors;
 import 'package:new_untitled/features/category_dash_board/lawyer/lawyer_bottom_nav/presentation/widget/new_section_card.dart';
 import 'package:new_untitled/features/category_dash_board/student/home/student_home_screen.dart';
 import 'package:new_untitled/features/category_dash_board/student/student_bottom_nav/student_bottom_nav_screen.dart';
@@ -22,17 +23,15 @@ class StudentImportantArticlesScreen extends StatefulWidget {
   const StudentImportantArticlesScreen({super.key});
 
   @override
-  State<StudentImportantArticlesScreen> createState() => _StudentImportantArticlesScreenState();
+  State<StudentImportantArticlesScreen> createState() =>
+      _StudentImportantArticlesScreenState();
 }
 
-class _StudentImportantArticlesScreenState extends State<StudentImportantArticlesScreen> {
-
-
-  Future<void>onTapCaseItem()async{
+class _StudentImportantArticlesScreenState
+    extends State<StudentImportantArticlesScreen> {
+  Future<void> onTapCaseItem() async {
     Get.to(CaseDetailsScreen());
-
   }
-
 
   @override
   Widget build(BuildContext context) {
@@ -40,8 +39,8 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
       builder: (controller) {
         return Scaffold(
           appBar: HomeBottomCurvedAppBar(
-            onLeadingPressed: ()=>Get.to(StudentHomeScreen()),
-            onBackPressed: ()=>Get.back(),
+            onLeadingPressed: () => Get.to(StudentHomeScreen()),
+            onBackPressed: () => Get.back(),
             height: 140,
             backgroundColor: AppColors.backgroundColor,
             backImage: AppImages.back,
@@ -64,7 +63,7 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
                       CommonText(
                         text: "Important Articles",
                         fontSize: 24,
-                        color: Color(0xff2E5089),
+                        color: Color(0xffD5FFED),
                       ),
                     ],
                   ),
@@ -74,8 +73,6 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
 
                 Column(
                   children: [
-
-
                     Row(
                       children: [
                         InkWell(
@@ -83,31 +80,24 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-
-
                               Container(
-                                height:40,
+                                height: 40,
                                 width: 80,
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(26),
-                                    color: Color(0xffD5FFED)
-
+                                  borderRadius: BorderRadius.circular(26),
+                                  color: Color(0xffD5FFED),
                                 ),
                                 child: Center(
                                   child: CommonText(
-
                                     text: 'Criminal',
                                     fontSize: 16,
                                     color:
-                                    controller.selectedIndex == 0
-                                        ? Colors.green
-                                        : AppColors.nameTextColor,
+                                        controller.selectedIndex == 0
+                                            ? Colors.green
+                                            : AppColors.nameTextColor,
                                   ),
                                 ),
                               ),
-
-
-
                             ],
                           ),
                         ),
@@ -117,31 +107,24 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-
-
                               Container(
-                                height:40,
+                                height: 40,
                                 width: 80,
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(26),
-                                    color: Color(0xffC2DCFF)
-
+                                  borderRadius: BorderRadius.circular(26),
+                                  color: Color(0xffC2DCFF),
                                 ),
                                 child: Center(
                                   child: CommonText(
-
                                     text: 'Civil',
                                     fontSize: 16,
                                     color:
-                                    controller.selectedIndex == 1
-                                        ? Colors.green
-                                        : AppColors.nameTextColor,
+                                        controller.selectedIndex == 1
+                                            ? Colors.green
+                                            : AppColors.nameTextColor,
                                   ),
                                 ),
                               ),
-
-
-
                             ],
                           ),
                         ),
@@ -152,40 +135,31 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
                           child: Column(
                             mainAxisSize: MainAxisSize.min,
                             children: [
-
-
                               Container(
-                                height:40,
+                                height: 40,
                                 width: 80,
                                 decoration: BoxDecoration(
-                                    borderRadius: BorderRadius.circular(26),
-                                    color: Color(0xffFAD9CD)
-
+                                  borderRadius: BorderRadius.circular(26),
+                                  color: Color(0xffFAD9CD),
                                 ),
                                 child: Center(
                                   child: CommonText(
-
                                     text: 'Labour',
                                     fontSize: 16,
                                     color:
-                                    controller.selectedIndex == 2
-                                        ? Colors.green
-                                        : AppColors.nameTextColor,
+                                        controller.selectedIndex == 2
+                                            ? Colors.green
+                                            : AppColors.nameTextColor,
                                   ),
                                 ),
                               ),
-
-
-
                             ],
                           ),
                         ),
                       ],
                     ),
 
-
-                    SizedBox(height: 12,),
-
+                    SizedBox(height: 12),
 
                     SingleChildScrollView(
                       scrollDirection: Axis.horizontal,
@@ -196,31 +170,24 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-
-
                                 Container(
-                                  height:40,
+                                  height: 40,
                                   width: 80,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(26),
-                                      color: Color(0xffF9E8A3)
-
+                                    borderRadius: BorderRadius.circular(26),
+                                    color: Color(0xffF9E8A3),
                                   ),
                                   child: Center(
                                     child: CommonText(
-
                                       text: 'Family',
                                       fontSize: 16,
                                       color:
-                                      controller.selectedIndex == 3
-                                          ? Colors.green
-                                          : AppColors.nameTextColor,
+                                          controller.selectedIndex == 3
+                                              ? Colors.green
+                                              : AppColors.nameTextColor,
                                     ),
                                   ),
                                 ),
-
-
-
                               ],
                             ),
                           ),
@@ -230,31 +197,24 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-
-
                                 Container(
-                                  height:40,
+                                  height: 40,
                                   width: 120,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(26),
-                                      color: Color(0xffC2DCFF)
-
+                                    borderRadius: BorderRadius.circular(26),
+                                    color: Color(0xffC2DCFF),
                                   ),
                                   child: Center(
                                     child: CommonText(
-
                                       text: 'Immigration',
                                       fontSize: 16,
                                       color:
-                                      controller.selectedIndex == 4
-                                          ? Colors.green
-                                          : AppColors.nameTextColor,
+                                          controller.selectedIndex == 4
+                                              ? Colors.green
+                                              : AppColors.nameTextColor,
                                     ),
                                   ),
                                 ),
-
-
-
                               ],
                             ),
                           ),
@@ -265,31 +225,25 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
                             child: Column(
                               mainAxisSize: MainAxisSize.min,
                               children: [
-
-
                                 Container(
-                                  height:40,
+                                  height: 40,
                                   width: 80,
                                   decoration: BoxDecoration(
-                                      borderRadius: BorderRadius.circular(26),
-                                      color: Color(0xffD9D9D9)
-
+                                    borderRadius: BorderRadius.circular(26),
+                                    color: Color(0xffD9D9D9),
                                   ),
                                   child: Center(
-                                    child:Icon(Icons.add_circle_outline_rounded),
+                                    child: Icon(
+                                      Icons.add_circle_outline_rounded,
+                                    ),
                                   ),
                                 ),
-
-
-
                               ],
                             ),
                           ),
                         ],
                       ),
-                    )
-
-
+                    ),
                   ],
                 ),
 
@@ -350,8 +304,7 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
                                 return Column(
                                   children: [
                                     CriminalCard(),
-                                    AdvertisingCardArticles()
-
+                                    AdvertisingCardArticles(),
                                   ],
                                 );
                               },
@@ -360,6 +313,20 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
                         ],
                       ),
 
+                      Column(
+                        children: [
+                          SizedBox(height: 45.h),
+
+                          Expanded(
+                            child: ListView.builder(
+                              itemCount: 10,
+                              itemBuilder: (context, index) {
+                                return Column(children: [CriminalCard()]);
+                              },
+                            ),
+                          ),
+                        ],
+                      ),
 
                       Column(
                         children: [
@@ -372,6 +339,7 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
                                 return Column(
                                   children: [
                                     CriminalCard(),
+                                    AdvertisingCardArticles(),
                                   ],
                                 );
                               },
@@ -379,31 +347,6 @@ class _StudentImportantArticlesScreenState extends State<StudentImportantArticle
                           ),
                         ],
                       ),
-
-
-
-                      Column(
-                        children: [
-                          SizedBox(height: 45.h),
-
-                          Expanded(
-                            child: ListView.builder(
-                              itemCount: 10,
-                              itemBuilder: (context, index) {
-                                return Column(
-                                  children: [
-                                    CriminalCard(),
-                                    AdvertisingCardArticles()
-                                  ],
-                                );
-                              },
-                            ),
-                          ),
-                        ],
-                      ),
-
-
-
                     ],
                   ),
                 ),

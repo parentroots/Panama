@@ -38,8 +38,9 @@ class StudentHomeScreen extends StatelessWidget {
                         Image.asset(AppImages.back, color: Colors.black),
                         SizedBox(width: 10.h),
                         InkWell(
-                            onTap: ()=>Get.offAll(SignInScreen()),
-                            child: Image.asset(AppImages.appBarHome)),
+                          onTap: () => Get.offAll(SignInScreen()),
+                          child: Image.asset(AppImages.appBarHome),
+                        ),
                       ],
                     ),
                   ),
@@ -52,14 +53,11 @@ class StudentHomeScreen extends StatelessWidget {
               ),
             ),
 
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 120.w),
-              child: CommonText(
-                text: 'Hello Carlos',
-                fontSize: 34,
-                fontWeight: FontWeight.w700,
-                color: AppColors.nameTextColor,
-              ),
+            CommonText(
+              text: 'Hello Ebrahim',
+              fontSize: 34,
+              fontWeight: FontWeight.w700,
+              color: AppColors.nameTextColor,
             ),
 
             SizedBox(height: 45.h),
@@ -67,33 +65,26 @@ class StudentHomeScreen extends StatelessWidget {
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
                 CommonText(
-                  text: 'Welcome To Panamas ',
-                  fontSize: 18,
+                  text: 'Lear, review laws, and ',
+                  fontSize: 17,
                   color: AppColors.nameTextColor,
-                ),
-                CommonText(
-                  text: ' Number',
-                  fontSize: 24,
-                  color: AppColors.nameTextColor,
-                  fontWeight: FontWeight.w600,
                 ),
               ],
             ),
 
             CommonText(
-              text: ' 1 legal platform.',
-              fontSize: 24,
+              text: ' prepare for you legal career.',
+              fontSize: 22,
+
               color: AppColors.nameTextColor,
-              fontWeight: FontWeight.w600,
+              fontWeight: FontWeight.w700,
             ),
 
-            SizedBox(height: 15.h,),
-            
-            
+            SizedBox(height: 30.h),
+
             Image.asset(AppImages.scaleBalencing),
 
-            SizedBox(height: 10,),
-
+            SizedBox(height: 56),
 
             Column(
               children: [
@@ -102,15 +93,25 @@ class StudentHomeScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-
-                    HomeCard(boxColor: AppColors.card1, text: "Chatbot", image: AppImages.bot, onTap: () {
-                      Get.to(StudentChatBotScreen());
-                    },),
-                    SizedBox(width: 20,),
-                    HomeCard(boxColor: AppColors.card2, text: "Library", image: AppImages.library, onTap: () {
-                      Get.to(StudentLibraryScreen());
-                    },)
-                  ],),
+                      HomeCard(
+                        boxColor: AppColors.card1,
+                        text: "Chatbot",
+                        image: AppImages.bot,
+                        onTap: () {
+                          Get.to(StudentChatBotScreen());
+                        },
+                      ),
+                      SizedBox(width: 20),
+                      HomeCard(
+                        boxColor: AppColors.card2,
+                        text: "Library",
+                        image: AppImages.library,
+                        onTap: () {
+                          Get.to(StudentLibraryScreen());
+                        },
+                      ),
+                    ],
+                  ),
                 ),
 
                 Padding(
@@ -118,26 +119,30 @@ class StudentHomeScreen extends StatelessWidget {
                   child: Row(
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
-
-                      HomeCard(boxColor: AppColors.card3, text: "Important articles", image: AppImages.book2, onTap: () {
-                        Get.to(StudentImportantArticlesScreen());
-                      },),
-                      SizedBox(width: 20,),
-                      HomeCard(boxColor: AppColors.card4, text: "Profile", image: AppImages.person, onTap: () {
-                        Get.to(StudentProfileScreen());
-                      },)
-                    ],),
+                      HomeCard(
+                        boxColor: AppColors.card3,
+                        text: "Important articles",
+                        image: AppImages.book2,
+                        onTap: () {
+                          Get.to(StudentImportantArticlesScreen());
+                        },
+                      ),
+                      SizedBox(width: 20),
+                      HomeCard(
+                        boxColor: AppColors.card4,
+                        text: "Profile",
+                        image: AppImages.person,
+                        onTap: () {
+                          Get.to(StudentProfileScreen());
+                        },
+                      ),
+                    ],
+                  ),
                 ),
               ],
             ),
 
-
-
-            SizedBox(height: 88.h,)
-
-
-
-
+            SizedBox(height: 88.h),
           ],
         ),
       ),
