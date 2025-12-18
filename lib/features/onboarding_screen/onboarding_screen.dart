@@ -41,26 +41,24 @@ class OnboardingScreen extends StatelessWidget {
 
                 60.height,
 
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 69),
-                  child: Column(
-                    children: [
-                      CommonText(
-                        text: 'Your legal connection ',
-                        style: TextStyle(
-                          fontSize: 24,
-                          color: AppColors.commonButtonBorderColor,
-                        ),
-                      ),
-
-                      CommonText(
-                        text: 'In Panama',
+                Column(
+                  children: [
+                    CommonText(
+                      overflow: TextOverflow.visible,
+                      text: 'Your legal connection ',
+                      style: TextStyle(
                         fontSize: 24,
                         color: AppColors.commonButtonBorderColor,
-                        fontWeight: FontWeight.w700,
                       ),
-                    ],
-                  ),
+                    ),
+
+                    CommonText(
+                      text: 'In Panama',
+                      fontSize: 24,
+                      color: AppColors.commonButtonBorderColor,
+                      fontWeight: FontWeight.w700,
+                    ),
+                  ],
                 ),
 
                 80.height,
@@ -70,6 +68,8 @@ class OnboardingScreen extends StatelessWidget {
                   child: CommonButton(
                     buttonRadius: 26,
                     buttonHeight: 53,
+                    titleSize: 17,
+                    titleWeight: FontWeight.w400,
                     borderColor: AppColors.commonButtonBorderColor,
                     borderWidth: 1,
                     buttonColor: AppColors.commonAppColor,
@@ -89,6 +89,8 @@ class OnboardingScreen extends StatelessWidget {
                     titleColor: AppColors.commonTextColor,
                     borderColor: AppColors.commonButtonBorderColor,
                     borderWidth: 1,
+                    titleSize: 17,
+                    titleWeight: FontWeight.w400,
                     buttonColor: AppColors.commonAppColor,
                     titleText: AppString.signUp,
                     onTap: () => Get.toNamed(AppRoutes.signUpWithCategoryScreen),

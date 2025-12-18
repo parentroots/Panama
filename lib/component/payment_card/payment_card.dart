@@ -30,7 +30,8 @@ class PaymentCard extends StatelessWidget {
 
               Icon(icon),
               CommonText(text: text,style: TextStyle(
-                color: AppColors.secondary
+                fontSize: 17,
+                color: Color(0xff878A90)
               ),)
 
             ],

@@ -58,7 +58,7 @@ class _LawyerBilPlanScreenState extends State<LawyerBilPlanScreen> {
                 ),
                 SizedBox(height: 83.h),
             
-                // Work Area Input
+
                 Padding(
                   padding: EdgeInsets.symmetric(horizontal: 52.w),
                   child: Container(
@@ -154,7 +154,7 @@ class _LawyerBilPlanScreenState extends State<LawyerBilPlanScreen> {
                     buttonHeight: 53,
                   ),
                 ),
-            
+
                 SizedBox(height: 82.h),
               ],
             ),

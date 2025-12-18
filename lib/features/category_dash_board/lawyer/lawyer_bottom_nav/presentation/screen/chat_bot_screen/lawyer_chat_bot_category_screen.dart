@@ -177,7 +177,7 @@ class _LawyerChatBotCategoryScreenState extends State<LawyerChatBotCategoryScree
                   style: const TextStyle(
                     color: AppColors.commonTextColor,
                     fontSize: 17,
-                    fontWeight: FontWeight.w600,
+                    fontWeight: FontWeight.w400,
                   ),
                 ),
               ],

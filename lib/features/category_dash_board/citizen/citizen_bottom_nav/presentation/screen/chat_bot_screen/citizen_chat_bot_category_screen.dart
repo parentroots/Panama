@@ -130,7 +130,7 @@ class _CitizenChatBotCategoryScreenState extends State<CitizenChatBotCategoryScr
                       style: TextStyle(
                         color: Colors.white,
                         fontSize: 17,
-                        fontWeight: FontWeight.w600,
+                        fontWeight: FontWeight.w400,
                       ),
                     ),
                   ),
@@ -177,7 +177,7 @@ class _CitizenChatBotCategoryScreenState extends State<CitizenChatBotCategoryScr
                 style: const TextStyle(
                   color: AppColors.commonTextColor,
                   fontSize: 17,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ],

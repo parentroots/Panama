@@ -184,6 +184,79 @@ class _ProfileEditScreenState extends State<ProfileEditScreen> {
                     textEditingController2: emailTEController,
                   ),
                   SizedBox(height: 40.h),
+
+
+
+                  Text(
+                    "Tell something about yourself",
+                    style: TextStyle(
+                      color: Color(0xFF2A4E83), // ইমেজের নীল কালার কোড
+                      fontSize: 14,
+                      fontWeight: FontWeight.w500,
+                    ),
+                  ),
+                  SizedBox(height: 12),
+
+                  // ইনপুট বক্স (TextField)
+                  TextField(
+                    maxLines: 6,
+                    decoration: InputDecoration(
+                      filled: true,
+                      fillColor: Color(0xFFE0E0E0),
+                      border: OutlineInputBorder(
+                        borderRadius: BorderRadius.circular(25.0),
+                        borderSide: BorderSide.none,
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 40),
+
+                  // Save Changes বাটন
+                  SizedBox(
+                    width: double.infinity,
+                    height: 60,
+                    child: ElevatedButton(
+                      onPressed: () {},
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFF2E5088),
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          side: BorderSide(color: Color(0xFFD4AF37), width: 1), // হালকা গোল্ডেন বর্ডার
+                        ),
+                      ),
+                      child: Text(
+                        "Save changes",
+                        style: TextStyle(color: Colors.white, fontSize: 17),
+                      ),
+                    ),
+                  ),
+                  SizedBox(height: 15),
+
+                  // Cancel বাটন
+                  SizedBox(
+                    width: double.infinity,
+                    height: 60,
+                    child: ElevatedButton(
+                      onPressed: () {
+                        Get.back();
+
+                      },
+                      style: ElevatedButton.styleFrom(
+                        backgroundColor: Color(0xFF132033), // অনেক গাঢ় কালো/নীল
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(30),
+                          side: BorderSide(color: Color(0xFFD4AF37), width: 1),
+                        ),
+                      ),
+                      child: Text(
+                        "Cancel",
+                        style: TextStyle(color: Color(0xFFD4AF37), fontSize: 17), // গোল্ডেন টেক্সট
+                      ),
+                    ),
+                  ),
+
+
+
                 ],
               ),
             ),

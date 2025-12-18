@@ -39,15 +39,11 @@ class _LawyerSignUpScreenState extends State<LawyerSignUpScreen> {
               imageSource: AppImages.appLogo,
               textColor: AppColors.commonTextColor,
             ),
-            SizedBox(height: 30.h,),
+            SizedBox(height: 81.h,),
         
             SingleChildScrollView(
               child: Column(
                 children: [
-                  
-                  
-                    
-              
               SizedBox(
                 height: 53,
                 child: Padding(
@@ -124,7 +120,7 @@ class _LawyerSignUpScreenState extends State<LawyerSignUpScreen> {
                 ),
               ),
 
-                  SizedBox(height: 49.h),
+                  SizedBox(height: 95.h),
               
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 52.w),
@@ -135,7 +131,6 @@ class _LawyerSignUpScreenState extends State<LawyerSignUpScreen> {
                 buttonRadius: 24,),
               ),
 
-                  SizedBox(height: 90.h,)
               
               
                 ],

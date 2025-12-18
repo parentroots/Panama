@@ -46,7 +46,10 @@ class _SignUpWithCategoryScreenState extends State<SignUpWithCategoryScreen> {
 
             Align(
               alignment: Alignment.center,
-              child: CommonImage(imageSrc: AppImages.appLogo, size: 100),
+              child: SizedBox(
+                height: 91.h,
+                  width: 72.w,
+                  child: CommonImage(imageSrc: AppImages.appLogo,)),
             ),
             20.height,
 
@@ -71,6 +74,8 @@ class _SignUpWithCategoryScreenState extends State<SignUpWithCategoryScreen> {
                 borderColor: AppColors.commonButtonBorderColor,
                 buttonRadius: 24,
                 buttonHeight: 53,
+                titleSize: 14,
+                titleWeight: FontWeight.w400,
                 titleColor: AppColors.commonTextColor,
               ),
             ),
@@ -86,6 +91,8 @@ class _SignUpWithCategoryScreenState extends State<SignUpWithCategoryScreen> {
                 borderColor: AppColors.commonButtonBorderColor,
                 buttonRadius: 24,
                 buttonHeight: 53,
+                titleSize: 14,
+                titleWeight: FontWeight.w400,
                 titleColor: AppColors.commonTextColor,
               ),
             ),
@@ -102,6 +109,8 @@ class _SignUpWithCategoryScreenState extends State<SignUpWithCategoryScreen> {
                 buttonRadius: 24,
                 buttonWidth: 336,
                 buttonHeight: 53,
+                titleSize: 14,
+                titleWeight: FontWeight.w400,
                 titleColor: AppColors.commonTextColor,
               ),
             ),
@@ -118,6 +127,8 @@ class _SignUpWithCategoryScreenState extends State<SignUpWithCategoryScreen> {
                 buttonRadius: 24,
                 buttonWidth: 336,
                 buttonHeight: 53,
+                titleSize: 14,
+                titleWeight: FontWeight.w400,
                 titleColor: AppColors.commonTextColor,
               ),
             ),

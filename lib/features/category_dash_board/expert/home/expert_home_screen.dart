@@ -48,14 +48,13 @@ class ExpertHomeScreen extends StatelessWidget {
               ),
             ),
 
-            Padding(
-              padding: EdgeInsets.symmetric(horizontal: 120.w),
-              child: CommonText(
-                text: 'Hello Carlos',
-                fontSize: 34,
-                fontWeight: FontWeight.w700,
-                color: AppColors.nameTextColor,
-              ),
+            SizedBox(height: 55.h,),
+
+            CommonText(
+              text: 'Hello Carlos',
+              fontSize: 34,
+              fontWeight: FontWeight.w700,
+              color: AppColors.nameTextColor,
             ),
 
             SizedBox(height: 45.h),

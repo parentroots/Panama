@@ -53,7 +53,7 @@ class _CitizenOtherQuestionAskScreenState extends State<CitizenOtherQuestionAskS
                 "What kind of work-related issue do you want to ask about?",
                 textAlign: TextAlign.center,
                 style: TextStyle(
-                  fontSize: 22,
+                  fontSize: 24,
                   fontWeight: FontWeight.w700,
                   color: const Color(0xff233B69),
                 ),
@@ -125,7 +125,7 @@ class _CitizenOtherQuestionAskScreenState extends State<CitizenOtherQuestionAskS
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 17,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                       ),
@@ -153,7 +153,7 @@ class _CitizenOtherQuestionAskScreenState extends State<CitizenOtherQuestionAskS
                           style: TextStyle(
                             color: Colors.white,
                             fontSize: 17,
-                            fontWeight: FontWeight.w600,
+                            fontWeight: FontWeight.w400,
                           ),
                         ),
                       ),
@@ -199,7 +199,7 @@ class _CitizenOtherQuestionAskScreenState extends State<CitizenOtherQuestionAskS
                 style: const TextStyle(
                   color: AppColors.commonTextColor,
                   fontSize: 17,
-                  fontWeight: FontWeight.w600,
+                  fontWeight: FontWeight.w400,
                 ),
               ),
             ],

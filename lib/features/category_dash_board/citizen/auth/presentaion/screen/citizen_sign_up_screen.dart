@@ -38,7 +38,7 @@ class _CitizenSignUpScreenState extends State<CitizenSignUpScreen> {
             imageSource: AppImages.appLogo,
             textColor: AppColors.commonTextColor,
           ),
-          SizedBox(height: 30.h,),
+          SizedBox(height: 74.h,),
 
           Expanded(
             child: SingleChildScrollView(
@@ -124,7 +124,7 @@ class _CitizenSignUpScreenState extends State<CitizenSignUpScreen> {
                 ),
               ),
 
-                  SizedBox(height: 49.h),
+                  SizedBox(height: 96.h),
 
               Padding(
                 padding: EdgeInsets.symmetric(horizontal: 52.w),
@@ -135,7 +135,6 @@ class _CitizenSignUpScreenState extends State<CitizenSignUpScreen> {
                 buttonRadius: 24,),
               ),
 
-                  SizedBox(height: 90.h,)
 
 
                 ],

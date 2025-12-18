@@ -35,6 +35,8 @@ class _CitizenPaymentMethodScreenState
       ),
 
       body: Column(
+        mainAxisAlignment: MainAxisAlignment.center,
+        crossAxisAlignment: CrossAxisAlignment.center,
         children: [
           CommonCurvedWidget(
             height: 100,

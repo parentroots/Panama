@@ -164,7 +164,7 @@ class _LawyerPaymentMethodScreenState
               ),
             ),
 
-            SizedBox(height: 50.h),
+            SizedBox(height: 170.h),
 
             // ----------- Continue Button -----------
             Padding(

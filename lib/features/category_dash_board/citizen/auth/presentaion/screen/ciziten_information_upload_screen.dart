@@ -42,7 +42,7 @@ class _CitizenInformationUploadScreenState
             textColor: AppColors.commonTextColor,
           ),
 
-          SizedBox(height: 40.h),
+          SizedBox(height: 74.h),
 
           Padding(
             padding: const EdgeInsets.symmetric(horizontal: 69),
@@ -53,14 +53,7 @@ class _CitizenInformationUploadScreenState
             ),
           ),
           SizedBox(height: 40.h),
-          Padding(
-            padding: EdgeInsets.symmetric(horizontal: 135.w),
-            child: CommonText(
-              text: AppString.identityDocument,
-              fontWeight: FontWeight.w700,
-              fontSize: 17,
-            ),
-          ),
+
 
           18.height,
 
@@ -81,22 +74,29 @@ class _CitizenInformationUploadScreenState
               child: Row(
                 mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                 children: [
-                  CommonButton(
-                    onTap:  () => Get.toNamed(AppRoutes.fileScanScreen),
-                    borderColor: Colors.transparent,
-                    buttonWidth: 100,
-                    buttonHeight: 53,
-                    titleText: 'Residential Aria',
-                    buttonColor: AppColors.white,
-                    titleColor: AppColors.secondary,
+                  Expanded(
+                    child: CommonButton(
+                      onTap:  () => Get.toNamed(AppRoutes.fileScanScreen),
+                      borderColor: Colors.transparent,
+                      buttonWidth: 100,
+                      buttonHeight: 53,
+                      titleSize: 17,
+                      titleWeight: FontWeight.w400,
+                      titleText: 'Residential Aria',
+                      buttonColor: AppColors.white,
+                      titleColor: AppColors.secondary,
+                    ),
                   ),
-                  
+
+
+
                   CircleAvatar(
                     radius: 15.r,
                     backgroundColor: Color(0xff2E5089),
-                      child: Icon(Icons.arrow_drop_up,color: Colors.white,))
-                  
-                  
+                      child: Icon(Icons.arrow_drop_up,color: Colors.white,)),
+                  SizedBox(width: 15.w,),
+
+
                 ],
               ),
             ),
@@ -111,6 +111,8 @@ class _CitizenInformationUploadScreenState
               borderColor: AppColors.buttonBorderColor,
               buttonWidth: 380,
               buttonHeight: 53,
+              titleSize: 17,
+              titleWeight: FontWeight.w400,
               titleText: 'Extract Address',
               buttonColor: AppColors.white,
               titleColor: AppColors.secondary,
@@ -124,6 +126,8 @@ class _CitizenInformationUploadScreenState
             child: CommonButton(
               borderColor: AppColors.buttonBorderColor,
               buttonHeight: 53,
+              titleSize: 17,
+              titleWeight: FontWeight.w400,
               titleText: 'Date of Birth',
               buttonColor: AppColors.white,
               titleColor: AppColors.secondary,
@@ -142,7 +146,7 @@ class _CitizenInformationUploadScreenState
             ),
           ),
 
-          SizedBox(height: 60.h),
+          SizedBox(height: 82.h),
 
 
 

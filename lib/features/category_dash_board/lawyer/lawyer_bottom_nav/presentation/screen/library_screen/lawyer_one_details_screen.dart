@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 import 'package:get/get_core/src/get_main.dart';
 import 'package:get/get_navigation/src/extension_navigation.dart';
 import 'package:new_untitled/features/category_dash_board/expert/home/expert_home_screen.dart';
@@ -72,7 +73,8 @@ class _LibraryLawyerOneDetailsScreenState extends State<LibraryLawyerOneDetailsS
 
             /// ---------- Banner Image ----------
             Container(
-              height: 180,
+              height: 159.h,
+              width: 358.w,
               margin: const EdgeInsets.all(16),
               decoration: BoxDecoration(
                 borderRadius: BorderRadius.circular(16),
@@ -83,9 +85,12 @@ class _LibraryLawyerOneDetailsScreenState extends State<LibraryLawyerOneDetailsS
               ),
             ),
 
+
+            SizedBox(height: 16.h,),
+
             /// ---------- Description ----------
             Padding(
-              padding: const EdgeInsets.symmetric(horizontal: 16.0),
+              padding: const EdgeInsets.symmetric(horizontal: 41.0),
               child: Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: const [
@@ -151,7 +156,7 @@ class _LibraryLawyerOneDetailsScreenState extends State<LibraryLawyerOneDetailsS
                     child: Container(
                       padding: const EdgeInsets.symmetric(vertical: 14),
                       decoration: BoxDecoration(
-                        color: const Color(0xff003366),
+                        color: const Color(0xff2E5089),
                         borderRadius: BorderRadius.circular(14),
                       ),
                       alignment: Alignment.center,
@@ -177,7 +182,7 @@ class _LibraryLawyerOneDetailsScreenState extends State<LibraryLawyerOneDetailsS
               child: Container(
                 padding: const EdgeInsets.symmetric(vertical: 14),
                 decoration: BoxDecoration(
-                  color: const Color(0xffD6DCE8),
+                  color: const Color(0xff97A8C4),
                   borderRadius: BorderRadius.circular(14),
                 ),
                 alignment: Alignment.center,

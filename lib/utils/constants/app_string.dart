@@ -90,5 +90,5 @@ class AppString {
 
   static const String
   accessevaluationrequestschatwithlawyersandtheprofessionaldirectory =
-      "Access evaluation requests, chat with lawyers, and the professional directory";
+      "Access evaluation requests, chat with \nlawyers, and the professional \ndirectory";
 }

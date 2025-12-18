@@ -114,13 +114,17 @@ class _LawyerLibraryScreenState extends State<LawyerLibraryScreen> {
             Row(
               children: [
                 Padding(
-                  padding: const EdgeInsets.only(left: 25),
-                  child: Image.asset(AppImages.category),
+                  padding:EdgeInsets.only(left: 25.w),
+                  child: SizedBox(
+                    height: 34.h,
+                      width: 15.w,
+                      child: Image.asset(AppImages.category)),
                 ),
                 CommonText(
-                  text: 'Categories',
+                  text: 'Code List',
                   fontSize: 16.h,
-                  fontWeight: FontWeight.w700,
+                  fontWeight: FontWeight.w400,
+                  color: Color(0xff2E5089),
                 ),
               ],
             ),
@@ -173,7 +177,10 @@ class _LawyerLibraryScreenState extends State<LawyerLibraryScreen> {
             
             Padding(
               padding: const EdgeInsets.symmetric(horizontal: 52,vertical: 39),
-              child: CommonButton(titleText: 'See the most recent Official Gazette'),
+              child: CommonButton(
+                titleSize: 17,
+                  titleWeight: FontWeight.w400,
+                  titleText: 'See the most recent Official Gazette'),
             )
         
         

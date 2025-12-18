@@ -42,7 +42,7 @@ class _ExpertBilPlanScreenState extends State<ExpertBilPlanScreen> {
             textColor: AppColors.commonTextColor,
           ),
 
-          SizedBox(height: 34.h),
+          SizedBox(height: 40.h),
 
           Expanded(
             child: SingleChildScrollView(
@@ -69,7 +69,7 @@ class _ExpertBilPlanScreenState extends State<ExpertBilPlanScreen> {
                     ),
                   ),
 
-                  SizedBox(height: 40),
+                  SizedBox(height: 37),
 
                   PricingCard(
                     title: 'Profesional Expert',
@@ -77,7 +77,7 @@ class _ExpertBilPlanScreenState extends State<ExpertBilPlanScreen> {
                     subtitle: "+ ITBMS per month",
                   ),
 
-                  SizedBox(height: 80.h),
+                  SizedBox(height: 88.h),
 
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 52),
@@ -88,7 +88,6 @@ class _ExpertBilPlanScreenState extends State<ExpertBilPlanScreen> {
                     ),
                   ),
 
-                  SizedBox(height: 82.h,)
 
 
                 ],

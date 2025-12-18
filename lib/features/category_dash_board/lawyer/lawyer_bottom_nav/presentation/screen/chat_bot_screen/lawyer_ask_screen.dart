@@ -37,7 +37,10 @@ class LawyerAskScreen extends StatelessWidget {
             SizedBox(height: 56,),
             Align(
               alignment: Alignment.center,
-                child: CommonText(text: 'Write your question here?')),
+                child: CommonText(
+                  fontSize: 24.sp,
+                    fontWeight: FontWeight.w700,
+                    text: 'Write your question here?')),
         
         
             SizedBox(height: 22.h,),
@@ -79,6 +82,8 @@ class LawyerAskScreen extends StatelessWidget {
             Padding(
               padding: EdgeInsets.symmetric(horizontal: 53.w),
               child: CommonButton(
+                titleSize: 17,
+                  titleWeight: FontWeight.w400,
                   buttonColor: Color(0xff2E5089),
                   titleText: 'Send'),
             ),
@@ -105,6 +110,8 @@ class LawyerAskScreen extends StatelessWidget {
             Padding(
               padding:  EdgeInsets.symmetric(horizontal: 53.w),
               child: CommonButton(
+                titleSize: 17,
+                  titleWeight: FontWeight.w400,
                   titleText: 'Contact a Lawyer'),
             ),
 

@@ -49,7 +49,7 @@ class SignInScreen extends StatelessWidget {
                 child: CommonImage(imageSrc: AppImages.appLogo, size: 70),
               ),
 
-              60.height,
+              26.height,
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 69),
@@ -67,7 +67,7 @@ class SignInScreen extends StatelessWidget {
                 ),
               ),
 
-              80.height,
+              66.height,
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 52),
@@ -97,7 +97,7 @@ class SignInScreen extends StatelessWidget {
               CommonText(text: 'You forgot your password',fontSize: 11,fontWeight: FontWeight.w400,color: Color(0xffE1D49F),),
 
 
-              SizedBox(height: 70,),
+              SizedBox(height: 102.h,),
 
               Padding(
                 padding: const EdgeInsets.symmetric(horizontal: 52),
@@ -107,7 +107,6 @@ class SignInScreen extends StatelessWidget {
               ),
 
 
-              SizedBox(height: 223.h,)
 
 
             ],

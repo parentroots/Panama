@@ -39,12 +39,13 @@ class _ExpertSignUpScreenState extends State<ExpertSignUpScreen> {
               imageSource: AppImages.appLogo,
               textColor: AppColors.commonTextColor,
             ),
-            SizedBox(height: 30.h,),
+            SizedBox(height: 40.h,),
         
             SingleChildScrollView(
               child: Column(
                 children: [
-                  
+
+
                   
                     
               
@@ -135,7 +136,6 @@ class _ExpertSignUpScreenState extends State<ExpertSignUpScreen> {
                 buttonRadius: 24,),
               ),
 
-                  SizedBox(height: 90.h,)
               
               
                 ],

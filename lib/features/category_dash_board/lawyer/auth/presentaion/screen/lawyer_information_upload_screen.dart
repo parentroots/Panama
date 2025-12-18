@@ -87,7 +87,7 @@ class _LawyerInformationUploadScreenState
               ),
             ),
         
-            SizedBox(height: 170.h),
+            SizedBox(height: 120.h),
 
 
             Padding(
@@ -131,8 +131,9 @@ class _LawyerInformationUploadScreenState
               padding: const EdgeInsets.symmetric(horizontal: 69),
               child: CommonText(
                 text: "Suitability Certificate",
-                fontWeight: FontWeight.w700,
+                fontWeight: FontWeight.w400,
                 fontSize: 17,
+                color: Color(0xff16253E),
               ),
             ),
         

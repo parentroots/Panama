@@ -37,8 +37,8 @@ class _CitizenBilPlanScreenState extends State<CitizenBilPlanScreen> {
       body: Column(
         children: [
           CommonCurvedWidget(
-            height: 80,
-            text: "",
+            height: 100,
+            text: "Citizen Subscription",
             imageSource: AppImages.appLogo,
             textColor: AppColors.commonTextColor,
           ),
@@ -53,7 +53,7 @@ class _CitizenBilPlanScreenState extends State<CitizenBilPlanScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 69),
                     child: CommonText(
                       text: "Citizen bill plan",
-                      color: AppColors.commonTextColor,
+                      color:Color(0xff16253E),
                       fontSize: 24,
                       fontWeight: FontWeight.w700,
                     ),
@@ -64,8 +64,7 @@ class _CitizenBilPlanScreenState extends State<CitizenBilPlanScreen> {
                     padding: const EdgeInsets.symmetric(horizontal: 30),
                     child: Text(
                       textAlign: TextAlign.center,
-                      AppString
-                          .accessevaluationrequestschatwithlawyersandtheprofessionaldirectory,
+                      'Access basic legal advice and chat with lawyers starting at',
                       style: TextStyle(fontSize: 17),
                     ),
                   ),
@@ -78,7 +77,7 @@ class _CitizenBilPlanScreenState extends State<CitizenBilPlanScreen> {
                     subtitle: "+ ITBMS per month",
                   ),
 
-                  SizedBox(height: 80.h),
+                  SizedBox(height: 58.h),
 
                   Padding(
                     padding: const EdgeInsets.symmetric(horizontal: 52),
@@ -86,10 +85,19 @@ class _CitizenBilPlanScreenState extends State<CitizenBilPlanScreen> {
                       onTap: () => Get.to(CitizenPaymentMethodScreen()),
                       titleText: AppString.selectPaymentMethod,
                       buttonHeight: 53,
+                      titleSize: 14,
+                      titleWeight: FontWeight.w400,
                     ),
                   ),
 
-                  SizedBox(height: 82.h,)
+
+                  SizedBox(height: 14.h,),
+                  
+                  CommonText(
+                    
+                    color: Color(0xff16253E),
+                    text: 'View plan benefits',fontSize: 12,fontWeight: FontWeight.w400,)
+     
 
 
                 ],
